@@ -1,0 +1,15 @@
+{
+  "schema": "narada.epistemic.proposal_review.v1",
+  "proposal_id": "ep_1d7f96b4-4e60-4efe-ad9c-1d5e5a5821be",
+  "status": "policy_valid",
+  "certifies_truth": false,
+  "checks": {
+    "schema": true,
+    "references": true,
+    "evidence_locations": true,
+    "graph_invariants": true,
+    "ledger_head": true
+  },
+  "expected_ledger_head": "f66cea430af8bfb129e5345257d750f0dd9889436ab8274c8da3397fd80a669f",
+  "actual_ledger_head": "f66cea430af8bfb129e5345257d750f0dd9889436ab8274c8da3397fd80a669f"
+}

@@ -1,0 +1,263 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_fdfa4f3f-cb41-489d-94ed-81c9735acee0",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed initial graph population: published kill table with closure reasons."
+  },
+  "idempotency_key": "auto-proposal-3f1315bb5b2c2b088d66d486",
+  "expected_ledger_head": "535523b94064959c88dd1abee9ca0ecfd70e2d536805e13e7ee1b630441d59af",
+  "created_at": "2026-08-18T18:51:46.8417708Z",
+  "content_fingerprint": "3f1315bb5b2c2b088d66d48656dc492ab75aee12753b812a196c9e00fccd0929",
+  "operations": [
+    {
+      "direction_code": "closed",
+      "entity_id": "surya-closed-thermoradiative-laminate",
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "k1",
+      "op": "entity.declare",
+      "status": "closed",
+      "title": "Closed: Thermoradiative back-face laminate"
+    },
+    {
+      "direction_code": "closed",
+      "entity_id": "surya-closed-eclipse-cycle-harvesting",
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "k2",
+      "op": "entity.declare",
+      "status": "closed",
+      "title": "Closed: Eclipse-cycle pyroelectric / shape-memory harvesting"
+    },
+    {
+      "direction_code": "closed",
+      "entity_id": "surya-closed-solar-dynamic-stirling",
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "k3",
+      "op": "entity.declare",
+      "status": "closed",
+      "title": "Closed: Solar-dynamic Stirling / Brayton"
+    },
+    {
+      "direction_code": "closed",
+      "entity_id": "surya-closed-electrodynamic-tethers",
+      "evidence_class": "established",
+      "kind": "surya:direction",
+      "local_ref": "k4",
+      "op": "entity.declare",
+      "status": "closed",
+      "title": "Closed: Electrodynamic tethers"
+    },
+    {
+      "direction_code": "closed",
+      "entity_id": "surya-closed-solar-pumped-laser",
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "k5",
+      "op": "entity.declare",
+      "status": "closed",
+      "title": "Closed: Solar-pumped laser"
+    },
+    {
+      "direction_code": "closed",
+      "entity_id": "surya-closed-gravity-gradient-harvesting",
+      "evidence_class": "established",
+      "kind": "surya:direction",
+      "local_ref": "k6",
+      "op": "entity.declare",
+      "status": "closed",
+      "title": "Closed: Solar gravity-gradient harvesting in LEO"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-close-thermoradiative-laminate",
+      "evidence": [
+        {
+          "locator": "https://surya.narada.systems/ closed table",
+          "paraphrase": "Published kill-table row: ~1% of front-side PV at theoretical best; added thermal resistance can erase the gain; a second qualification dossier for a rounding error.",
+          "source_id": "src-surya-index"
+        }
+      ],
+      "judgment": "closed",
+      "op": "assessment.record",
+      "reason": "~1% of front-side PV at theoretical best; added thermal resistance can erase the gain; a second qualification dossier for a rounding error.",
+      "subject_id": "surya-closed-thermoradiative-laminate"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-close-eclipse-cycle-harvesting",
+      "evidence": [
+        {
+          "locator": "https://surya.narada.systems/ closed table",
+          "paraphrase": "Published kill-table row: physically real in LEO (5,800 deep cycles/yr) but uW-mW/m^2 - sensor-class power, not a bus.",
+          "source_id": "src-surya-index"
+        }
+      ],
+      "judgment": "closed",
+      "op": "assessment.record",
+      "reason": "Physically real in LEO (5,800 deep cycles/yr) but microwatt-milliwatt per m^2: sensor-class power, not a bus.",
+      "subject_id": "surya-closed-eclipse-cycle-harvesting"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-close-solar-dynamic-stirling",
+      "evidence": [
+        {
+          "locator": "https://surya.narada.systems/ closed table",
+          "paraphrase": "Published kill-table row: ~30% conversion is real, but 12-25 W/kg system-level against 100-500 W/kg flexible PV - plus the only moving parts on the table.",
+          "source_id": "src-surya-index"
+        }
+      ],
+      "judgment": "closed",
+      "op": "assessment.record",
+      "reason": "~30% conversion is real, but 12-25 W/kg system-level against 100-500 W/kg flexible PV, plus the only moving parts on the table.",
+      "subject_id": "surya-closed-solar-dynamic-stirling"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-close-electrodynamic-tethers",
+      "evidence": [
+        {
+          "locator": "https://surya.narada.systems/ closed table",
+          "paraphrase": "Published kill-table row: misfiled - converts orbital energy, not sunlight; a propulsion-power coupling tool, not a generator.",
+          "source_id": "src-surya-index"
+        }
+      ],
+      "judgment": "closed",
+      "op": "assessment.record",
+      "reason": "Misfiled: converts orbital energy, not sunlight. A propulsion-power coupling tool, not a generator.",
+      "subject_id": "surya-closed-electrodynamic-tethers"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-close-solar-pumped-laser",
+      "evidence": [
+        {
+          "locator": "https://surya.narada.systems/ closed table",
+          "paraphrase": "Published kill-table row: ~1% end-to-end as generation; a power transmission service, not a source; watch item under beaming, not generation.",
+          "source_id": "src-surya-index"
+        }
+      ],
+      "judgment": "closed",
+      "op": "assessment.record",
+      "reason": "~1% end-to-end as generation. A power transmission service, not a source; watch item under beaming, not generation.",
+      "subject_id": "surya-closed-solar-pumped-laser"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-close-gravity-gradient-harvesting",
+      "evidence": [
+        {
+          "locator": "https://surya.narada.systems/ closed table",
+          "paraphrase": "Published kill-table row: solar tide across a 100 m structure is ~1e-11 m/s^2; harvesting scales with amplitude squared; fourteen orders short.",
+          "source_id": "src-surya-index"
+        }
+      ],
+      "judgment": "closed",
+      "op": "assessment.record",
+      "reason": "Solar tide across a 100 m structure is ~1e-11 m/s^2; harvesting scales with amplitude squared. Fourteen orders short.",
+      "subject_id": "surya-closed-gravity-gradient-harvesting"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:closed_under",
+      "source_ref": "k1",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-closed-thermoradiative-laminate",
+      "relation_id": "rel:suryaclosed_under-c63e65f3fa9f6ed9"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:closed_under",
+      "source_ref": "k2",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-closed-eclipse-cycle-harvesting",
+      "relation_id": "rel:suryaclosed_under-b65518947ee9dabf"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:closed_under",
+      "source_ref": "k3",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-closed-solar-dynamic-stirling",
+      "relation_id": "rel:suryaclosed_under-15816bf213e28ade"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:closed_under",
+      "source_ref": "k4",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-closed-electrodynamic-tethers",
+      "relation_id": "rel:suryaclosed_under-1768df57dd05f127"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:closed_under",
+      "source_ref": "k5",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-closed-solar-pumped-laser",
+      "relation_id": "rel:suryaclosed_under-b753b68b46663f27"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:closed_under",
+      "source_ref": "k6",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-closed-gravity-gradient-harvesting",
+      "relation_id": "rel:suryaclosed_under-0a27a1032af64a5f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "k1",
+      "target_id": "src-surya-index",
+      "source_id": "surya-closed-thermoradiative-laminate",
+      "relation_id": "rel:derived_from-0d7946c0781fa91e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "k2",
+      "target_id": "src-surya-index",
+      "source_id": "surya-closed-eclipse-cycle-harvesting",
+      "relation_id": "rel:derived_from-b965a8afa45f283c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "k3",
+      "target_id": "src-surya-index",
+      "source_id": "surya-closed-solar-dynamic-stirling",
+      "relation_id": "rel:derived_from-a214e6c23c0adff2"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "k4",
+      "target_id": "src-surya-index",
+      "source_id": "surya-closed-electrodynamic-tethers",
+      "relation_id": "rel:derived_from-1a8b395dbc4db891"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "k5",
+      "target_id": "src-surya-index",
+      "source_id": "surya-closed-solar-pumped-laser",
+      "relation_id": "rel:derived_from-5d625d15a2c8dc73"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "k6",
+      "target_id": "src-surya-index",
+      "source_id": "surya-closed-gravity-gradient-harvesting",
+      "relation_id": "rel:derived_from-3fa4fc9a8faad29d"
+    }
+  ],
+  "digest": "a1fbd3758018f1939cb72d1988d84d581ba46960f3dc0e41e66521d07003efb2"
+}

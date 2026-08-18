@@ -1,0 +1,181 @@
+{
+  "schema": "narada.epistemic.event.v1",
+  "sequence": 5,
+  "event_id": "ev-000000000005-71a22647-9338-4546-ac9e-f34b4187ecb1",
+  "event_kind": "proposal_admitted",
+  "previous_hash": "a91d29a41bec67fe8a46732fd526a2b703573db757f4745d0c1d15792e6c46c1",
+  "proposal_id": "ep_d447ee1a-95c7-4e07-8ce5-e3f432b13776",
+  "proposal_digest": "d6c732e35420e54c2495b73630f484c46968cf1b55059a2b86fd6326facfed9c",
+  "operations": [
+    {
+      "entity_id": "surya-conjecture-r1-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w1",
+      "op": "entity.declare",
+      "title": "R1 wins if: end-of-life degradation becomes predictable and boring - an actuarial input rather than a research question"
+    },
+    {
+      "entity_id": "surya-conjecture-r2-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w2",
+      "op": "entity.declare",
+      "title": "R2 wins if: a credible 5-year LEO degradation model survives independent replication"
+    },
+    {
+      "entity_id": "surya-conjecture-r3-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w3",
+      "op": "entity.declare",
+      "title": "R3 wins if: reuse economics close at constellation volumes (~10 substrate reuse cycles drops germanium exposure an order of magnitude)"
+    },
+    {
+      "entity_id": "surya-conjecture-r4-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w4",
+      "op": "entity.declare",
+      "title": "R4 wins if: someone else's metamorphic-buffer breakthrough makes it cheap to revisit; check annually, fund never"
+    },
+    {
+      "entity_id": "surya-conjecture-r5-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w5",
+      "op": "entity.declare",
+      "title": "R5 wins if: deposited specific power beats launched specific power after accounting for the coater's own mass and operations"
+    },
+    {
+      "entity_id": "surya-conjecture-r6-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w6",
+      "op": "entity.declare",
+      "title": "R6 wins if: array-level specific power ~500 W/kg and cheap, fast radiation-test campaigns exist"
+    },
+    {
+      "entity_id": "surya-conjecture-r7-wins-if",
+      "kind": "conjecture",
+      "local_ref": "w7",
+      "op": "entity.declare",
+      "title": "R7 wins if: an honest closing argument with current numbers is written once, retiring non-PV from every trade study"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w1",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-conjecture-r1-wins-if",
+      "relation_id": "rel:addresses-328c623630d7b8a6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w2",
+      "target_id": "surya-direction-r2",
+      "source_id": "surya-conjecture-r2-wins-if",
+      "relation_id": "rel:addresses-a64f6c4ec10718be"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w3",
+      "target_id": "surya-direction-r3",
+      "source_id": "surya-conjecture-r3-wins-if",
+      "relation_id": "rel:addresses-2be05ec4ca34abfa"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w4",
+      "target_id": "surya-direction-r4",
+      "source_id": "surya-conjecture-r4-wins-if",
+      "relation_id": "rel:addresses-45b336a5c87feea4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w5",
+      "target_id": "surya-direction-r5",
+      "source_id": "surya-conjecture-r5-wins-if",
+      "relation_id": "rel:addresses-7b32daca6f6bc3ae"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w6",
+      "target_id": "surya-direction-r6",
+      "source_id": "surya-conjecture-r6-wins-if",
+      "relation_id": "rel:addresses-d02f4513fcead618"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "w7",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-conjecture-r7-wins-if",
+      "relation_id": "rel:addresses-a19414e382077caa"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w1",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r1-wins-if",
+      "relation_id": "rel:derived_from-609045e11ed2f105"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w2",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r2-wins-if",
+      "relation_id": "rel:derived_from-622c395bfcdc9eab"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w3",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r3-wins-if",
+      "relation_id": "rel:derived_from-2ae4a18ece5c01c9"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w4",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r4-wins-if",
+      "relation_id": "rel:derived_from-2206285ae15d0871"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w5",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r5-wins-if",
+      "relation_id": "rel:derived_from-956d5c5d7bf253cd"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w6",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r6-wins-if",
+      "relation_id": "rel:derived_from-c82758e12a5399d8"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "w7",
+      "target_id": "src-founding-article",
+      "source_id": "surya-conjecture-r7-wins-if",
+      "relation_id": "rel:derived_from-a76017a76c3e3f73"
+    }
+  ],
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed initial graph population: win-condition conjectures for R1-R7."
+  },
+  "idempotency_key": "auto-admission-f831461184ebfe1b447cec99",
+  "occurred_at": "2026-08-18T18:52:41.5924335Z",
+  "certifies_truth": false,
+  "event_hash": "3127c3eb2e4d9c0cc4d790eb74f1ec0b842fbc93fd90ccd436789fedb5a8ed26"
+}

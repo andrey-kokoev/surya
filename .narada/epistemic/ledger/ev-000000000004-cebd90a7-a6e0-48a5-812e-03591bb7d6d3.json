@@ -1,0 +1,87 @@
+{
+  "schema": "narada.epistemic.event.v1",
+  "sequence": 4,
+  "event_id": "ev-000000000004-cebd90a7-a6e0-48a5-812e-03591bb7d6d3",
+  "event_kind": "proposal_admitted",
+  "previous_hash": "f66cea430af8bfb129e5345257d750f0dd9889436ab8274c8da3397fd80a669f",
+  "proposal_id": "ep_1d7f96b4-4e60-4efe-ad9c-1d5e5a5821be",
+  "proposal_digest": "8cc32fa6c96fed555c6bca6b735c33e328a5d021cc0d3185772b3e7bbc8201eb",
+  "operations": [
+    {
+      "entity_id": "surya-claim-r2-readiness-baseline-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "r2claim",
+      "op": "entity.declare",
+      "title": "R2 readiness baseline (Aug 2026): flight heritage exists; TRL 4-5 trending 6; gap is duration and coupled stressors, not existence"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-r2-baseline-2026-08",
+      "evidence": [
+        {
+          "locator": "https://space.narada.systems/articles/ledger/ entry 888",
+          "paraphrase": "MAPHEUS-8 (2019): first perovskites flown in space.",
+          "source_id": "src-ledger-888"
+        },
+        {
+          "locator": "https://space.narada.systems/articles/ledger/ entry 888",
+          "paraphrase": "~10-month ISS MISSE exposure: degradation >90% reversible.",
+          "source_id": "src-ledger-888"
+        },
+        {
+          "locator": "https://space.narada.systems/articles/ledger/ entry 888",
+          "paraphrase": "RIT CubeSat: ~100 days on orbit with no observable degradation.",
+          "source_id": "src-ledger-888"
+        },
+        {
+          "locator": "https://space.narada.systems/articles/ledger/ entry 888",
+          "paraphrase": "Big Red Sat-1 and RHOK-SAT provide additional recent flight heritage.",
+          "source_id": "src-ledger-888"
+        },
+        {
+          "locator": "https://surya.narada.systems/directions/ R2 section",
+          "paraphrase": "Baseline recorded as proposal ep_1ca635b3 in the family epistemic graph; two independent research sweeps corroborated; readiness TRL 4-5 trending 6.",
+          "source_id": "src-surya-directions"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "Two independent research sweeps corroborate: perovskite flight heritage exists and is recent and thin. Readiness TRL 4-5, trending 6. The open gap is multi-year duration under coupled UV/ATOX/thermal stressors, not existence of the effect.",
+      "subject_id": "surya-claim-r2-readiness-baseline-2026-08"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r2claim",
+      "target_id": "surya-direction-r2",
+      "source_id": "surya-claim-r2-readiness-baseline-2026-08",
+      "relation_id": "rel:addresses-2e7374f73e522a3d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r2claim",
+      "target_id": "src-ledger-888",
+      "source_id": "surya-claim-r2-readiness-baseline-2026-08",
+      "relation_id": "rel:derived_from-15cb5d31f606009f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r2claim",
+      "target_id": "src-surya-directions",
+      "source_id": "surya-claim-r2-readiness-baseline-2026-08",
+      "relation_id": "rel:derived_from-893fec855eb01ab5"
+    }
+  ],
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed initial graph population: R2 readiness baseline."
+  },
+  "idempotency_key": "auto-admission-fd86e5ddba8e9e91918d20e6",
+  "occurred_at": "2026-08-18T18:52:12.3525982Z",
+  "certifies_truth": false,
+  "event_hash": "a91d29a41bec67fe8a46732fd526a2b703573db757f4745d0c1d15792e6c46c1"
+}

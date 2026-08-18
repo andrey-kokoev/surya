@@ -1,0 +1,398 @@
+{
+  "schema": "narada.epistemic.event.v1",
+  "sequence": 2,
+  "event_id": "ev-000000000002-e6e83587-a187-49d2-9485-e75bb96a8ab8",
+  "event_kind": "proposal_admitted",
+  "previous_hash": "3c8bffe73f7f89ae7fc48b5a14a7c4491cabf3c973017dbf20c05a8b93269641",
+  "proposal_id": "ep_09e9dd56-9645-4557-b0dc-0ce10386e402",
+  "proposal_digest": "f4fd44e0aab5bd3d12d866ed8611596e6d978abac6c5b96ca8c87e2fb24f68cd",
+  "operations": [
+    {
+      "entity_id": "surya-problem-root",
+      "kind": "problem",
+      "local_ref": "root",
+      "op": "entity.declare",
+      "title": "Space-grade solar power that escapes the germanium, gallium, coverglass, and qualification chokepoints"
+    },
+    {
+      "entity_id": "surya-chokepoint-germanium",
+      "kind": "problem",
+      "local_ref": "ge",
+      "op": "entity.declare",
+      "title": "Germanium substrate chokepoint: structural, export-control exercised (Dec 2024)"
+    },
+    {
+      "entity_id": "surya-chokepoint-gallium",
+      "kind": "problem",
+      "local_ref": "ga",
+      "op": "entity.declare",
+      "title": "Gallium chokepoint: logistical, inventory and recycling credible"
+    },
+    {
+      "entity_id": "surya-chokepoint-coverglass",
+      "kind": "problem",
+      "local_ref": "cg",
+      "op": "entity.declare",
+      "title": "Ceria-doped coverglass chokepoint: heritage monopoly under demolition"
+    },
+    {
+      "entity_id": "surya-chokepoint-qualification",
+      "kind": "problem",
+      "local_ref": "qual",
+      "op": "entity.declare",
+      "title": "Qualification lock: heritage dossier as moat; attackable as a research problem"
+    },
+    {
+      "clock": "0-3 yr",
+      "direction_code": "R1",
+      "entity_id": "surya-direction-r1",
+      "escapes": [
+        "germanium",
+        "coverglass",
+        "cell-cost"
+      ],
+      "evidence_class": "established",
+      "kind": "surya:direction",
+      "local_ref": "r1",
+      "op": "entity.declare",
+      "posture": "buy & characterize",
+      "status": "open",
+      "title": "R1 Space-ified terrestrial silicon"
+    },
+    {
+      "clock": "3-7 yr",
+      "direction_code": "R2",
+      "entity_id": "surya-direction-r2",
+      "escapes": [
+        "germanium",
+        "gallium",
+        "coverglass"
+      ],
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "r2",
+      "op": "entity.declare",
+      "posture": "fund the dataset & the protocol",
+      "status": "open",
+      "title": "R2 Perovskite and perovskite/Si tandems"
+    },
+    {
+      "clock": "3-7 yr",
+      "direction_code": "R3",
+      "entity_id": "surya-direction-r3",
+      "escapes": [
+        "germanium"
+      ],
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "r3",
+      "op": "entity.declare",
+      "posture": "track reuse cycle count",
+      "status": "open",
+      "title": "R3 Substrate liberation: ELO/IMM"
+    },
+    {
+      "clock": "-",
+      "direction_code": "R4",
+      "entity_id": "surya-direction-r4",
+      "escapes": [
+        "germanium"
+      ],
+      "evidence_class": "heuristic",
+      "kind": "surya:direction",
+      "local_ref": "r4",
+      "op": "entity.declare",
+      "posture": "watching brief",
+      "status": "watching",
+      "title": "R4 III-V on alternate lattices"
+    },
+    {
+      "clock": "7-15 yr",
+      "direction_code": "R5",
+      "entity_id": "surya-direction-r5",
+      "escapes": [
+        "germanium",
+        "coverglass",
+        "launch-mass"
+      ],
+      "evidence_class": "heuristic",
+      "kind": "surya:direction",
+      "local_ref": "r5",
+      "op": "entity.declare",
+      "posture": "ours to build",
+      "status": "open",
+      "title": "R5 In-space cell manufacturing"
+    },
+    {
+      "clock": "continuous",
+      "direction_code": "R6",
+      "entity_id": "surya-direction-r6",
+      "escapes": [
+        "qualification",
+        "structure-tax"
+      ],
+      "evidence_class": "evidence-backed",
+      "kind": "surya:direction",
+      "local_ref": "r6",
+      "op": "entity.declare",
+      "posture": "background duty",
+      "status": "open",
+      "title": "R6 System architecture as research"
+    },
+    {
+      "clock": "once",
+      "direction_code": "R7",
+      "entity_id": "surya-direction-r7",
+      "escapes": [],
+      "evidence_class": "heuristic",
+      "kind": "surya:direction",
+      "local_ref": "r7",
+      "op": "entity.declare",
+      "posture": "one sweep, then retire",
+      "status": "open",
+      "title": "R7 Non-photovoltaic solar: the closing argument"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r1",
+      "target_ref": "root",
+      "source_id": "surya-direction-r1",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-e2d04ecbeb84f2cc"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r2",
+      "target_ref": "root",
+      "source_id": "surya-direction-r2",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-bf4d665e8f5dd297"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r3",
+      "target_ref": "root",
+      "source_id": "surya-direction-r3",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-a6174531e4762841"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r4",
+      "target_ref": "root",
+      "source_id": "surya-direction-r4",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-1c4ef87a44c16b10"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r5",
+      "target_ref": "root",
+      "source_id": "surya-direction-r5",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-eb06d30b5f420807"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r6",
+      "target_ref": "root",
+      "source_id": "surya-direction-r6",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-fda6163b83088180"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r7",
+      "target_ref": "root",
+      "source_id": "surya-direction-r7",
+      "target_id": "surya-problem-root",
+      "relation_id": "rel:addresses-ada7b11d25e2a2ac"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r1",
+      "target_ref": "ge",
+      "source_id": "surya-direction-r1",
+      "target_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:addresses-edbe24f7b16796f8"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r1",
+      "target_ref": "cg",
+      "source_id": "surya-direction-r1",
+      "target_id": "surya-chokepoint-coverglass",
+      "relation_id": "rel:addresses-6600f47fcad870eb"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r2",
+      "target_ref": "ge",
+      "source_id": "surya-direction-r2",
+      "target_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:addresses-77e45bb395ebf2a2"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r2",
+      "target_ref": "ga",
+      "source_id": "surya-direction-r2",
+      "target_id": "surya-chokepoint-gallium",
+      "relation_id": "rel:addresses-c7b975ed827a6a1c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r2",
+      "target_ref": "cg",
+      "source_id": "surya-direction-r2",
+      "target_id": "surya-chokepoint-coverglass",
+      "relation_id": "rel:addresses-899f61d74c504619"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r3",
+      "target_ref": "ge",
+      "source_id": "surya-direction-r3",
+      "target_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:addresses-c9119422c142cba6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r4",
+      "target_ref": "ge",
+      "source_id": "surya-direction-r4",
+      "target_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:addresses-e79c90ae65ae5516"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r5",
+      "target_ref": "ge",
+      "source_id": "surya-direction-r5",
+      "target_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:addresses-3a1839a48fb10d19"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r5",
+      "target_ref": "cg",
+      "source_id": "surya-direction-r5",
+      "target_id": "surya-chokepoint-coverglass",
+      "relation_id": "rel:addresses-539a9563e926086a"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "r6",
+      "target_ref": "qual",
+      "source_id": "surya-direction-r6",
+      "target_id": "surya-chokepoint-qualification",
+      "relation_id": "rel:addresses-885e7357b2a3e264"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r1",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r1",
+      "relation_id": "rel:derived_from-369f4c4e1a9f249f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r2",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r2",
+      "relation_id": "rel:derived_from-0ed8c8132421d63f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r3",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r3",
+      "relation_id": "rel:derived_from-c961718abdfcdc6e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r4",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r4",
+      "relation_id": "rel:derived_from-9ace258111bafa65"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r5",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r5",
+      "relation_id": "rel:derived_from-66b4d0f9f8ca1c09"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r6",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r6",
+      "relation_id": "rel:derived_from-e3e4a2296ca0ad5a"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "r7",
+      "target_id": "src-founding-article",
+      "source_id": "surya-direction-r7",
+      "relation_id": "rel:derived_from-af5950601fc2c71f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "ge",
+      "target_id": "src-ledger-884",
+      "source_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:derived_from-9708f69838c93f5e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "ga",
+      "target_id": "src-ledger-885",
+      "source_id": "surya-chokepoint-gallium",
+      "relation_id": "rel:derived_from-10eff0c724754c16"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "cg",
+      "target_id": "src-ledger-886",
+      "source_id": "surya-chokepoint-coverglass",
+      "relation_id": "rel:derived_from-b6e6c5dba023951e"
+    }
+  ],
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed initial graph population: program spine (root problem, chokepoints, R1-R7 directions)."
+  },
+  "idempotency_key": "auto-admission-8002eee6d45b356f1729d700",
+  "occurred_at": "2026-08-18T18:50:57.4536761Z",
+  "certifies_truth": false,
+  "event_hash": "535523b94064959c88dd1abee9ca0ecfd70e2d536805e13e7ee1b630441d59af"
+}

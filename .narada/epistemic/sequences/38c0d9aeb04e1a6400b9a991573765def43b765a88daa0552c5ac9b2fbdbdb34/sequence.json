@@ -1,0 +1,15 @@
+{
+  "schema": "narada.epistemic.sequence.v1",
+  "sequence_id": "seq-38c0d9aeb04e1a6400b9a991",
+  "sequence_name": "surya-ledger",
+  "start_at": 1,
+  "step": 1,
+  "created_by": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed full initial epistemic-graph population for surya, including a Site-owned entry numbering authority."
+  },
+  "idempotency_key": null,
+  "created_at": "2026-08-18T18:48:01.9990741Z",
+  "creation_hash": "4decd95ff8283f483e0148f9a3c25038d2530ace2b1feb5e29e2207be96921ef"
+}

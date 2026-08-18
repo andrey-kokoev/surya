@@ -1,0 +1,92 @@
+{
+  "schema": "narada.epistemic.event.v1",
+  "sequence": 1,
+  "event_id": "ev-000000000001-e05545dd-a73b-40f6-9e76-bf0d811dc754",
+  "event_kind": "proposal_admitted",
+  "previous_hash": null,
+  "proposal_id": "ep_c2b31438-c002-4e77-bdc7-84be14d1dd7e",
+  "proposal_digest": "a1c941a556d20a704a6c06d2c2d2f8799f6be32d9adf447232aeb8efcb780264",
+  "operations": [
+    {
+      "entity_id": "src-founding-article",
+      "kind": "source",
+      "local_ref": "src-founding-article",
+      "locator": "https://space.narada.systems/articles/research-directions-space-solar/",
+      "op": "entity.declare",
+      "title": "Seven research directions for space-grade solar power (originating article)",
+      "version": "2026-08-17"
+    },
+    {
+      "entity_id": "src-surya-directions",
+      "kind": "source",
+      "local_ref": "src-surya-directions",
+      "locator": "https://surya.narada.systems/directions/",
+      "op": "entity.declare",
+      "title": "surya.narada.systems directions page (full treatment)",
+      "version": "2026-08"
+    },
+    {
+      "entity_id": "src-surya-index",
+      "kind": "source",
+      "local_ref": "src-surya-index",
+      "locator": "https://surya.narada.systems/",
+      "op": "entity.declare",
+      "title": "surya.narada.systems index (constraint map and published kill table)",
+      "version": "2026-08"
+    },
+    {
+      "entity_id": "src-ledger-884",
+      "kind": "source",
+      "local_ref": "src-ledger-884",
+      "locator": "https://space.narada.systems/articles/ledger/ entry 884",
+      "op": "entity.declare",
+      "title": "narada.space Resident's Ledger Entry 884 (germanium substrate chokepoint)",
+      "version": "2026-08"
+    },
+    {
+      "entity_id": "src-ledger-885",
+      "kind": "source",
+      "local_ref": "src-ledger-885",
+      "locator": "https://space.narada.systems/articles/ledger/ entry 885",
+      "op": "entity.declare",
+      "title": "narada.space Resident's Ledger Entry 885 (gallium chokepoint)",
+      "version": "2026-08"
+    },
+    {
+      "entity_id": "src-ledger-886",
+      "kind": "source",
+      "local_ref": "src-ledger-886",
+      "locator": "https://space.narada.systems/articles/ledger/ entry 886",
+      "op": "entity.declare",
+      "title": "narada.space Resident's Ledger Entry 886 (coverglass chokepoint)",
+      "version": "2026-08"
+    },
+    {
+      "entity_id": "src-ledger-887",
+      "kind": "source",
+      "local_ref": "src-ledger-887",
+      "locator": "https://space.narada.systems/articles/ledger/ entry 887",
+      "op": "entity.declare",
+      "title": "narada.space Resident's Ledger Entry 887 (Surya naming record)",
+      "version": "2026-08"
+    },
+    {
+      "entity_id": "src-ledger-888",
+      "kind": "source",
+      "local_ref": "src-ledger-888",
+      "locator": "https://space.narada.systems/articles/ledger/ entry 888",
+      "op": "entity.declare",
+      "title": "narada.space Resident's Ledger Entry 888 (R2 readiness baseline, two corroborating sweeps)",
+      "version": "2026-08"
+    }
+  ],
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed initial graph population: founding sources batch."
+  },
+  "idempotency_key": "auto-admission-51478219402a18213818055b",
+  "occurred_at": "2026-08-18T18:48:51.9502446Z",
+  "certifies_truth": false,
+  "event_hash": "3c8bffe73f7f89ae7fc48b5a14a7c4491cabf3c973017dbf20c05a8b93269641"
+}
