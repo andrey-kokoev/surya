@@ -1,0 +1,576 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_a9315c66-f538-435f-942c-63c08bd002e1",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed execution of the surya research program; R7 sweep first. Lifecycle task #1."
+  },
+  "idempotency_key": "auto-proposal-6e1abed0309769bc5121f6a8",
+  "expected_ledger_head": "3127c3eb2e4d9c0cc4d790eb74f1ec0b842fbc93fd90ccd436789fedb5a8ed26",
+  "created_at": "2026-08-18T19:29:25.3103993Z",
+  "content_fingerprint": "6e1abed0309769bc5121f6a84ddd467fc27c7fee6ecec04e52673d515ee0cda3",
+  "operations": [
+    {
+      "kind": "source",
+      "local_ref": "s1",
+      "op": "entity.declare",
+      "entity_id": "src-nasa-tm-102016",
+      "title": "Solar Dynamic Power for Space Station Freedom (Labus, Secunde & Lovely, NASA TM-102016, 1989)",
+      "version": "1989",
+      "locator": "https://ntrs.nasa.gov/api/citations/19890014145/downloads/19890014145.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s2",
+      "op": "entity.declare",
+      "entity_id": "src-nasa-tm-1999-209380",
+      "title": "Mason, A Solar Dynamic Power Option for Space Solar Power (NASA/TM-1999-209380)",
+      "version": "1999",
+      "locator": "https://ntrs.nasa.gov/api/citations/19990062655/downloads/19990062655.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s3",
+      "op": "entity.declare",
+      "entity_id": "src-nasa-sp-509-vol2",
+      "title": "NASA SP-509 Vol. 2, Space Resources: Energy, Power, and Transport",
+      "version": "1992",
+      "locator": "https://nss.org/settlement/nasa/spaceresvol2/technologies.html"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s4",
+      "op": "entity.declare",
+      "entity_id": "src-toro-lior-2017",
+      "title": "Toro & Lior, Analysis and comparison of solar-heat driven Stirling, Brayton and Rankine cycles for space power generation, Energy 120 (2017)",
+      "version": "2017",
+      "locator": "https://www.seas.upenn.edu/~lior/documents/Analysisandcomparisonofsolar-heatdrivencyclesforspacepowergeneration-published.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s5",
+      "op": "entity.declare",
+      "entity_id": "src-go-2017-thermionics",
+      "title": "Go et al., Thermionic Energy Conversion in the Twenty-first Century, Front. Mech. Eng. 2017",
+      "version": "2017",
+      "locator": "https://www.frontiersin.org/journals/mechanical-engineering/articles/10.3389/fmech.2017.00013/full"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s6",
+      "op": "entity.declare",
+      "entity_id": "src-campbell-2021-tec",
+      "title": "Campbell et al., Progress Toward High Power Output in Thermionic Energy Converters, Adv. Energy Mater. 2021",
+      "version": "2021",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8097403/"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s7",
+      "op": "entity.declare",
+      "entity_id": "src-nasa-1978-thermionic-study",
+      "title": "NASA Space Station Systems Analysis Study Vol. 7 (1978), 50 kWe solar-thermionic power subsystem",
+      "version": "1978",
+      "locator": "https://ntrs.nasa.gov/api/citations/19780002242/downloads/19780002242.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s8",
+      "op": "entity.declare",
+      "entity_id": "src-lapotin-2022-nature",
+      "title": "LaPotin et al., Thermophotovoltaic efficiency of 40%, Nature 604, 287-291 (2022)",
+      "version": "2022",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9007744/"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s9",
+      "op": "entity.declare",
+      "entity_id": "src-roy-layinde-2024-joule",
+      "title": "Roy-Layinde et al., High-efficiency air-bridge thermophotovoltaic cells, Joule 8 (2024)",
+      "version": "2024",
+      "locator": "https://www.sciencedirect.com/science/article/pii/S2542435124002022"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s10",
+      "op": "entity.declare",
+      "entity_id": "src-datas-algora-2012",
+      "title": "Datas & Algora, Development and experimental evaluation of a complete solar thermophotovoltaic system, Prog. Photovoltaics (2012)",
+      "version": "2012",
+      "locator": "https://oa.upm.es/28887/1/INVE_MEM_2013_166187.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s11",
+      "op": "entity.declare",
+      "entity_id": "src-lenert-2014-nnano",
+      "title": "Lenert et al., A nanophotonic solar thermophotovoltaic device, Nature Nanotech. 9 (2014)",
+      "version": "2014",
+      "locator": "https://www.nature.com/articles/nnano.2013.286"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s12",
+      "op": "entity.declare",
+      "entity_id": "src-datas-marti-2017",
+      "title": "Datas & Marti, Thermophotovoltaic energy in space applications: Review and future potential, Sol. Energy Mater. Sol. Cells 161 (2017)",
+      "version": "2017",
+      "locator": "https://oa.upm.es/50077/2/INVE_MEM_2017_264242.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s13",
+      "op": "entity.declare",
+      "entity_id": "src-rocketlab-solar-2026",
+      "title": "Rocket Lab Space Systems solar product page (IMM-alpha / IMM-beta production figures)",
+      "version": "2026",
+      "locator": "https://rocketlabcorp.com/space-systems/solar/"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s14",
+      "op": "entity.declare",
+      "entity_id": "src-esa-sbsp-architecture",
+      "title": "ESA SBSP Architecture Selection Report TN3 (rigid and roll-out array specific-power ranges)",
+      "version": "2023",
+      "locator": "https://nebula.esa.int/sites/default/files/neb_tec_study/1557/public/TN3_TASI-SD-SBSP-TNO-0637_Architecture Selection Report_v3_E-Sgn.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s15",
+      "op": "entity.declare",
+      "entity_id": "src-jpl-st8-ultraflex",
+      "title": "NASA JPL ST8 UltraFlex technology page (175 W/kg flown)",
+      "version": "2009",
+      "locator": "https://www.jpl.nasa.gov/nmp/st8/tech/solar_array4.html"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s16",
+      "op": "entity.declare",
+      "entity_id": "src-nasa-spinoff-2016-cellcost",
+      "title": "NASA Spinoff 2016: typical 4x8 cm space solar cell costs $400-500 apiece",
+      "version": "2016",
+      "locator": "https://spinoff.nasa.gov/Spinoff2016/ee_5.html"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s17",
+      "op": "entity.declare",
+      "entity_id": "src-jpl-d24454-arraycost",
+      "title": "JPL D-24454, Solar Cell and Array Technology for Future Space Science Missions (GSFC array cost dataset)",
+      "version": "2002",
+      "locator": "https://solarsystem.nasa.gov/system/downloadable_items/163_D-24454_(2)_-_Solar_Cell_and_Array_Technology__20022.pdf"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s18",
+      "op": "entity.declare",
+      "entity_id": "src-herasimenka-2024-solestial",
+      "title": "Herasimenka et al., SmallSat 2024 (Solestial space-rated Si cells, $20/W target)",
+      "version": "2024",
+      "locator": "https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=6029&context=smallsat"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s19",
+      "op": "entity.declare",
+      "entity_id": "src-airbusventures-2022-solestial",
+      "title": "Airbus Ventures, Solestial - Why We Invested (2022): III-V cells alone cost hundreds of dollars per watt",
+      "version": "2022",
+      "locator": "https://www.airbusventures.vc/insights/solestial-why-we-invested"
+    },
+    {
+      "kind": "source",
+      "local_ref": "s20",
+      "op": "entity.declare",
+      "entity_id": "src-jaigp-2025-array-survey",
+      "title": "JAIGP space solar array survey 2025 (Table 16: specific power, efficiency, TRL across array technologies)",
+      "version": "2025",
+      "locator": "https://jaigp.org/paper/23/pdf?version=1"
+    },
+    {
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c2",
+      "op": "entity.declare",
+      "entity_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "title": "Solar-dynamic Stirling/Brayton: 29% cycle and 17% orbital efficiency measured end-to-end; the only engineered system point is ~3.4 W/kg (Freedom 25 kWe module); all higher figures (10-40 near-term, 120-700 W/kg far-term) are unbuilt study projections; no flight program since 1991"
+    },
+    {
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c3",
+      "op": "entity.declare",
+      "entity_id": "surya-claim-r7-thermionics-2026-08",
+      "title": "Solar thermionics: converters demonstrated 6-13% (best ~16% at 2200 K); the only system-level study is a 1978 NASA design at ~14 W/kg dominated by concentrator mass; >30% efficiency and 100 W/cm2 remain theoretical; the dedicated solar-thermionic program was discontinued in the 1970s as uncompetitive with PV"
+    },
+    {
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c4",
+      "op": "entity.declare",
+      "entity_id": "surya-claim-r7-tpv-2026-08",
+      "title": "Solar TPV: cell physics reached 41.1% at 2400 C (2022) and 44% at 1435 C (2024), but measured complete solar-TPV systems are 0.8-3.2% solar-to-electric; all space TPV heritage is nuclear-heated, 100 We class, 6-8 W/kg; no orbital solar-TPV system-level W/kg estimate exists in the literature"
+    },
+    {
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c5",
+      "op": "entity.declare",
+      "entity_id": "surya-claim-r7-pv-baseline-2026-08",
+      "title": "PV baseline (Aug 2026): production III-V cells 30.7-34% AM0; arrays 50 W/kg rigid and 100-200 W/kg flexible flown (UltraFlex 175 W/kg); cells cost hundreds of $/W, arrays ~$1,650/W on the last public dataset (2002); Si entrants target $20/W; thin-film cells exceed 1 kW/kg at cell level, TRL 3-4"
+    },
+    {
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c1",
+      "op": "entity.declare",
+      "entity_id": "surya-claim-r7-closing-2026-08",
+      "title": "R7 closing argument (Aug 2026): on measured system-level numbers, no non-photovoltaic solar technology beats PV on specific power, cost, or readiness; only unbuilt study projections compete; non-PV solar is retired from future trade studies"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c1",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-claim-r7-closing-2026-08",
+      "relation_id": "rel:addresses-763194db8a1ec4be"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c2",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "relation_id": "rel:addresses-2b00ed01aa427daf"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c3",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-claim-r7-thermionics-2026-08",
+      "relation_id": "rel:addresses-2d268e0fea015aa5"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c4",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-claim-r7-tpv-2026-08",
+      "relation_id": "rel:addresses-5c81e14544494226"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c5",
+      "target_id": "surya-direction-r7",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "relation_id": "rel:addresses-1e97a4e89bc8ef2d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c2",
+      "source_id": "surya-claim-r7-closing-2026-08",
+      "target_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "relation_id": "rel:depends_on-3ea4219ae2ebfa88"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c3",
+      "source_id": "surya-claim-r7-closing-2026-08",
+      "target_id": "surya-claim-r7-thermionics-2026-08",
+      "relation_id": "rel:depends_on-4c394f892b279cad"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c4",
+      "source_id": "surya-claim-r7-closing-2026-08",
+      "target_id": "surya-claim-r7-tpv-2026-08",
+      "relation_id": "rel:depends_on-eafa9e4bea89515f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c5",
+      "source_id": "surya-claim-r7-closing-2026-08",
+      "target_id": "surya-claim-r7-pv-baseline-2026-08",
+      "relation_id": "rel:depends_on-fd73bec92c7c8164"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:refines",
+      "source_ref": "c2",
+      "target_id": "surya-closed-solar-dynamic-stirling",
+      "source_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "relation_id": "rel:suryarefines-7113700a73c8e968"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s1",
+      "source_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "target_id": "src-nasa-tm-102016",
+      "relation_id": "rel:derived_from-a19f128050920547"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s2",
+      "source_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "target_id": "src-nasa-tm-1999-209380",
+      "relation_id": "rel:derived_from-3dbb191d13cdfda2"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s3",
+      "source_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "target_id": "src-nasa-sp-509-vol2",
+      "relation_id": "rel:derived_from-0b48c09239969f34"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s4",
+      "source_id": "surya-claim-r7-solar-dynamic-2026-08",
+      "target_id": "src-toro-lior-2017",
+      "relation_id": "rel:derived_from-113406d62f611382"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s5",
+      "source_id": "surya-claim-r7-thermionics-2026-08",
+      "target_id": "src-go-2017-thermionics",
+      "relation_id": "rel:derived_from-71d8ce513eb8d462"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s6",
+      "source_id": "surya-claim-r7-thermionics-2026-08",
+      "target_id": "src-campbell-2021-tec",
+      "relation_id": "rel:derived_from-7d161a1f13149d3c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s7",
+      "source_id": "surya-claim-r7-thermionics-2026-08",
+      "target_id": "src-nasa-1978-thermionic-study",
+      "relation_id": "rel:derived_from-343019017d2eaa83"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s8",
+      "source_id": "surya-claim-r7-tpv-2026-08",
+      "target_id": "src-lapotin-2022-nature",
+      "relation_id": "rel:derived_from-ba501f0194cd91db"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s9",
+      "source_id": "surya-claim-r7-tpv-2026-08",
+      "target_id": "src-roy-layinde-2024-joule",
+      "relation_id": "rel:derived_from-fb55c34361c26f56"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s10",
+      "source_id": "surya-claim-r7-tpv-2026-08",
+      "target_id": "src-datas-algora-2012",
+      "relation_id": "rel:derived_from-a746b25e55e9cfbb"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s11",
+      "source_id": "surya-claim-r7-tpv-2026-08",
+      "target_id": "src-lenert-2014-nnano",
+      "relation_id": "rel:derived_from-bdc025d84cc0420a"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s12",
+      "source_id": "surya-claim-r7-tpv-2026-08",
+      "target_id": "src-datas-marti-2017",
+      "relation_id": "rel:derived_from-20f1aff83578fbb8"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s13",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-rocketlab-solar-2026",
+      "relation_id": "rel:derived_from-47859219576cd7ed"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s14",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-esa-sbsp-architecture",
+      "relation_id": "rel:derived_from-d486a738d2ac9140"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s15",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-jpl-st8-ultraflex",
+      "relation_id": "rel:derived_from-df8be8703cd49cba"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s16",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-nasa-spinoff-2016-cellcost",
+      "relation_id": "rel:derived_from-cf84a0d0ef305c59"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s17",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-jpl-d24454-arraycost",
+      "relation_id": "rel:derived_from-ddc41930a3829bc2"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s18",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-herasimenka-2024-solestial",
+      "relation_id": "rel:derived_from-c17df867840f3f74"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s19",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-airbusventures-2022-solestial",
+      "relation_id": "rel:derived_from-76293ccd248e4ea3"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s20",
+      "source_id": "surya-claim-r7-pv-baseline-2026-08",
+      "target_id": "src-jaigp-2025-array-survey",
+      "relation_id": "rel:derived_from-02803222ae94ada2"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-r7-closing-2026-08",
+      "evidence": [
+        {
+          "locator": "NASA/TM-1999-209380",
+          "paraphrase": "2 kWe Solar Dynamic Ground Test Demonstration measured 29% cycle efficiency and 17% orbital end-to-end efficiency over 800 h and 372 simulated LEO orbits.",
+          "source_id": "src-nasa-tm-1999-209380"
+        },
+        {
+          "locator": "NASA TM-102016",
+          "paraphrase": "Freedom 25 kWe solar-dynamic module mass 7440 kg complete: ~3.4 W/kg, the only fully engineered SD system point.",
+          "source_id": "src-nasa-tm-102016"
+        },
+        {
+          "locator": "SP-509 Vol. 2 technologies chapter",
+          "paraphrase": "LEO solar Brayton studies: 10-13 W/kg with thermal storage (half the system mass); 20-26 W/kg day-only; ~40 W/kg projected with improved components.",
+          "source_id": "src-nasa-sp-509-vol2"
+        },
+        {
+          "locator": "Go et al. 2017",
+          "paraphrase": "JPL solar thermionic converters ran 7-11% at ~1900 K for up to 11,000 h; the program was discontinued in the 1970s as uncompetitive with emerging PV and thermoelectrics.",
+          "source_id": "src-go-2017-thermionics"
+        },
+        {
+          "locator": "Campbell et al. 2021",
+          "paraphrase": "Plasma TECs delivered 10-20 W/cm2 for >50,000 h at 6-13% efficiency; best vacuum devices slightly over 10% at ~1 W/cm2; >30% and 100 W/cm2 remain unachieved targets.",
+          "source_id": "src-campbell-2021-tec"
+        },
+        {
+          "locator": "NASA 1978 Vol. 7",
+          "paraphrase": "50 kWe solar-thermionic study: 3540 kg total, 70.8 kg/kWe (~14 W/kg); concentrator alone 2000 kg, 57% of system mass.",
+          "source_id": "src-nasa-1978-thermionic-study"
+        },
+        {
+          "locator": "LaPotin et al. 2022",
+          "paraphrase": "Record TPV cell 41.1 +/- 1% at 2400 C emitter and 2.39 W/cm2; tandem III-V with 93% sub-bandgap reflector.",
+          "source_id": "src-lapotin-2022-nature"
+        },
+        {
+          "locator": "Datas & Algora 2012; Lenert et al. 2014",
+          "paraphrase": "Measured complete solar-TPV systems: 0.8% global solar-to-electric (Datas & Algora) and 3.2% (Lenert).",
+          "source_id": "src-datas-algora-2012"
+        },
+        {
+          "locator": "Datas & Marti 2017",
+          "paraphrase": "Space TPV usefulness limited to 100 We-class RTPV/small STPV; realistic RTPV specific power 6-8 W/kg after early optimistic estimates; low cell rejection temperature forces large radiators.",
+          "source_id": "src-datas-marti-2017"
+        },
+        {
+          "locator": "ESA TN3; JPL ST8",
+          "paraphrase": "PV arrays: rigid ~50 W/kg at 29% cells; roll-out 120-200 W/kg; UltraFlex flown at 175 W/kg.",
+          "source_id": "src-esa-sbsp-architecture"
+        },
+        {
+          "locator": "NASA Spinoff 2016; Airbus Ventures 2022",
+          "paraphrase": "III-V space cells cost hundreds of $/W ($400-500 per 4x8 cm cell); array-level ~$1,650/W on the 2002 GSFC dataset, the last rigorous public dataset.",
+          "source_id": "src-nasa-spinoff-2016-cellcost"
+        },
+        {
+          "locator": "Rocket Lab solar page",
+          "paraphrase": "Production III-V at 32% (IMM-alpha, volume) to 33.3% avg BOL (IMM-beta), latest cells/CICs up to 34%.",
+          "source_id": "src-rocketlab-solar-2026"
+        },
+        {
+          "locator": "Herasimenka et al. 2024",
+          "paraphrase": "Solestial targets $20/W space-rated Si by 2025, ~90% below incumbent III-V module cost.",
+          "source_id": "src-herasimenka-2024-solestial"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "Measured numbers close the question: solar-dynamic's only engineered point is 3.4 W/kg vs 100-200 W/kg flown flexible PV; thermionics peaked at 6-13% converters and a 1978 14 W/kg study; solar TPV's measured system ceiling is 3.2% against 30%+ direct PV. Known gaps: no current merchant III-V $/W primary source (2002 array dataset is the last rigorous public one); no modern system-level W/kg for thermionics or orbital solar TPV. Neither gap can reverse the conclusion: both would require order-of-magnitude improvements in technologies that have been static or abandoned for decades, while PV keeps moving.",
+      "subject_id": "surya-claim-r7-closing-2026-08"
+    }
+  ],
+  "digest": "788aba4ee588e606eb96afe1cdabed2db715bd540c67fc58f2f44fa20a405502"
+}

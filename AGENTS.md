@@ -59,6 +59,10 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
   permanent source+sink thermal schemes, eclipse-cycle harvesting,
   thermoradiative laminates, tethers-as-generators, solar-pumped lasers.
   Audited and closed August 2026.
+- **R7 non-photovoltaic solar**: closed August 2026. The closing argument
+  with sourced numbers is published at /r7-closing/ (graph event
+  `ev-000000000006`, assessment `surya-assessment-r7-closing-2026-08`,
+  established-with-gap). Four re-open triggers are listed on that page.
 - **Upstream context**: germanium substrate and coverglass chokepoint
   analyses live in the narada.space ledger (Entries 884–886); the
   disintermediation question (buy cells, not panels) is open background.

@@ -1,0 +1,245 @@
+---
+import Base from "../layouts/Base.astro";
+
+const sources = [
+  ["NASA TM-102016 (1989)", "Solar Dynamic Power for Space Station Freedom — the only fully engineered SD system point", "https://ntrs.nasa.gov/api/citations/19890014145/downloads/19890014145.pdf"],
+  ["NASA/TM-1999-209380", "Mason, A Solar Dynamic Power Option for Space Solar Power — GTD measured results and SSP projections", "https://ntrs.nasa.gov/api/citations/19990062655/downloads/19990062655.pdf"],
+  ["NASA SP-509 Vol. 2", "Space Resources: Energy, Power, and Transport — SD system specific-power studies", "https://nss.org/settlement/nasa/spaceresvol2/technologies.html"],
+  ["Toro & Lior, Energy 120 (2017)", "Solar-heat driven Stirling/Brayton/Rankine cycle comparison for space", "https://www.seas.upenn.edu/~lior/documents/Analysisandcomparisonofsolar-heatdrivencyclesforspacepowergeneration-published.pdf"],
+  ["Go et al., Front. Mech. Eng. (2017)", "Thermionic Energy Conversion in the Twenty-first Century", "https://www.frontiersin.org/journals/mechanical-engineering/articles/10.3389/fmech.2017.00013/full"],
+  ["Campbell et al., Adv. Energy Mater. (2021)", "Progress Toward High Power Output in Thermionic Energy Converters", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8097403/"],
+  ["NASA Space Station Systems Analysis Vol. 7 (1978)", "50 kWe solar-thermionic power subsystem study", "https://ntrs.nasa.gov/api/citations/19780002242/downloads/19780002242.pdf"],
+  ["LaPotin et al., Nature 604 (2022)", "Thermophotovoltaic efficiency of 40%", "https://pmc.ncbi.nlm.nih.gov/articles/PMC9007744/"],
+  ["Roy-Layinde et al., Joule 8 (2024)", "High-efficiency air-bridge thermophotovoltaic cells", "https://www.sciencedirect.com/science/article/pii/S2542435124002022"],
+  ["Datas & Algora, Prog. Photovoltaics (2012)", "Complete solar-TPV system, measured", "https://oa.upm.es/28887/1/INVE_MEM_2013_166187.pdf"],
+  ["Lenert et al., Nature Nanotech. 9 (2014)", "A nanophotonic solar thermophotovoltaic device", "https://www.nature.com/articles/nnano.2013.286"],
+  ["Datas & Martí, Sol. Energy Mater. Sol. Cells 161 (2017)", "Thermophotovoltaic energy in space applications: review", "https://oa.upm.es/50077/2/INVE_MEM_2017_264242.pdf"],
+  ["Rocket Lab Space Systems (2026)", "IMM-α / IMM-β production cell figures", "https://rocketlabcorp.com/space-systems/solar/"],
+  ["ESA SBSP Architecture Selection Report TN3", "Rigid and roll-out array specific-power ranges", "https://nebula.esa.int/sites/default/files/neb_tec_study/1557/public/TN3_TASI-SD-SBSP-TNO-0637_Architecture Selection Report_v3_E-Sgn.pdf"],
+  ["NASA JPL ST8", "UltraFlex flexible array, flown", "https://www.jpl.nasa.gov/nmp/st8/tech/solar_array4.html"],
+  ["NASA Spinoff (2016)", "Typical 4×8 cm space solar cell: $400–500 apiece", "https://spinoff.nasa.gov/Spinoff2016/ee_5.html"],
+  ["JPL D-24454 (2002)", "GSFC flight-array cost dataset", "https://solarsystem.nasa.gov/system/downloadable_items/163_D-24454_(2)_-_Solar_Cell_and_Array_Technology__20022.pdf"],
+  ["Herasimenka et al., SmallSat (2024)", "Solestial space-rated silicon, $20/W target", "https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=6029&context=smallsat"],
+  ["Airbus Ventures (2022)", "Solestial — Why We Invested: incumbent cells cost hundreds of $/W", "https://www.airbusventures.vc/insights/solestial-why-we-invested"],
+  ["JAIGP array survey (2025)", "Table 16: specific power, efficiency, TRL across array technologies", "https://jaigp.org/paper/23/pdf?version=1"],
+];
+---
+
+<Base
+  title="R7 closed: non-photovoltaic solar — Surya"
+  description="The closing argument for non-photovoltaic solar power in space: solar-dynamic, thermionics, and solar TPV against the PV baseline, with current sourced numbers. Sweep executed August 2026."
+  path="/r7-closing/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .verdict {
+      border-left: 3px solid var(--kill);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .verdict b { color: var(--kill); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R7: the closing argument for non-photovoltaic solar</h1>
+      <p class="lede">
+        Sweep executed 18 August 2026. Verdict: <b>closed</b>. On measured,
+        system-level numbers, no non-photovoltaic solar technology beats
+        photovoltaics on specific power, cost, or readiness. Only unbuilt
+        study projections compete, and they require exactly the components
+        nobody is building for space. The question is retired from future
+        trade studies; this page is the answer they should cite.
+      </p>
+
+      <h2>The question</h2>
+      <p>
+        Does anything that turns sunlight into electricity without a p-n
+        junction — heat engines, thermionics, thermophotovoltaics — deserve a
+        line in space-power trade studies? The space-unique variants were
+        already closed on the <a href="/#closed">kill table</a>. What remained
+        was the general case, with current numbers, written once.
+      </p>
+
+      <h2>The numbers</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Technology</th><th>Best measured</th><th>System specific power</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Solar-dynamic Stirling/Brayton</td>
+            <td>29% cycle, <b>17% orbital end-to-end</b> (2 kWe ground test, 800 h, 372 simulated LEO orbits)</td>
+            <td><b>3.4 W/kg</b> engineered (Freedom 25 kWe module, 7,440 kg); 10–13 W/kg study-level; 120–700 W/kg projected, never built</td>
+            <td>No flight program since 1991; never flown</td>
+          </tr>
+          <tr>
+            <td>Solar thermionics</td>
+            <td>6–13% converters (best ~16% at 2,200 K); JPL solar units 7–11% at ~1,900 K</td>
+            <td><b>~14 W/kg</b> — one study, 1978; concentrator alone 57% of mass</td>
+            <td>Solar program discontinued in the 1970s as uncompetitive with PV</td>
+          </tr>
+          <tr>
+            <td>Solar TPV</td>
+            <td>Cell physics: <b>41.1%</b> at 2,400 °C (2022), 44% at 1,435 °C (2024). Complete systems: <b>0.8–3.2%</b> solar-to-electric, measured</td>
+            <td>No orbital system estimate exists. Space TPV heritage is nuclear-heated: 100 We class, 6–8 W/kg realistic</td>
+            <td>Cells advancing fast; systems stagnant; commercial work is terrestrial storage</td>
+          </tr>
+          <tr>
+            <td><b>PV baseline</b></td>
+            <td>30.7–34% AM0 production III-V cells</td>
+            <td><b>50 W/kg</b> rigid; <b>100–200 W/kg</b> flexible flown (UltraFlex 175 W/kg); thin-film cells &gt;1 kW/kg at cell level, TRL 3–4</td>
+            <td>Shipping, improving, and getting cheaper (Si entrants target $20/W)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Solar-dynamic: the engine works, the system doesn't</h2>
+      <p>
+        <span class="class">established</span> The conversion is real: cycle
+        efficiencies of 25–35% are documented across Stirling, Brayton, and
+        Rankine studies, and NASA's 2 kWe closed-Brayton ground demonstration
+        measured 29% cycle efficiency and 17% orbital end-to-end efficiency
+        over 800 hours and 372 simulated LEO orbits. The 1968–78 Brayton
+        Rotating Unit ran over 38,000 hours without degradation. Nobody is
+        disputing the physics.
+      </p>
+      <p>
+        The mass is the kill. The only fully engineered system point —
+        Space Station Freedom's 25 kWe module — closed at 7,440 kg:
+        <b>3.4 W/kg</b>, with a two-axis concentrator held to ±0.1°, thermal
+        storage alone half the system mass, and a radiator rejecting ~4 W for
+        every watt delivered. Studies without full engineering reach 10–13
+        W/kg with storage, 20–26 W/kg day-only, ~40 W/kg with assumed
+        component improvements; Mason's 120–700 W/kg SSP projections require
+        inflatable concentrators at 0.2 kg/m² and 2,000 K ceramic turbines —
+        components that do not exist. Meanwhile the PV side of that 1991
+        trade shipped, and has since improved array-level specific power by
+        roughly an order of magnitude.
+      </p>
+
+      <h2>Thermionics: abandoned once, correctly</h2>
+      <p>
+        <span class="class">established</span> JPL's solar-thermionic
+        converters ran 7–11% at ~1,900 K for up to 11,000 hours — and the
+        program was discontinued in the 1970s, explicitly because it was
+        uncompetitive with emerging photovoltaics. Nothing since has changed
+        the physics: space charge still halves efficiency, cesium
+        neutralization still costs 30–50% of it, emitters still want
+        &gt;1,500 K, and the best modern vacuum-gap devices sit at ~10% and
+        ~1 W/cm² against a theoretical 30%+/100 W/cm² that no prototype has
+        approached. The only system-level study ever done — NASA, 1978, 50
+        kWe — closed at ~14 W/kg with the concentrator at 57% of the mass
+        budget. That was against 1978 photovoltaics.
+      </p>
+
+      <h2>Solar TPV: the live one, and why it still loses</h2>
+      <p>
+        <span class="class">evidence-backed</span> TPV cell physics is
+        genuinely moving: 41.1 ± 1% at a 2,400 °C emitter (Nature, 2022),
+        44% at 1,435 °C (Joule, 2024). This is the strongest non-PV thread,
+        and it still closes, because a cell is not a system. The two measured
+        complete solar-TPV systems stand at 0.8% and 3.2% solar-to-electric —
+        against 30%+ direct PV at the same sunlight. Every space application
+        of TPV to date is nuclear-heated (radioisotope or reactor), 100
+        We-class, with realistic specific power of 6–8 W/kg, limited by the
+        cold-side radiator that the low cell rejection temperature forces.
+        No orbital solar-TPV system-level W/kg estimate exists in the
+        literature; building one from concentrator, emitter, and radiator
+        mass models points the wrong way on every term. The active commercial
+        TPV work (thermal-battery storage) is terrestrial and does not move
+        the space case.
+      </p>
+
+      <h2>The incumbent baseline</h2>
+      <p>
+        <span class="class">evidence-backed</span> Production III-V cells run
+        30.7–34% AM0 (Spectrolab XTJ Prime, Rocket Lab/SolAero IMM-α in
+        volume at 32%, IMM-β averaging 33.3% BOL). Arrays ship at ~50 W/kg
+        rigid and 100–200 W/kg flexible — UltraFlex flew at 175 W/kg. Cost:
+        cells run hundreds of $/W ($400–500 per 4×8 cm cell, NASA Spinoff
+        2016; Airbus Ventures 2022 concurs); the last rigorous public
+        array-level dataset (GSFC 2002) puts delivered arrays at ~$1,650/W.
+        Silicon entrants (Solestial, mPower) are attacking exactly that cost
+        with a $20/W target, and thin-film/perovskite cells exceed 1 kW/kg at
+        cell level, TRL 3–4 — which is what this program's R1 and R2 are
+        for. PV is a moving target; non-PV stood still for three decades and
+        never caught the 1991 version.
+      </p>
+
+      <h2>Verdict</h2>
+      <p class="verdict">
+        <b>Closed.</b> No non-photovoltaic solar approach beats PV on any
+        measured system-level axis; the only competitive figures are unbuilt
+        projections depending on components no one is developing for space.
+        Future trade studies should cite this page instead of re-opening the
+        question.
+      </p>
+
+      <h2>What would change the conclusion</h2>
+      <ol>
+        <li>Flight-proven ultra-light concentrators (&lt;0.5 kg/m²), developed for any reason — solar sailing, thermal propulsion. Concentrator mass is the term that killed every thermal scheme.</li>
+        <li>A 2,400 °C-class emitter plus spectral-control stack with multi-year space durability — moves solar TPV systems toward their cell physics.</li>
+        <li>Mission profiles where PV+battery mass explodes (deep space, eclipse-heavy orbits) — re-run the trade with storage charged to the PV side.</li>
+        <li>Anyone flies a non-PV solar demonstrator above 50 W/kg system-level.</li>
+      </ol>
+      <p>
+        Annual check against these four triggers. Otherwise the direction
+        stays closed.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Sweep of 18 August 2026, four parallel literature sweeps, twenty
+        sources. Findings admitted to the Surya epistemic graph as event
+        <code>ev-000000000006</code> with assessment
+        <code>surya-assessment-r7-closing-2026-08</code>, judgment
+        <b>established-with-gap</b>. Known gaps, flagged there: no current
+        merchant III-V $/W primary source (the 2002 GSFC dataset is the last
+        rigorous public one; a 2026 market-report figure of $307/W exists but
+        its methodology is opaque — treated as indicative, not load-bearing);
+        no modern system-level W/kg for thermionics or orbital solar TPV.
+        Neither gap can reverse the conclusion: both would require
+        order-of-magnitude reversals in technologies that have been static or
+        abandoned for decades, while PV kept moving. The earlier kill-table
+        figure of 12–25 W/kg for solar-dynamic is refined here: 3.4 W/kg
+        engineered, 10–13 W/kg study-level.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

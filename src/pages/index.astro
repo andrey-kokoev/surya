@@ -53,10 +53,10 @@ const directions = [
   {
     id: "R7",
     name: "Non-photovoltaic solar",
-    posture: "one sweep, then retire",
-    clock: "once",
+    posture: "closed Aug 2026",
+    clock: "done",
     escapes: "nothing — that is the finding",
-    wins: "An honest closing argument with current numbers, written once.",
+    wins: "Written: the closing argument with current numbers.",
   },
 ];
 
@@ -74,7 +74,12 @@ const closed = [
   {
     name: "Solar-dynamic Stirling / Brayton",
     reason:
-      "~30% conversion is real, but 12–25 W/kg system-level against 100–500 W/kg flexible PV — plus the only moving parts on the table.",
+      "29% cycle / 17% orbital efficiency measured — and 3.4 W/kg at the only engineered system point (Freedom 25 kWe), 10–13 W/kg study-level, against 100–200 W/kg flown flexible PV. Plus the only moving parts on the table.",
+  },
+  {
+    name: "Solar thermionics and solar TPV",
+    reason:
+      "Thermionics: 6–13% converters, one 1978 system study at ~14 W/kg, program abandoned in the 1970s. Solar TPV: cells at 41–44%, measured complete systems at 0.8–3.2% solar-to-electric. Full closing argument: /r7-closing/.",
   },
   {
     name: "Electrodynamic tethers",
@@ -280,7 +285,9 @@ const closed = [
         Sequencing: R1 carries the program while R2 (escapes the materials)
         and R3 (escapes the geography) mature. R5 is the long game and
         composes with on-orbit servicing architecture. R6 is continuous
-        background duty; R4 and R7 exist to be closed, not funded.
+        background duty; R4 and R7 exist to be closed, not funded. R7 was
+        closed in August 2026 — the full closing argument with sourced
+        numbers is at <a href="/r7-closing/">/r7-closing/</a>.
       </p>
       <p class="fineprint">
         Epistemic contract: every claim here carries a confidence class —
