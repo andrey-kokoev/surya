@@ -1,0 +1,328 @@
+---
+import Base from "../layouts/Base.astro";
+
+const defects = [
+  {
+    name: "E-center (V–P)",
+    where: "Dominant radiation defect in P-doped n-type Si",
+    anneals: "150–180 °C",
+    ea: "0.94 eV",
+    source: "Watkins & Corbett school; Markevich 2001; Khirunenko",
+  },
+  {
+    name: "Divacancy (V₂)",
+    where: "Predominant lifetime killer in n-type; levels Ec−0.42/−0.23, Ev+0.20",
+    anneals: "~300 °C (immobile to ~200 °C)",
+    ea: "1.3 eV migration; first-order V₂→V₂O, c₀ = 4.4×10⁸ s⁻¹",
+    source: "Watkins & Corbett 1965; Mikelsen 2005",
+  },
+  {
+    name: "A-center (V–O)",
+    where: "Dominant recombination center in electron-irradiated p-type",
+    anneals: "300–400 °C",
+    ea: "≈1.3 eV",
+    source: "Londos 1998; NASA 1966",
+  },
+  {
+    name: "Interstitial carbon (Cᵢ)",
+    where: "Formed by Watkins displacement from substitutional carbon",
+    anneals: "Room-temperature unstable; decays to CᵢOᵢ / CᵢCₛ",
+    ea: "0.88 eV diffusion (positive charge state)",
+    source: "Wang 2017; Lastovskii 2017",
+  },
+  {
+    name: "Ev+0.30 donor (B–O–V?)",
+    where: "Lifetime-limiting level in B-doped p-type bases; low introduction rate (~0.03 cm⁻¹ per 1 MeV e⁻)",
+    anneals: "Implicated in reverse annealing >400 °C at >10¹⁴ e/cm²",
+    ea: "—",
+    source: "Mooney 1977; Weinberg & Swartz 1980/81",
+  },
+  {
+    name: "B–O (LID)",
+    where: "Not a radiation defect — injection-activated complex in B-doped Cz; ~3–4% relative loss; absent in n-type and Ga-doped",
+    anneals: "Dark anneal >200 °C; permanent regeneration under light at 160–230 °C",
+    ea: "0.23 / 0.475 eV formation (fast/slow)",
+    source: "Herguth & Hallam 2018; Bothe 2005",
+  },
+];
+
+const thickness = [
+  ["2 µm", "Computed optimum for EOL efficiency — stays below the damaged diffusion length even after irradiation (Landis 1991)"],
+  ["<25 µm", "Tolerates lifetimes <250 ns vs ~1 ms conventional — a >1000× relaxation of the lifetime requirement; modeled radiation resistance comparable to InP (DiNetta/Barnett 1991)"],
+  ["50 µm", "NASDA 1983; flown on ERS-1, ETS-VI, ADEOS; above ~10¹⁵ e/cm² thinner cells deliver higher Pmax than thick ones"],
+  ["60 µm", "Ga-doped SHJ beats 180 µm PERC end-of-life at every tested fluence (to 1.5×10¹⁵ e/cm²), at 3× lower mass; certified 15.9% AM1.5G EOL at 1.5×10¹⁴ e/cm² (Cariou 2023)"],
+  ["100 µm", "~60,000 CICs produced and qualified for ADEOS (NASDA); 17.5% AM0 with random pyramids. This is the program design point — heritage exists, annealing data does not"],
+];
+
+const annealing = [
+  ["20 µm SHJ", "120 mV/hr Voc recovery after 1 MeV, 10¹⁵ e/cm²; full recovery within 8 h at 80 °C under 0.5 sun"],
+  ["40 µm SHJ", "Intermediate (rate between the 20 and 80 µm points)"],
+  ["80 µm SHJ", "Almost zero annealing under the same conditions"],
+  ["Temperature", "Recovery rate 120 / 11.4 / 2.5 at 100 / 80 / 65 °C — a steep but usable slope; 65 °C under maximum-power-point operation works (SPW 2024)"],
+  ["Doping", "Cz p(B): ~90% Voc recovery at 100 °C. Cz n(P): none. Impurity engineering restored 100% recovery at 80 °C"],
+  ["Independent validation", "CEA: 10-year-LEO-equivalent dose, recovery under 1 sun at 90 °C, 96% of initial Voc retained"],
+];
+
+const gaps = [
+  ["Thickness-resolved annealing at the design point", "Published recovery data: 20 µm full, 80 µm near-zero. The 80–100 µm band — where the program lives — has no published annealing rates. This is one irradiation-and-anneal campaign on existing cells."],
+  ["Mechanism attribution", "Injection-enhanced bulk annealing vs surface proximity / gettering / out-diffusion is unresolved; the strongest practitioner (Solestial) treats the defect engineering as proprietary. The mechanism decides whether the effect transfers to other cell architectures."],
+  ["In-orbit flight telemetry", "No peer-reviewed flight dataset shows Si cell recovery in orbit (APEX recorded degradation; the documented in-orbit annealing case is GaAs, Hughes HS 393). Company on-orbit claims exist; published data does not."],
+  ["Combined-protocol annealing", "No campaign anneals under radiation + illumination + thermal cycling at a realistic LEO profile. Single-stressor annealing data may not predict recovery under the coupled environment."],
+];
+
+const sources = [
+  ["Tada et al., Solar Cell Radiation Handbook, 3rd ed., JPL (1982)", "The canonical damage-law and annealing-temperature compilation", "https://ntrs.nasa.gov/api/citations/19780007623/downloads/19780007623.pdf"],
+  ["Rosenzweig, Gummel, Smits, BSTJ 42 (1963)", "Original diffusion-length damage law; K_L ≈ 1.9×10⁻¹⁰ per 1 MeV electron", "https://onlinelibrary.wiley.com/doi/10.1002/j.1538-7305.1963.tb00506.x"],
+  ["Watkins & Corbett, Phys. Rev. 138 (1965)", "EPR of the divacancy; migration Ea 1.3 eV", "https://doi.org/10.1103/PhysRev.138.A543"],
+  ["Mooney et al., Phys. Rev. B 15 (1977)", "Defect census for B-doped Si under 1 MeV electrons", "https://doi.org/10.1103/PhysRevB.15.3836"],
+  ["Mikelsen et al., Phys. Rev. B 72 (2005)", "Divacancy annealing kinetics: first-order, Ea 1.30±0.02 eV", "https://doi.org/10.1103/PhysRevB.72.195207"],
+  ["Londos et al., J. Appl. Phys. 84 (1998)", "A-center annealing behavior", "http://users.uoa.gr/~hlontos/pdf/magazines_articles/A50-J.Appl.Phys.%2084,3569%20(1998).pdf"],
+  ["Weinberg & Swartz, NASA TM-82597 (1981)", "Reduced annealing temperatures: 96% Isc recovery at 200 °C in low-O/C cells", "https://ntrs.nasa.gov/api/citations/19810015093/downloads/19810015093.pdf"],
+  ["Weinberg & Swartz, Appl. Phys. Lett. 36 (1980)", "Origin of reverse annealing in radiation-damaged Si cells", "https://ntrs.nasa.gov/api/citations/19800007298/downloads/19800007298.pdf"],
+  ["Srour, Marshall & Marshall, IEEE TNS 50 (2003)", "Displacement-damage (NIEL/DDD) framework review", "https://doi.org/10.1109/TNS.2003.813197"],
+  ["Lang & Kimerling, Phys. Rev. Lett. 33 (1974)", "Recombination-enhanced defect reactions — the injection-annealing mechanism", "https://doi.org/10.1103/PhysRevLett.33.489"],
+  ["Arimura et al., J. Appl. Phys. 40 (1969)", "Injection-enhanced divacancy annealing in n-type Si", "https://pubs.aip.org/aip/jap/article-pdf/40/6/2570/18350489/2570_1_online.pdf"],
+  ["Makarenko et al., J. Appl. Phys. (2018)", "Electron injection alters defect reaction rates in irradiated Si", "https://doi.org/10.1063/1.5010965"],
+  ["DiNetta, Rand, Barnett et al., NASA CP (1991)", "<25 µm cells tolerate <250 ns lifetimes; InP-class radiation resistance projected", "https://ntrs.nasa.gov/api/citations/19910020907/downloads/19910020907.pdf"],
+  ["Landis, NASA CP (1991)", "Optimum EOL thickness may be as low as 2 µm", "https://ntrs.nasa.gov/api/citations/19910009885/downloads/19910009885.pdf"],
+  ["Cariou et al., IEEE J. Photovoltaics 14 (2023)", "60/110/160 µm Ga-doped SHJ vs PERC under 1 MeV electrons", "https://cea.hal.science/cea-04513443/document"],
+  ["Matsuda et al., NASDA, NASA CP (1994)", "50 µm cells flown on ERS-1/ETS-VI/ADEOS; ~60,000 100 µm CICs qualified", "https://ntrs.nasa.gov/api/citations/19940006941/downloads/19940006941.pdf"],
+  ["Herasimenka et al., 40th Space Power Workshop (2023)", "Full recovery at 80 °C under light; thickness- and doping-gated", "https://spw.aerospace.org/files/2023/06/2023-05_08_Poster_S.-Herasimenka_Presentation.pdf"],
+  ["Gurimskaya et al., ESPC (2023)", "Peer-reviewed conference version: effective annealing in ultra-thin Si", "https://asu.elsevierpure.com/en/publications/effective-annealing-of-proton-and-electron-radiation-damage-in-ul/"],
+  ["Aponte et al., 41st Space Power Workshop (2024)", "Annealing at 65 °C under maximum-power-point operation", "https://spw.aerospace.org/files/2024/07/4_EG1_D.-Aponte_Presentation.pdf"],
+  ["Solestial / CEA (2023)", "Independent CEA validation: recovery under 1 sun at 90 °C after a 10-year-LEO-equivalent dose", "https://solestial.com/the-cea-validates-solestials-breakthrough-radiation-curing-technology/"],
+  ["Wang et al., Science Advances (2025)", "Perovskite/p-Si tandem on 100 µm p-Si HJT bottom cell; radiation-resilient", "https://pmc.ncbi.nlm.nih.gov/articles/PMC13418752/"],
+  ["Khan, Yamaguchi et al., Sol. Energy Mater. Sol. Cells 75 (2003)", "Ga-doped Si more radiation tolerant than B-doped", "https://doi.org/10.1016/S0927-0248(02)00169-1"],
+  ["Vayner, NASA Glenn (2016)", "Measured array temperatures: −150 to +110 °C", "https://ntrs.nasa.gov/citations/20160010349"],
+  ["Gruenbaum, APEX/PASP-Plus, NASA/JPL (1995)", "Si degradation recorded; in-orbit annealing documented for GaAs, not Si", "https://ntrs.nasa.gov/api/citations/19950021228/downloads/19950021228.pdf"],
+  ["Brown & Gabbe et al., BSTJ 42 (1963)", "Telstar: 15–20% diffusion-length recovery after two weeks at room temperature", "https://vtda.org/pubs/BSTJ/vol42-1963/articles/bstj42-4-1765.pdf"],
+];
+---
+
+<Base
+  title="R1 annealing baseline — Surya"
+  description="Radiation-defect annealing kinetics in thin silicon for space photovoltaics: what the literature supports, where the 100 µm design point stands, and the four gaps to a creditable end-of-life model. Sweep executed August 2026."
+  path="/r1-annealing/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    .finding {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .finding b { color: var(--accent); }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; white-space: nowrap; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R1: the annealing baseline</h1>
+      <p class="lede">
+        Sweep executed 18 August 2026. The finding: the annealing mechanism is
+        real and defect-resolved, and ultra-thin defect-engineered silicon
+        cells recover fully at 65–100 °C under light — inside the realistic
+        sunlit LEO operating band. But the effect is strongly thickness-gated
+        (full recovery at 20 µm, near-zero at 80 µm) and doping-gated
+        (p-type recovers, n-type does not). At the program's 100 µm n-type
+        design point, the annealing claim is currently undemonstrated on both
+        axes.
+      </p>
+
+      <h2>Why this baseline exists</h2>
+      <p>
+        R1 bets that thin silicon can be radiation-hard through self-annealing
+        rather than shielding. The directions page stated the mechanism exists
+        in the literature but is not yet creditable at the 100 µm design
+        point; R1 wins when end-of-life degradation becomes predictable and
+        boring — an actuarial input, not a research question. This page
+        records what the literature actually supports: the defect physics, the
+        thickness scaling, the operating-temperature arithmetic, and the named
+        gaps between the published evidence and a creditable model.
+      </p>
+
+      <h2>Defect inventory and annealing stages</h2>
+      <p>
+        <span class="class">established</span> Radiation damage in silicon is
+        displacement damage: the primary event is the Frenkel pair
+        (displacement threshold ≈ 11–13 eV), and the surviving stable defects
+        are impurity complexes. Carrier-lifetime damage follows
+        <code>1/L² = 1/L₀² + K_L·Φ</code> with K_L ≈ 1.9×10⁻¹⁰ per 1 MeV
+        electron for n/p 1 Ω·cm cells (Rosenzweig 1963). Each defect has its
+        own annealing temperature and activation energy:
+      </p>
+      <table class="nums">
+        <thead>
+          <tr><th>Defect</th><th>Role</th><th>Anneals at</th><th>Activation energy</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          {defects.map((d) => (
+            <tr>
+              <td>{d.name}</td>
+              <td>{d.where}</td>
+              <td>{d.anneals}</td>
+              <td>{d.ea}</td>
+              <td>{d.source}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p>
+        Device level: conventional Si cells show <em>no significant annealing
+        below ~200 °C</em>; significant recovery needs 200–400 °C (JPL
+        Radiation Handbook). Low-oxygen/low-carbon cells recover 96% of
+        pre-irradiation I<sub>sc</sub> at 200 °C and fully at 275–300 °C
+        (second-order, Ea 1.5±0.2 eV — Weinberg &amp; Swartz 1981). Ambient
+        annealing exists but is slow and partial: ~10% of I<sub>sc</sub> over
+        days-to-a-month for electrons, ~20% after 22 months for protons;
+        Telstar-era cells recovered 15–20% of diffusion length in two weeks
+        at room temperature. Reverse annealing — continued degradation during
+        post-irradiation heating — is documented above 400 °C at fluences
+        &gt;10¹⁴ e/cm². Injection-enhanced annealing (recombination energy
+        driving defect reactions) is established mechanism-level physics in
+        Si: Lang &amp; Kimerling 1974, Arimura 1969, Makarenko 2018.
+      </p>
+
+      <h2>Thickness scaling: the short-base argument, quantified</h2>
+      <p>
+        <span class="class">established</span> When the base is thinner than
+        the radiation-degraded diffusion length, lifetime damage stops
+        limiting collection. This is not a heuristic — it is quantified and
+        flight-proven:
+      </p>
+      <table class="nums">
+        <thead>
+          <tr><th>Thickness</th><th>What the evidence says</th></tr>
+        </thead>
+        <tbody>
+          {thickness.map(([t, note]) => (
+            <tr>
+              <td>{t}</td>
+              <td>{note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h2>The modern annealing result — and its gates</h2>
+      <p>
+        <span class="class">established-with-gap</span> The strongest recent
+        result in the program's direction: ultra-thin silicon heterojunction
+        cells (Solestial/ASU, independently validated by CEA) recover
+        <em>fully</em> from 1 MeV electron and 300 keV proton damage at
+        65–100 °C under illumination. But the same dataset shows the two
+        gates:
+      </p>
+      <table class="nums">
+        <thead>
+          <tr><th>Axis</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          {annealing.map(([t, note]) => (
+            <tr>
+              <td>{t}</td>
+              <td>{note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="finding">
+        <b>The design-point problem, stated plainly:</b> the published
+        recovery data brackets the program's design point from both sides —
+        full recovery at 20 µm, almost none at 80 µm — and the doping axis
+        points away from n-type: Cz p(B) recovers ~90% at 100 °C, Cz n(P)
+        does not recover at all. The "100 µm n-type" assumption inherited by
+        the directions page is challenged by this evidence on both axes.
+      </p>
+
+      <h2>Operating-temperature realism</h2>
+      <p>
+        <span class="class">evidence-backed</span> Measured LEO/GEO array
+        temperatures span −150 to +110 °C (Vayner 2016); ISS-class silicon
+        arrays run ~+55 °C typically, ~28 °C at equinox insolation; the
+        qualification envelope is ~30,000 cycles between −100 and +100 °C.
+        The sunlit operating point — where annealing under illumination could
+        actually run — is roughly +50 to +80 °C. Against that: conventional
+        Si needs ≥200 °C (never seen in orbit), while the thin-Si result
+        works at 65–100 °C — the upper end of the realistic sunlit band, and
+        reachable by thermal design. The arithmetic closes, but only for the
+        thin, p-type, defect-engineered cell, and only at the warm end of
+        the orbit.
+      </p>
+
+      <h2>The gap, decomposed</h2>
+      <ul>
+        {gaps.map(([name, note]) => (
+          <li><b>{name}</b> — {note}</li>
+        ))}
+      </ul>
+
+      <h2>What this changes</h2>
+      <p>
+        Three program consequences. First, the R1 design point should be
+        revisited: the evidence favors Ga-doped p-type SHJ at the thinnest
+        manufacturable thickness, not 100 µm n-type — the directions page
+        should carry that as an open design revision, not a settled
+        assumption. Second, the single decisive experiment is cheap and
+        ground-based: irradiate-and-anneal at 80–100 µm to locate the
+        annealing cliff between 20 and 80 µm — if the cliff is sharp and
+        below 100 µm, the R1 annealing thesis as scoped is wrong and the
+        design moves down-thickness. Third, watch items: Solestial/York
+        on-orbit data (flown Transporter-10, "nominal", unpublished), and
+        any peer-reviewed flight telemetry showing in-orbit Si recovery —
+        none exists today.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Three parallel literature sweeps, 25 sources, admitted to the Surya
+        epistemic graph as event <code>ev-000000000008</code> with assessment
+        <code>surya-assessment-r1-annealing-2026-08</code>, judgment
+        <b>established-with-gap</b>. Sweep-level gaps, flagged honestly:
+        several AIP/Wiley/HAL full texts were bot-walled, so some numbers
+        rest on abstracts and citing works rather than primary text; the
+        Medjoubi 2021 damage-coefficient table and Guillot 2024
+        thickness-resolved numbers could not be verified firsthand; the
+        classic defect annealing temperatures rest on 1960s EPR/IR work read
+        through later kinetics papers; the Solestial mechanism is partly
+        proprietary; and no peer-reviewed in-orbit Si annealing telemetry was
+        located at all. None of these change the shape of the baseline —
+        they are recorded as perimeter, not smoothed over.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

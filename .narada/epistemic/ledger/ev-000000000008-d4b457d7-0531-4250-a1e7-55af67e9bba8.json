@@ -1,0 +1,734 @@
+{
+  "schema": "narada.epistemic.event.v1",
+  "sequence": 8,
+  "event_id": "ev-000000000008-d4b457d7-0531-4250-a1e7-55af67e9bba8",
+  "event_kind": "proposal_admitted",
+  "previous_hash": "41f2f0ce04b56ee040d32e85504af08fe927198f489f08dc76a8a3d9f8e52532",
+  "proposal_id": "ep_557f03d9-43dd-46c2-9f5b-3335ed9319bc",
+  "proposal_digest": "0aa220b0db5ba9b611eb1191cef068dc44a64ed258c9db883559a2f8885d3621",
+  "operations": [
+    {
+      "entity_id": "src-tada-1982-radiation-handbook",
+      "kind": "source",
+      "local_ref": "s1",
+      "locator": "https://ntrs.nasa.gov/api/citations/19780007623/downloads/19780007623.pdf",
+      "op": "entity.declare",
+      "title": "Tada, Carter, Anspaugh, Downing, Solar Cell Radiation Handbook 3rd ed., JPL 82-69 (SPENVIS mirror)",
+      "version": "1982"
+    },
+    {
+      "entity_id": "src-rosenzweig-1963-bell",
+      "kind": "source",
+      "local_ref": "s2",
+      "locator": "https://onlinelibrary.wiley.com/doi/10.1002/j.1538-7305.1963.tb00506.x",
+      "op": "entity.declare",
+      "title": "Rosenzweig, Gummel, Smits, Solar Cell Degradation under 1-MeV Electron Bombardment, Bell System Technical Journal 42(2)",
+      "version": "1963"
+    },
+    {
+      "entity_id": "src-watkins-corbett-1965-divacancy",
+      "kind": "source",
+      "local_ref": "s3",
+      "locator": "https://doi.org/10.1103/PhysRev.138.A543",
+      "op": "entity.declare",
+      "title": "Watkins & Corbett, Defects in Irradiated Silicon: EPR of the Divacancy, Phys. Rev. 138 A543",
+      "version": "1965"
+    },
+    {
+      "entity_id": "src-mooney-1977-boron-defects",
+      "kind": "source",
+      "local_ref": "s4",
+      "locator": "https://doi.org/10.1103/PhysRevB.15.3836",
+      "op": "entity.declare",
+      "title": "Mooney et al., Defect energy levels in boron-doped silicon irradiated with 1-MeV electrons, Phys. Rev. B 15 3836",
+      "version": "1977"
+    },
+    {
+      "entity_id": "src-mikelsen-2005-divacancy-kinetics",
+      "kind": "source",
+      "local_ref": "s5",
+      "locator": "https://doi.org/10.1103/PhysRevB.72.195207",
+      "op": "entity.declare",
+      "title": "Mikelsen et al., Kinetics of divacancy annealing and divacancy-oxygen formation, Phys. Rev. B 72 195207",
+      "version": "2005"
+    },
+    {
+      "entity_id": "src-londos-1998-acenter",
+      "kind": "source",
+      "local_ref": "s6",
+      "locator": "http://users.uoa.gr/~hlontos/pdf/magazines_articles/A50-J.Appl.Phys.%2084,3569%20(1998).pdf",
+      "op": "entity.declare",
+      "title": "Londos et al., Infrared studies of defects formed during postirradiation annealing, J. Appl. Phys. 84 3569",
+      "version": "1998"
+    },
+    {
+      "entity_id": "src-weinberg-swartz-1981-tm82597",
+      "kind": "source",
+      "local_ref": "s7",
+      "locator": "https://ntrs.nasa.gov/api/citations/19810015093/downloads/19810015093.pdf",
+      "op": "entity.declare",
+      "title": "Weinberg & Swartz, Reduced Annealing Temperatures in Silicon Solar Cells, NASA TM-82597 / 15th IEEE PVSC",
+      "version": "1981"
+    },
+    {
+      "entity_id": "src-weinberg-swartz-1980-reverse",
+      "kind": "source",
+      "local_ref": "s8",
+      "locator": "https://ntrs.nasa.gov/api/citations/19800007298/downloads/19800007298.pdf",
+      "op": "entity.declare",
+      "title": "Weinberg & Swartz, Origin of Reverse Annealing in Radiation-Damaged Silicon Solar Cells, Appl. Phys. Lett. 36(8) 693",
+      "version": "1980"
+    },
+    {
+      "entity_id": "src-srour-2003-dd-review",
+      "kind": "source",
+      "local_ref": "s9",
+      "locator": "https://doi.org/10.1109/TNS.2003.813197",
+      "op": "entity.declare",
+      "title": "Srour, Marshall, Marshall, Review of Displacement Damage Effects in Silicon Devices, IEEE TNS 50(3) 653",
+      "version": "2003"
+    },
+    {
+      "entity_id": "src-lang-kimerling-1974-redr",
+      "kind": "source",
+      "local_ref": "s10",
+      "locator": "https://doi.org/10.1103/PhysRevLett.33.489",
+      "op": "entity.declare",
+      "title": "Lang & Kimerling, Recombination-enhanced defect reactions, Phys. Rev. Lett. 33 489",
+      "version": "1974"
+    },
+    {
+      "entity_id": "src-arimura-1969-injection-anneal",
+      "kind": "source",
+      "local_ref": "s11",
+      "locator": "https://pubs.aip.org/aip/jap/article-pdf/40/6/2570/18350489/2570_1_online.pdf",
+      "op": "entity.declare",
+      "title": "Arimura et al., injection-enhanced divacancy annealing in n-type Si, J. Appl. Phys. 40 2570",
+      "version": "1969"
+    },
+    {
+      "entity_id": "src-makarenko-2018-injection",
+      "kind": "source",
+      "local_ref": "s12",
+      "locator": "https://doi.org/10.1063/1.5010965",
+      "op": "entity.declare",
+      "title": "Makarenko et al., Effect of electron injection on defect reactions in irradiated silicon, J. Appl. Phys.",
+      "version": "2018"
+    },
+    {
+      "entity_id": "src-dinetta-1991-thin-cells",
+      "kind": "source",
+      "local_ref": "s13",
+      "locator": "https://ntrs.nasa.gov/api/citations/19910020907/downloads/19910020907.pdf",
+      "op": "entity.declare",
+      "title": "DiNetta, Rand, Barnett et al., Direct Glass Bonded High Specific Power Silicon Solar Cells for Space, NASA CP N91-30221",
+      "version": "1991"
+    },
+    {
+      "entity_id": "src-landis-1991-ultrathin",
+      "kind": "source",
+      "local_ref": "s14",
+      "locator": "https://ntrs.nasa.gov/api/citations/19910009885/downloads/19910009885.pdf",
+      "op": "entity.declare",
+      "title": "Landis, Review of Thin Film Solar Cell Technology for Ultra-Light Spacecraft Arrays, NASA CP N91-19198",
+      "version": "1991"
+    },
+    {
+      "entity_id": "src-cariou-2023-shj-thickness",
+      "kind": "source",
+      "local_ref": "s15",
+      "locator": "https://cea.hal.science/cea-04513443/document",
+      "op": "entity.declare",
+      "title": "Cariou et al., Investigation of p-type Silicon Heterojunction Radiation Hardness (160/110/60 um), IEEE J. Photovoltaics 14 41",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-nasda-1994-thin-flown",
+      "kind": "source",
+      "local_ref": "s16",
+      "locator": "https://ntrs.nasa.gov/api/citations/19940006941/downloads/19940006941.pdf",
+      "op": "entity.declare",
+      "title": "Matsuda, Yamamoto, Uesugi, NASDA thin-Si cell program: 50 um cells flown on ERS-1/ETS-VI/ADEOS, NASA CP N94-11413",
+      "version": "1994"
+    },
+    {
+      "entity_id": "src-herasimenka-2023-spw-poster",
+      "kind": "source",
+      "local_ref": "s17",
+      "locator": "https://spw.aerospace.org/files/2023/06/2023-05_08_Poster_S.-Herasimenka_Presentation.pdf",
+      "op": "entity.declare",
+      "title": "Herasimenka et al., Full Recovery of Radiation Damage in Silicon Solar Cells at 80 C Under Light, 40th Space Power Workshop poster",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-gurimskaya-2023-espc",
+      "kind": "source",
+      "local_ref": "s18",
+      "locator": "https://asu.elsevierpure.com/en/publications/effective-annealing-of-proton-and-electron-radiation-damage-in-ul/",
+      "op": "entity.declare",
+      "title": "Gurimskaya et al., Effective Annealing of Proton and Electron Radiation Damage in Ultra-Thin Silicon Solar Cells, ESPC 2023",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-aponte-2024-spw-65c",
+      "kind": "source",
+      "local_ref": "s19",
+      "locator": "https://spw.aerospace.org/files/2024/07/4_EG1_D.-Aponte_Presentation.pdf",
+      "op": "entity.declare",
+      "title": "Aponte et al., Effective Annealing of 1 MeV Electron and 3 MeV Proton Damage in Silicon Solar Cells at 65 C and Maximum Power Point, 41st Space Power Workshop",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-solestial-cea-2023-validation",
+      "kind": "source",
+      "local_ref": "s20",
+      "locator": "https://solestial.com/the-cea-validates-solestials-breakthrough-radiation-curing-technology/",
+      "op": "entity.declare",
+      "title": "Solestial/CEA press release: CEA validates radiation-curing of ultra-thin Si under sunlight at 90 C after 10-year-LEO-equivalent dose",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-wang-2025-tandem-sciadv",
+      "kind": "source",
+      "local_ref": "s21",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13418752/",
+      "op": "entity.declare",
+      "title": "Wang et al., Radiation-resilient monolithic perovskite/p-Si HJT tandem for space (100 um p-Si bottom cell), Science Advances",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-khan-2003-ga-doping",
+      "kind": "source",
+      "local_ref": "s22",
+      "locator": "https://doi.org/10.1016/S0927-0248(02)00169-1",
+      "op": "entity.declare",
+      "title": "Khan, Yamaguchi et al., Strategies for improving radiation tolerance of Si space solar cells (Ga-doping), Sol. Energy Mater. Sol. Cells 75 271",
+      "version": "2003"
+    },
+    {
+      "entity_id": "src-vayner-2016-array-temps",
+      "kind": "source",
+      "local_ref": "s23",
+      "locator": "https://ntrs.nasa.gov/citations/20160010349",
+      "op": "entity.declare",
+      "title": "Vayner, Solar Array at Very High Temperatures: Ground Tests, NASA Glenn (measured array temps -150..+110 C)",
+      "version": "2016"
+    },
+    {
+      "entity_id": "src-gruenbaum-1995-apex",
+      "kind": "source",
+      "local_ref": "s24",
+      "locator": "https://ntrs.nasa.gov/api/citations/19950021228/downloads/19950021228.pdf",
+      "op": "entity.declare",
+      "title": "Gruenbaum, APEX/PASP-Plus flight experiment results (Si cell degradation; cites Goldhammer GaAs in-orbit annealing)",
+      "version": "1995"
+    },
+    {
+      "entity_id": "src-brown-gabbe-1963-telstar",
+      "kind": "source",
+      "local_ref": "s25",
+      "locator": "https://vtda.org/pubs/BSTJ/vol42-1963/articles/bstj42-4-1765.pdf",
+      "op": "entity.declare",
+      "title": "Brown & Gabbe et al., The Solar Cells and Their Mounting (Telstar), BSTJ 42 1765: 15-20% diffusion-length recovery after two weeks room-temperature anneal",
+      "version": "1963"
+    },
+    {
+      "entity_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c1",
+      "op": "entity.declare",
+      "title": "R1 annealing baseline (Aug 2026): conventional crystalline Si shows no significant annealing below ~200 C, but ultra-thin defect-engineered SHJ cells (20 um class) fully recover from 1 MeV electron (1e15 e/cm2) and 300 keV proton damage within hours at 65-100 C under illumination - inside the realistic sunlit LEO operating band (+50..+80 C); the effect is strongly thickness-gated (20 um: 120 mV/hr Voc recovery; 80 um: nearly none) and undemonstrated at the 100 um design point"
+    },
+    {
+      "entity_id": "surya-claim-r1-defect-inventory-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c2",
+      "op": "entity.declare",
+      "title": "R1 defect inventory (Aug 2026): lifetime damage follows 1/L^2 = 1/L0^2 + K_L*Phi (K_L ~1.9e-10 per 1 MeV electron, n/p 1 ohm-cm); thermal annealing stages are defect-resolved - E-center (V-P) 150-180 C (Ea 0.94 eV), divacancy ~300 C (Ea 1.3 eV, first-order), A-center (V-O) 300-400 C; reverse annealing observed in n+p cells >400 C at fluences >1e14 e/cm2; injection-enhanced annealing of Si defects is established at mechanism level (Lang-Kimerling; Arimura; Makarenko)"
+    },
+    {
+      "entity_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c3",
+      "op": "entity.declare",
+      "title": "R1 thickness scaling (Aug 2026): the short-base argument is quantified and flight-proven - base width <25 um tolerates lifetimes <250 ns vs ~1 ms conventional (>1000x relaxation, DiNetta 1991); optimum EOL thickness computed as low as 2 um (Landis 1991); 60 um Ga-doped SHJ beats 180 um PERC EOL at every tested fluence at 3x lower mass (Cariou 2023); NASDA flew 50 um cells from 1983 and qualified ~60000 100 um CICs, with thinner cells winning above ~1e15 e/cm2"
+    },
+    {
+      "entity_id": "surya-claim-r1-doping-annealing-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c4",
+      "op": "entity.declare",
+      "title": "R1 doping and annealing (Aug 2026): Ga-doped p-type SHJ is the radiation-hard and annealing-compatible choice - Cz p(B) ultra-thin cells show ~90% Voc recovery at 100 C under light while Cz n(P) shows none; classic n-on-p polarity wins on radiation (proton damage coefficient >=2x worse for p-on-n); BO-LID is a distinct injection-activated mechanism absent in n-type and Ga-doped material; the program's 100 um n-type design-point assumption is challenged by this evidence"
+    },
+    {
+      "entity_id": "surya-claim-r1-gap-shape-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c5",
+      "op": "entity.declare",
+      "title": "R1 gap shape (Aug 2026): four named gaps - (i) no published thickness-resolved annealing rates at 80-100 um (the design point sits between 20 um full-recovery and 80 um near-zero data); (ii) mechanism of thin-cell low-temperature annealing unresolved (injection-enhanced bulk vs surface proximity/gettering; partly proprietary); (iii) no peer-reviewed in-orbit annealing flight dataset for Si (documented for GaAs HS 393 only); (iv) no combined radiation + illumination + thermal-cycling annealing campaign at realistic LEO profile"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c1",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "relation_id": "rel:addresses-25e17b7e6dd232c7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c2",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "relation_id": "rel:addresses-d53ac1aacb11c122"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c3",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "relation_id": "rel:addresses-6a51ed1451ab093e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c4",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-doping-annealing-2026-08",
+      "relation_id": "rel:addresses-95a242934da04aa8"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c5",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-gap-shape-2026-08",
+      "relation_id": "rel:addresses-ab211961d2051672"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c2",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "surya-claim-r1-defect-inventory-2026-08",
+      "relation_id": "rel:depends_on-cc26c66afea50280"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c3",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "relation_id": "rel:depends_on-73a73617f25c4e75"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c4",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "surya-claim-r1-doping-annealing-2026-08",
+      "relation_id": "rel:depends_on-672e3c22db1c72a9"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c5",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "surya-claim-r1-gap-shape-2026-08",
+      "relation_id": "rel:depends_on-b891de0a7b7dc387"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s17",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "src-herasimenka-2023-spw-poster",
+      "relation_id": "rel:derived_from-d9a87245f7315b06"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s18",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "src-gurimskaya-2023-espc",
+      "relation_id": "rel:derived_from-c7b7c29e30787200"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s19",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "src-aponte-2024-spw-65c",
+      "relation_id": "rel:derived_from-3461a83660fdc354"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s20",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "src-solestial-cea-2023-validation",
+      "relation_id": "rel:derived_from-0e5f28ca7a6fc8b4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s1",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "src-tada-1982-radiation-handbook",
+      "relation_id": "rel:derived_from-4116e0fbb134ec9a"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s23",
+      "source_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "target_id": "src-vayner-2016-array-temps",
+      "relation_id": "rel:derived_from-cca60e34cb0bb20a"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s1",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-tada-1982-radiation-handbook",
+      "relation_id": "rel:derived_from-741d988f4044f3bc"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s2",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-rosenzweig-1963-bell",
+      "relation_id": "rel:derived_from-2223d6c146818b68"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s3",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-watkins-corbett-1965-divacancy",
+      "relation_id": "rel:derived_from-207e457ad9429ac7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s4",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-mooney-1977-boron-defects",
+      "relation_id": "rel:derived_from-383dbcd02bdcdffd"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s5",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-mikelsen-2005-divacancy-kinetics",
+      "relation_id": "rel:derived_from-a29b575cb49b20ee"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s6",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-londos-1998-acenter",
+      "relation_id": "rel:derived_from-e83d04b751f59906"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s7",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-weinberg-swartz-1981-tm82597",
+      "relation_id": "rel:derived_from-1e1ace4196499a9d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s8",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-weinberg-swartz-1980-reverse",
+      "relation_id": "rel:derived_from-e500e509acf428cb"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s9",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-srour-2003-dd-review",
+      "relation_id": "rel:derived_from-51af244141fc3b19"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s10",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-lang-kimerling-1974-redr",
+      "relation_id": "rel:derived_from-1052e714f48a53a2"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s11",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-arimura-1969-injection-anneal",
+      "relation_id": "rel:derived_from-49b7b9bd2b862ae3"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s12",
+      "source_id": "surya-claim-r1-defect-inventory-2026-08",
+      "target_id": "src-makarenko-2018-injection",
+      "relation_id": "rel:derived_from-7c7b42542dd9b462"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s2",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "target_id": "src-rosenzweig-1963-bell",
+      "relation_id": "rel:derived_from-fcf4e26acd143e55"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s13",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "target_id": "src-dinetta-1991-thin-cells",
+      "relation_id": "rel:derived_from-e7f680fc4177334e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s14",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "target_id": "src-landis-1991-ultrathin",
+      "relation_id": "rel:derived_from-b80b44a852145dbc"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s15",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "target_id": "src-cariou-2023-shj-thickness",
+      "relation_id": "rel:derived_from-e8fe94384a057f19"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s16",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "target_id": "src-nasda-1994-thin-flown",
+      "relation_id": "rel:derived_from-d624f14bdd27dcc5"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s21",
+      "source_id": "surya-claim-r1-thickness-scaling-2026-08",
+      "target_id": "src-wang-2025-tandem-sciadv",
+      "relation_id": "rel:derived_from-936411dda4837413"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s22",
+      "source_id": "surya-claim-r1-doping-annealing-2026-08",
+      "target_id": "src-khan-2003-ga-doping",
+      "relation_id": "rel:derived_from-52238be52d512666"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s15",
+      "source_id": "surya-claim-r1-doping-annealing-2026-08",
+      "target_id": "src-cariou-2023-shj-thickness",
+      "relation_id": "rel:derived_from-a0115959211aaf65"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s17",
+      "source_id": "surya-claim-r1-doping-annealing-2026-08",
+      "target_id": "src-herasimenka-2023-spw-poster",
+      "relation_id": "rel:derived_from-b61e2eda402a3ff7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s25",
+      "source_id": "surya-claim-r1-doping-annealing-2026-08",
+      "target_id": "src-brown-gabbe-1963-telstar",
+      "relation_id": "rel:derived_from-f19b4576b0053901"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s24",
+      "source_id": "surya-claim-r1-gap-shape-2026-08",
+      "target_id": "src-gruenbaum-1995-apex",
+      "relation_id": "rel:derived_from-bd661d282c5cb424"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s23",
+      "source_id": "surya-claim-r1-gap-shape-2026-08",
+      "target_id": "src-vayner-2016-array-temps",
+      "relation_id": "rel:derived_from-84d54372e62c3bdd"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s19",
+      "source_id": "surya-claim-r1-gap-shape-2026-08",
+      "target_id": "src-aponte-2024-spw-65c",
+      "relation_id": "rel:derived_from-ab0625c6b570d4fd"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c5",
+      "target_ref": "s20",
+      "source_id": "surya-claim-r1-gap-shape-2026-08",
+      "target_id": "src-solestial-cea-2023-validation",
+      "relation_id": "rel:derived_from-0ec0943133af0b02"
+    },
+    {
+      "assessment_id": "surya-assessment-r1-annealing-2026-08",
+      "actor": "surya.resident",
+      "evidence": [
+        {
+          "locator": "SPENVIS soldam background / JPL 82-69",
+          "paraphrase": "Conventional Si cells cannot be significantly annealed below 200 C; significant recovery in the 200-400 C range; ambient annealing up to ~10% Isc (electrons) and ~20% after 22 months (protons).",
+          "source_id": "src-tada-1982-radiation-handbook"
+        },
+        {
+          "locator": "BSTJ 42(2) 399-414",
+          "paraphrase": "Original diffusion-length damage law 1/L^2 = 1/L0^2 + K_L*Phi for n/p Si under 1 MeV electrons; K_L quoted as ~1.9e-10 per electron (NTRS 19690009988).",
+          "source_id": "src-rosenzweig-1963-bell"
+        },
+        {
+          "locator": "Phys. Rev. 138 A543; PRB 72 195207",
+          "paraphrase": "Divacancy migration Ea 1.3 eV, anneals ~300 C; isothermal DLTS 205-285 C V2 to V2O first-order, Ea 1.30+/-0.02 eV, prefactor 4.4e8 s-1.",
+          "source_id": "src-watkins-corbett-1965-divacancy"
+        },
+        {
+          "locator": "NASA TM-82597",
+          "paraphrase": "Low-O/C 0.1 ohm-cm n+p cells recovered to 96% of pre-irradiation Isc at 200 C and fully at 275-300 C; second-order annealing Ea 1.5+/-0.2 eV.",
+          "source_id": "src-weinberg-swartz-1981-tm82597"
+        },
+        {
+          "locator": "40th Space Power Workshop poster",
+          "paraphrase": "SHJ cells 20/40/80 um: annealing at 65/80/100 C under 0.5 sun at open circuit; 20 um recovered Voc at 120 mV/hr after 1 MeV 1e15 e/cm2 while 80 um showed almost zero annealing; 18-19% cells fully recovered within 8 h at 80 C under light; Cz p(B) ~90% Voc recovery at 100 C, Cz n(P) none.",
+          "source_id": "src-herasimenka-2023-spw-poster"
+        },
+        {
+          "locator": "ESPC 2023 / ASU Pure record",
+          "paraphrase": "Peer-reviewed conference version: defect-engineered ultra-thin Si self-cures proton and electron damage; thickness/wafer-type/cell-technology dependence documented.",
+          "source_id": "src-gurimskaya-2023-espc"
+        },
+        {
+          "locator": "41st Space Power Workshop 2024",
+          "paraphrase": "Effective annealing of 1 MeV electron and 3 MeV proton damage at 65 C under maximum-power-point operation; recovery claimed whenever the cell sees sun above 65 C.",
+          "source_id": "src-aponte-2024-spw-65c"
+        },
+        {
+          "locator": "Solestial press release, 28 Mar 2023",
+          "paraphrase": "CEA independently validated annealing of ultra-thin Si under sunlight at 90 C after a 10-year-LEO-equivalent dose, retaining 96% of initial Voc; CEA notes conventional Si annealing above 200-250 C is not useful in space.",
+          "source_id": "src-solestial-cea-2023-validation"
+        },
+        {
+          "locator": "NASA CP N91-30221",
+          "paraphrase": "For base width <25 um the cell tolerates lifetimes <250 ns vs ~1 ms conventional; modeled radiation resistance comparable to InP and better than GaAs/Ge.",
+          "source_id": "src-dinetta-1991-thin-cells"
+        },
+        {
+          "locator": "NASA CP N91-19198",
+          "paraphrase": "For highest end-of-life efficiency the optimum Si cell thickness may be as low as 2 um because thickness stays below the damaged diffusion length.",
+          "source_id": "src-landis-1991-ultrathin"
+        },
+        {
+          "locator": "IEEE J. Photovoltaics 14, 41-45",
+          "paraphrase": "60 um Ga-doped SHJ outperformed 180 um PERC EOL at every fluence tested (up to 1.5e15 e/cm2) at 3x lower mass; certified 15.9% AM1.5G EOL at 1.5e14 e/cm2.",
+          "source_id": "src-cariou-2023-shj-thickness"
+        },
+        {
+          "locator": "NASA CP N94-11413",
+          "paraphrase": "NASDA developed 50 um cells in 1983, flew them on ERS-1/ETS-VI/ADEOS; ~60000 100 um CICs qualified; above ~1e15 e/cm2 thinner cells showed higher Pmax.",
+          "source_id": "src-nasda-1994-thin-flown"
+        },
+        {
+          "locator": "Sol. Energy Mater. Sol. Cells 75, 271",
+          "paraphrase": "Ga-doped Si cells experimentally confirmed more radiation tolerant than B-doped; Ga also eliminates BO-LID.",
+          "source_id": "src-khan-2003-ga-doping"
+        },
+        {
+          "locator": "NTRS 20160010349",
+          "paraphrase": "Measured solar array temperatures across LEO/GEO missions span -150 to +110 C; typical sunlit LEO operating point roughly +50 to +80 C.",
+          "source_id": "src-vayner-2016-array-temps"
+        },
+        {
+          "locator": "NTRS 19950021228",
+          "paraphrase": "APEX/PASP-Plus recorded Si cell degradation without large recovery; well-documented in-orbit thermal annealing exists for GaAs (Hughes HS 393), not Si.",
+          "source_id": "src-gruenbaum-1995-apex"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "Three independent sweeps converge: the annealing mechanism is real and defect-resolved at the bulk level (1960s Watkins-Corbett school through 2005 DLTS kinetics); the short-base thickness argument is quantified and flight-proven; and the modern ultra-thin SHJ result puts full recovery inside the realistic sunlit LEO temperature band - but only at 20 um and only for p-type defect-engineered cells. The 100 um n-type design point is undemonstrated on both axes. Sweep perimeter: AIP/Wiley/HAL full texts partly bot-walled (some numbers via abstracts and citing works); Solestial mechanism partly proprietary; Medjoubi K_L table and Guillot thickness-resolved numbers unverified firsthand; no peer-reviewed Si in-orbit annealing telemetry located.",
+      "subject_id": "surya-claim-r1-annealing-baseline-2026-08"
+    }
+  ],
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed execution of the surya research program attack order; R1 annealing baseline third after R7 and R2. Lifecycle task #3."
+  },
+  "idempotency_key": "auto-admission-e519838a46dc7306ac49bbd5",
+  "occurred_at": "2026-08-18T20:28:55.8006427Z",
+  "certifies_truth": false,
+  "event_hash": "0fab3e2fc870c8dfec9cda2bbf5127ffc550b0a2c18f231ffe896a8295b3b51a"
+}

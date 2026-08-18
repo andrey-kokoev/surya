@@ -49,6 +49,15 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
 
 ## Program state (August 2026)
 
+- **R1 space-ified terrestrial silicon**: annealing baseline published at
+  /r1-annealing/ (graph event `ev-000000000008`, assessment
+  `surya-assessment-r1-annealing-2026-08`, established-with-gap). The
+  mechanism is real and defect-resolved; ultra-thin defect-engineered SHJ
+  cells fully recover at 65–100 °C under light (inside the sunlit LEO
+  band), but recovery is thickness-gated (full at 20 µm, near-zero at
+  80 µm) and doping-gated (p-type recovers, n-type does not). The 100 µm
+  n-type design point is undemonstrated on both axes; design revision
+  toward Ga-doped p-type SHJ is an open program question.
 - **R2 perovskite/tandems**: readiness baseline documented — flight
   heritage exists (MAPHEUS-8 2019; ~10-month ISS MISSE exposure with >90%
   reversible degradation; RIT CubeSat ~100 days no observable degradation;
