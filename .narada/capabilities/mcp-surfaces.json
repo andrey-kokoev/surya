@@ -3,7 +3,7 @@
   "artifact_role": "site_capability_surface_registry_not_mcp_client_config",
   "site_id": "surya",
   "generated_by": "mcp-registrar",
-  "generated_at": "2026-08-18T18:00:31.7280691Z",
+  "generated_at": "2026-08-18T18:19:51.5649389Z",
   "generation_policy": {
     "source": ".ai/mcp + registrar surface catalog",
     "mode": "enabled_surface_tool_authority",
@@ -716,7 +716,7 @@
       "runtime_binding": {
         "runtime_kind": "rust-stdio",
         "proxy_implementation": "native",
-        "entrypoint": "C:/Users/andrey/src/mcp-surfaces/packages/shared/mcp-surfaces-native/dist/native/versions/37af509ef8ebf07bd4d0958272ae55b91cf4a26833cd6a5635191d8890436b36/narada-mcp-surfaces.exe",
+        "entrypoint": "C:/Users/andrey/src/mcp-surfaces/packages/shared/mcp-surfaces-native/dist/native/versions/281ffa228af10e6534a1959751a3cfb372c650924f3023dab26af46ad081c98e/narada-mcp-surfaces.exe",
         "owner_site_id": "surya",
         "transport": {
           "type": "stdio",
@@ -726,13 +726,13 @@
             "--surface-id",
             "epistemic-graph",
             "--child-command",
-            "C:/Users/andrey/src/mcp-surfaces/packages/shared/mcp-surfaces-native/dist/native/versions/37af509ef8ebf07bd4d0958272ae55b91cf4a26833cd6a5635191d8890436b36/narada-mcp-surfaces.exe",
+            "C:/Users/andrey/src/mcp-surfaces/packages/shared/mcp-surfaces-native/dist/native/versions/281ffa228af10e6534a1959751a3cfb372c650924f3023dab26af46ad081c98e/narada-mcp-surfaces.exe",
             "--artifact-manifest",
             "C:/Users/andrey/src/mcp-surfaces/.ai/runtime/workspace-artifact-manifest.json",
             "--runtime-contract-version",
             "8",
             "--entrypoint",
-            "C:/Users/andrey/src/mcp-surfaces/packages/shared/mcp-surfaces-native/dist/native/versions/37af509ef8ebf07bd4d0958272ae55b91cf4a26833cd6a5635191d8890436b36/narada-mcp-surfaces.exe",
+            "C:/Users/andrey/src/mcp-surfaces/packages/shared/mcp-surfaces-native/dist/native/versions/281ffa228af10e6534a1959751a3cfb372c650924f3023dab26af46ad081c98e/narada-mcp-surfaces.exe",
             "--child-invocation-kind",
             "native_entrypoint",
             "--",
