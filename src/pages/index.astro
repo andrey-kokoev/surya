@@ -1,0 +1,294 @@
+---
+import Base from "../layouts/Base.astro";
+
+const directions = [
+  {
+    id: "R1",
+    name: "Space-ified terrestrial silicon",
+    posture: "buy & characterize",
+    clock: "0–3 yr",
+    escapes: "Ge substrate, coverglass, cell cost",
+    wins: "End-of-life degradation becomes actuarial, not a research question.",
+  },
+  {
+    id: "R2",
+    name: "Perovskite / thin-Si tandems",
+    posture: "fund the dataset & the protocol",
+    clock: "3–7 yr",
+    escapes: "all materials chokepoints at once",
+    wins: "A credible 5-year LEO degradation model survives independent replication.",
+  },
+  {
+    id: "R3",
+    name: "Substrate liberation (ELO/IMM)",
+    posture: "track reuse cycle count",
+    clock: "3–7 yr",
+    escapes: "the geography, keeps III-V performance",
+    wins: "~10 substrate reuse cycles — Ge exposure drops an order of magnitude.",
+  },
+  {
+    id: "R4",
+    name: "III-V on alternate lattices",
+    posture: "watching brief",
+    clock: "—",
+    escapes: "Ge, at the price of defect physics",
+    wins: "Someone else's metamorphic-buffer breakthrough. Check annually; fund never.",
+  },
+  {
+    id: "R5",
+    name: "In-space cell manufacturing",
+    posture: "ours to build",
+    clock: "7–15 yr",
+    escapes: "substrate, coverglass, and launch mass in one move",
+    wins: "Deposited specific power beats launched specific power, coater included.",
+  },
+  {
+    id: "R6",
+    name: "System architecture as research",
+    posture: "background duty",
+    clock: "continuous",
+    escapes: "the qualification lock, the structure tax",
+    wins: "Array-level specific power ~500 W/kg; cheap radiation-test campaigns exist.",
+  },
+  {
+    id: "R7",
+    name: "Non-photovoltaic solar",
+    posture: "one sweep, then retire",
+    clock: "once",
+    escapes: "nothing — that is the finding",
+    wins: "An honest closing argument with current numbers, written once.",
+  },
+];
+
+const closed = [
+  {
+    name: "Thermoradiative back-face laminate",
+    reason:
+      "~1% of front-side PV at theoretical best; added thermal resistance can erase the gain; a second qualification dossier for a rounding error.",
+  },
+  {
+    name: "Eclipse-cycle pyroelectric / shape-memory harvesting",
+    reason:
+      "Physically real in LEO (5,800 deep cycles/yr) but µW–mW/m² — sensor-class power, not a bus.",
+  },
+  {
+    name: "Solar-dynamic Stirling / Brayton",
+    reason:
+      "~30% conversion is real, but 12–25 W/kg system-level against 100–500 W/kg flexible PV — plus the only moving parts on the table.",
+  },
+  {
+    name: "Electrodynamic tethers",
+    reason:
+      "Misfiled: converts orbital energy, not sunlight. A propulsion–power coupling tool, not a generator.",
+  },
+  {
+    name: "Solar-pumped laser",
+    reason:
+      "~1% end-to-end as generation. It is a power transmission service, not a source; watch item under beaming, not generation.",
+  },
+  {
+    name: "Solar gravity-gradient harvesting in LEO",
+    reason:
+      "Solar tide across a 100 m structure is ~10⁻¹¹ m/s²; harvesting scales with amplitude squared. Fourteen orders short.",
+  },
+];
+---
+
+<Base
+  title="Surya — alternative space-grade solar energy"
+  description="Surya is a Narada family research program: seven research directions for space-grade solar power that escapes the germanium, gallium, coverglass, and qualification chokepoints."
+  path="/"
+>
+  <style>
+    .hero {
+      padding: var(--space-10) 0 var(--space-8);
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero h1 {
+      font-size: var(--text-3xl);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 var(--space-4);
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p.lede {
+      font-size: var(--text-lg);
+      color: var(--fg-dim);
+      max-width: 44rem;
+      margin: 0;
+    }
+    section { padding: var(--space-8) 0 0; }
+    h2 {
+      font-size: var(--text-2xl);
+      letter-spacing: -0.01em;
+      margin: 0 0 var(--space-3);
+    }
+    .section-sub { color: var(--fg-dim); max-width: 46rem; margin: 0 0 var(--space-6); }
+    .chokepoints {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: var(--space-4);
+    }
+    .chokepoint {
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: var(--space-4);
+      background: var(--bg-raised);
+    }
+    .chokepoint h3 { margin: 0 0 var(--space-2); font-size: var(--text-base); }
+    .chokepoint p { margin: 0; color: var(--fg-dim); font-size: var(--text-sm); }
+    .dir-grid { display: grid; gap: var(--space-3); }
+    .dir {
+      display: grid;
+      grid-template-columns: 3.2rem 1fr;
+      gap: var(--space-4);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: var(--space-4) var(--space-5);
+      background: var(--bg-raised);
+    }
+    .dir-id {
+      font-family: ui-monospace, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: var(--text-lg);
+    }
+    .dir h3 { margin: 0; font-size: var(--text-base); }
+    .dir .meta { color: var(--fg-dim); font-size: var(--text-sm); margin: var(--space-1) 0 var(--space-2); }
+    .dir .meta b { color: var(--fg); font-weight: 600; }
+    .dir p { margin: 0; font-size: var(--text-sm); color: var(--fg-dim); }
+    .dir p b { color: var(--fg); font-weight: 600; }
+    table.kill {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+    }
+    table.kill th, table.kill td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.kill th { color: var(--kill); font-weight: 600; }
+    table.kill td:first-child { font-weight: 600; white-space: normal; }
+    table.kill td:last-child { color: var(--fg-dim); }
+    .fineprint { margin-top: var(--space-6); color: var(--fg-dim); font-size: var(--text-sm); }
+  </style>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1>The sun, <em>harvested off-Earth</em> — without the chokepoints.</h1>
+      <p class="lede">
+        Surya is a research program for alternative space-grade solar power:
+        seven directions that each escape a documented constraint — germanium
+        substrates, gallium, coverglass heritage, the qualification lock — and
+        a published table of the directions we killed, with the reasons.
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>The constraint map</h2>
+      <p class="section-sub">
+        Every direction is defined by which of these it escapes. Mapped in the
+        narada.space Resident's Ledger, entries 884–886.
+      </p>
+      <div class="chokepoints">
+        <div class="chokepoint">
+          <h3>Germanium — structural</h3>
+          <p>
+            ~60% Chinese refining, zero US primary production, export ban
+            exercised December 2024. The substrate <em>is</em> the cell: bulk
+            grams per watt.
+          </p>
+        </div>
+        <div class="chokepoint">
+          <h3>Gallium — logistical</h3>
+          <p>
+            98–99% Chinese crude extraction. But microns of epi per device:
+            inventory and recycling are credible. A small door, not a wall.
+          </p>
+        </div>
+        <div class="chokepoint">
+          <h3>Coverglass — heritage</h3>
+          <p>
+            One factory in Wales holds ~80%. Under active demolition: SCHOTT
+            exos in qualification, US Title III funding a domestic source.
+          </p>
+        </div>
+        <div class="chokepoint">
+          <h3>Qualification — the filing cabinet</h3>
+          <p>
+            "Space-qualified" is a heritage dossier, not a spec. The deepest
+            moat is paperwork, and it can be attacked as a research problem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Seven directions</h2>
+      <p class="section-sub">
+        Not competitors — a portfolio with different clocks.
+        <a href="/directions/">Full treatment →</a>
+      </p>
+      <div class="dir-grid">
+        {
+          directions.map((d) => (
+            <div class="dir">
+              <div class="dir-id">{d.id}</div>
+              <div>
+                <h3>{d.name}</h3>
+                <div class="meta">
+                  posture: <b>{d.posture}</b> · clock: <b>{d.clock}</b> · escapes: <b>{d.escapes}</b>
+                </div>
+                <p><b>wins if:</b> {d.wins}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="closed">
+    <div class="wrap">
+      <h2>Closed, with reasons</h2>
+      <p class="section-sub">
+        Directions examined and retired stay published. A gap is data, not
+        failure — the family contract.
+      </p>
+      <table class="kill">
+        <thead>
+          <tr><th>Direction</th><th>Why it is closed</th></tr>
+        </thead>
+        <tbody>
+          {
+            closed.map((c) => (
+              <tr>
+                <td>{c.name}</td>
+                <td>{c.reason}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="fineprint">
+        Sequencing: R1 carries the program while R2 (escapes the materials)
+        and R3 (escapes the geography) mature. R5 is the long game and
+        composes with on-orbit servicing architecture. R6 is continuous
+        background duty; R4 and R7 exist to be closed, not funded.
+      </p>
+      <p class="fineprint">
+        Epistemic contract: every claim here carries a confidence class —
+        established, evidence-backed, heuristic, or observation. Where a
+        number is a market estimate rather than a quote, it says so. Surya is
+        an offshoot of <a href="https://space.narada.systems/articles/research-directions-space-solar/">space.narada.systems</a>;
+        the narrative record lives in the Resident's Ledger there.
+      </p>
+    </div>
+  </section>
+</Base>

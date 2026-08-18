@@ -1,0 +1,19 @@
+{
+  "name": "surya",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "ship": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.1.7",
+    "astro": "^7.1.6",
+    "wrangler": "^4.118.0"
+  }
+}

@@ -1,0 +1,143 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Research directions — Surya"
+  description="The full treatment of Surya's seven research directions for alternative space-grade solar energy: what each escapes, the open research, and what must be true for it to win."
+  path="/directions/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    h2 .rid { color: var(--accent); font-family: ui-monospace, monospace; margin-right: var(--space-2); }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    .tagline { color: var(--fg-dim); font-style: italic; }
+    ul { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .wins {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .wins b { color: var(--accent); }
+    p { max-width: 46rem; }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>Research directions, full treatment</h1>
+      <p class="lede">
+        Each direction is defined by two things: which documented constraint it
+        escapes, and what must be true for it to win. Founding document of the
+        Surya program; adapted from the
+        <a href="https://space.narada.systems/articles/research-directions-space-solar/">originating article</a>
+        at space.narada.systems.
+      </p>
+
+      <h2><span class="rid">R1</span>Space-ified terrestrial silicon</h2>
+      <p class="tagline">The workhorse. Near-term, highest confidence.</p>
+      <p>
+        Ultrathin crystalline silicon with polymer encapsulation, no
+        coverglass, radiation self-annealing — the route Solestial and Source
+        Energy are already flying (~$5/W modules, flight-proven). Nothing here
+        needs inventing; it needs characterizing.
+      </p>
+      <ul>
+        <li>Annealing kinetics at real operating temperatures as a function of wafer thickness and doping — the mechanism exists in the literature but is not yet creditable at the 100 µm n-type design point.</li>
+        <li>Handling yield below 100 µm: breakage climbs from ~10% at 100 µm to ~96% at 70 µm. Carriers, edge reinforcement, kerfless methods.</li>
+        <li>Atomic-oxygen protection without glass: ETFE, SiO₂ nanolaminates, sacrificial coatings.</li>
+      </ul>
+      <p class="wins"><b>Wins if:</b> end-of-life degradation becomes predictable and boring — an actuarial input rather than a research question.</p>
+
+      <h2><span class="rid">R2</span>Perovskite and perovskite/Si tandems</h2>
+      <p class="tagline">The upside bet. Mid-term.</p>
+      <p>
+        Self-healing under irradiation, specific power above 1 kW/kg,
+        projected $5–15/W at maturity. The tandem escapes every materials
+        chokepoint at once: no germanium, no gallium worth counting, no glass.
+      </p>
+      <ul>
+        <li>Multi-year stability under <em>combined</em> UV, ATOX, and thermal cycling — single-stressor data exists; the coupled dataset does not, anywhere.</li>
+        <li>Encapsulation as the actual product — the cell is easy; keeping it alive is the company.</li>
+        <li>Qualification protocols: none exist for this class. Writing the test standard is itself a research direction with unusual leverage — whoever defines the protocol defines everyone's market entry cost.</li>
+      </ul>
+      <p class="wins"><b>Wins if:</b> a credible 5-year LEO degradation model survives independent replication.</p>
+
+      <h2><span class="rid">R3</span>Substrate liberation: ELO/IMM</h2>
+      <p class="tagline">The geopolitical hedge. Mid-term.</p>
+      <p>
+        Epitaxial lift-off and inverted metamorphic growth separate the III-V
+        junction from the germanium wafer. The wafer becomes a reusable
+        template instead of a consumable — the only direction that attacks the
+        germanium chokepoint <em>while keeping</em> III-V performance.
+      </p>
+      <ul>
+        <li>ELO throughput and yield at industrial scale — today it is a laboratory courtesy.</li>
+        <li>Substrate reuse cycle count: ~10 cycles is the threshold where germanium exposure drops by an order of magnitude.</li>
+        <li>IMM mechanical reliability without the handle wafer: what holds the cell together once the germanium leaves.</li>
+      </ul>
+      <p class="wins"><b>Wins if:</b> reuse economics close at constellation volumes. Watch MicroLink and the Rocket Lab/AZUR process disclosures.</p>
+
+      <h2><span class="rid">R4</span>III-V on alternate lattices</h2>
+      <p class="tagline">A watching brief, not a program.</p>
+      <p>
+        Metamorphic III-V on silicon, GaAs substrates (recyclable but still
+        gallium), sapphire. Honest assessment: trades a structural chokepoint
+        for a defect-physics problem. Threading dislocations and CTE mismatch
+        over 30,000 thermal cycles are soluble in principle and unrewarding in
+        practice so far.
+      </p>
+      <p class="wins"><b>Wins if:</b> someone else's metamorphic-buffer breakthrough makes it cheap to revisit. Check annually, fund never.</p>
+
+      <h2><span class="rid">R5</span>In-space cell manufacturing</h2>
+      <p class="tagline">The long game. Far-term, and uniquely aligned with this program.</p>
+      <p>
+        Deposit thin-film cells directly onto deployed membranes in orbit.
+        Vacuum is free up there; launch mass collapses to feedstock;
+        coverglass becomes optional when nothing has to survive the fairing.
+        The only direction that escapes substrate, coverglass, <em>and</em>
+        launch mass in one move.
+      </p>
+      <ul>
+        <li>Deposition rate and film quality in uncontrolled vacuum, on non-ideal substrates, with thermal drift.</li>
+        <li>Contamination of the host platform — the coater and the array must not poison each other.</li>
+        <li>Repair and re-coat as a service model: a coating pod visiting a membrane is an ISAM mission profile, and composes with on-orbit attachment architectures.</li>
+      </ul>
+      <p class="wins"><b>Wins if:</b> deposited specific power beats launched specific power after accounting for the coater's own mass and operations. Nobody else is motivated to build this.</p>
+
+      <h2><span class="rid">R6</span>System architecture as research</h2>
+      <p class="tagline">Cross-cutting. Cheap to do now, compounding returns.</p>
+      <p>
+        The ISCR analysis showed the move: integrate solar, radiator, and
+        compute so the dedicated panel structure disappears (~500 W/kg at
+        array level).
+      </p>
+      <ul>
+        <li>High-voltage array design to cut harness mass.</li>
+        <li>Mass-production panel standardization — the Starlink lesson: the cost was never the cell.</li>
+        <li>Qualification economics: cheap, fast radiation-test campaigns that let new materials accumulate credible heritage without a decade-long dossier. Attacks the filing-cabinet moat directly and benefits every other direction.</li>
+      </ul>
+
+      <h2><span class="rid">R7</span>Non-photovoltaic solar: the closing argument</h2>
+      <p class="tagline">One sweep, then retire.</p>
+      <p>
+        Solar-thermal Stirling, thermionics, thermophotovoltaics with
+        concentrators. Almost certainly dominated by photovoltaics on both
+        $/W and W/kg — but the honest closing argument with current numbers
+        has never been written. A single reading sweep retires the question
+        permanently instead of leaving it as background noise in every trade
+        study. The space-unique variants (permanent source+sink, eclipse-cycle
+        harvesting, thermoradiative laminates, tethers, solar-pumped lasers)
+        were audited and closed in August 2026; see the
+        <a href="/#closed">closed table</a>.
+      </p>
+    </div>
+  </article>
+</Base>
