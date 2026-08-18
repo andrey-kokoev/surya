@@ -1,0 +1,237 @@
+---
+import Base from "../layouts/Base.astro";
+
+const manufacturability = [
+  ["The cliff claim, traced", "The \"10% breakage at 100 µm → 96% at 70 µm\" figure traces to one paper: Harrison et al., CEA-INES SHJ pilot line, EU PVSEC 2016 — production mode on 156 mm wafers, with handling, wet processing, and printing as the killer steps. It is a state-of-the-line snapshot from 2016, not a material law."],
+  ["The cliff, mitigated", "Terheiden et al. 2015: <5% breakage at 100 µm through full cell processing with engineered handling (Hanwha Q CELLS pilot line). Cariou et al. 2023: CEA itself now runs 60 µm on the same line class. Wu et al. 2024: edge-reinforcement rings give ~0% breakage on 28 µm free-standing wafers vs >85% for all-thin controls."],
+  ["Below the wafer entirely", "Kerfless routes bypass sawing: porous-silicon layer transfer delivered a 43 µm cell at 19% (Petermann 2012) with near-100% detachment yield demonstrated by 2015. Bond-to-substrate heritage: AstroPower grew 50 µm Si on ceramic; Wu 2024 holds free-standing 4.7 µm 4-inch wafers."],
+  ["Flown practice", "Solestial ships ~20 µm SHJ cells packaged in polymer/ceramic films — module mass 508 g/m², rollable to a 5 cm bend radius, flown on Transporter-10 (March 2024). The thin Si is handled at module level inside the film stack, not as a free wafer."],
+];
+
+const cliff = [
+  ["Solestial/ASU, 2023–24", "20 µm full recovery (120 mV/hr Voc, electrons; 7.5 mV/hr, protons), 40 µm intermediate (graphical only), 80 µm near-zero — at 10¹⁵ e/cm² on Cz p(B), 1–2 cells per condition"],
+  ["CEA/INES, Oct 2025", "90 µm and 60 µm Ga-doped SHJ recovered 97% of initial performance after 10¹⁴ e/cm², cured at 80 °C, certified by ISFH-Caltec"],
+  ["Read together", "The cliff is not a thickness wall. Between the two datasets the fluence dropped 10×, the doping changed, and the processing changed — and 90 µm went from \"near-zero\" to \"97% recovered.\" Doping and processing set the design point first; thickness second."],
+  ["Mechanism status", "REDR theory (Lang–Kimerling) predicts the annealing rate scales with the injection-to-defect ratio — which thinning raises — but no published model computes this against thickness. Hydrogen's role is explicitly unresolved: hydrogenation supercharges recovery in Ga-PERC (Li 2025), yet CEA reports bulk hydrogenation did not influence post-irradiation lifetime before self-healing (Enjalbert, SiliconPV). The p/n asymmetry is consistent with the defect census: the p-type lifetime killer (BᵢOᵢ-class interstitial complexes) anneals under forward current, while n-type's E-center and divacancy need 150–400 °C."],
+];
+
+const system = [
+  ["III-V rigid panel", "100–150 W/kg", "$200–400/W", "Incumbent benchmark (Solestial SmallSat 2024 table)"],
+  ["III-V flexible module", "250–350 W/kg", "$400–600/W", "Incumbent, flexible"],
+  ["Commodity-Si flexible", "50–200 W/kg", "$5–20/W", "Terrestrial-derived, no radiation engineering"],
+  ["Solestial thin-Si module", "500–600 W/kg (target)", "$20–40/W (target)", "Company targets, marked post-2025; measured anchor: 508 g/m² module mass, >18% AM0 BOL mini-module"],
+  ["NASA SBIR target", "200 W/kg array BOL", "$40/W", "TechPort 125378; ≥10× cost reduction vs state of practice"],
+];
+
+const unknowns = [
+  ["Cliff location at the design point", "No published thickness-resolved annealing rates at 80–100 µm at matched fluence and processing. One ground campaign — irradiate-and-anneal across 60/80/90/100 µm at 10¹⁴ and 10¹⁵ e/cm² — resolves it. CNES/CEA have opened a PhD on exactly this mechanism space (project 26-254, posted January 2026)."],
+  ["Peer-reviewed thin-Si annealing article", "The core dataset remains a workshop poster + conference paper + press releases. SPRAT-29 is August 2026; Guillot et al. (Solar RRL 2025, thickness × composition in irradiated Ga-SHJ) is published but was bot-walled at sweep time."],
+  ["Module-level specific power, measured", "No peer-reviewed measured W/kg for a coverglass-free thin-Si module exists; 500–600 W/kg is a company target, 508 g/m² is self-published."],
+  ["ATOX protection for coverglass-free thin Si", "No published ground-test (plasma asher) or flight erosion data on modern thin-Si polymer-encapsulated modules. Heritage says dielectric coatings work (LDEF); thin-Si-specific data does not exist."],
+  ["In-orbit recovery telemetry", "CEA's October 2025 headline says \"in orbit\" — the underlying flight dataset is not yet published. Company claims (Transporter-10 \"nominal\") stand without public curves."],
+];
+
+const sources = [
+  ["Harrison et al., EU PVSEC (2016)", "Primary source of the 10%→96% breakage figures (CEA-INES SHJ pilot line)", "https://doi.org/10.4229/EUPVSEC20162016-2BO.9.2"],
+  ["Wu et al., Nature Communications 15 (2024)", "Edge-reinforced ultrathin wafers; quotes and contextualizes the 2016 cliff", "https://pmc.ncbi.nlm.nih.gov/articles/PMC11076549/"],
+  ["Terheiden et al., phys. status solidi (a) (2015)", "<5% breakage at 100 µm with engineered handling", "https://doi.org/10.1002/pssa.201431241"],
+  ["ITRPV 15th edition, VDMA (2024)", "Terrestrial thickness roadmap (~130–150 µm mainstream)", "https://www.qualenergia.it/wp-content/uploads/2024/06/ITRPV-15th-Edition-2024-2.pdf"],
+  ["Solestial flexible module product page", "508 g/m² module mass, 5 cm bend radius, polymer/ceramic packaging", "https://solestial.com/product/flexible-solar-power-modules/"],
+  ["Herasimenka et al., SmallSat (2024)", "W/kg and $/W comparison table; self-curing disclosure", "https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=6029&context=smallsat"],
+  ["Fedoseyev et al., J. Phys.: Conf. Ser. 2675 (2023)", "Fermilab A2D2 irradiations of 20–80 µm UT-Si; non-NIEL degradation", "https://lss.fnal.gov/archive/2023/conf/fermilab-conf-23-0886-ad.pdf"],
+  ["CEA/INES (October 2025)", "90/60 µm SHJ recovered 97% after 10¹⁴ e/cm², cured at 80 °C, ISFH-certified", "https://www.ines-solaire.org/en/news/a-major-breakthrough-for-photovoltaic-technology-in-space/"],
+  ["Guillot et al., Solar RRL 9 (2025)", "Thickness × composition in electron-irradiated Ga-doped SHJ", "https://doi.org/10.1002/solr.202400669"],
+  ["Li et al., Sol. Energy Mater. Sol. Cells 290 (2025)", "Hydrogenation supercharges recovery in Ga-doped PERC", "https://doi.org/10.1016/j.solmat.2025.113729"],
+  ["CEA/INES (November 2023)", "60 µm Ga-doped space-TOPCon (CARLAH, ESA)", "https://www.ines-solaire.org/en/news/first-topcon-solar-cells-adapted-for-space-missions/"],
+  ["Ma et al., Sol. Energy Mater. Sol. Cells 274 (2024)", "TCAD: PERC vs TOPCon under 1 MeV electrons", "https://doi.org/10.1016/j.solmat.2024.113002"],
+  ["Le et al., Materials Today Energy 57 (2026)", "Ultra-thin SHJ temperature-dependent performance and radiation stability", "https://www.sciencedirect.com/science/article/pii/S2468606926000584"],
+  ["NASA TechPort 125378", "SBIR Ignite: 200 W/kg array BOL, $40/W targets", "https://techport.nasa.gov/projects/125378"],
+  ["CNES/CEA PhD 26-254 (2026)", "Self-healing mechanisms in irradiated Si passivated-contact cells", "https://recrutement.cnes.fr/en/annonce/4151057-26-254-self-healing-of-radiation-induced-defects-in-silicon-solar-cell-for-space-73370-le-bourget-du-lac"],
+  ["Enjalbert et al., SiliconPV abstract", "Hydrogenation did not drive self-healing; Ga doping/resistivity does", "https://cea.hal.science/cea-05529053/file/Enjalbert_SiliconPV_Abstract.pdf"],
+  ["Makarenko et al., RESMDD (2014)", "Forward-current-enhanced annealing of interstitial defects in p-type Si", "https://indico.cern.ch/event/313925/contributions/1687268/attachments/601578/827960/3-1_makarenko.pdf"],
+  ["Petermann et al., Prog. Photovolt. 20 (2012)", "43 µm, 19% cell from porous-silicon layer transfer", "https://doi.org/10.1002/pip.1129"],
+  ["Business Wire (2022)", "Solestial seed round; \"one-tenth the cost\" claim", "https://www.businesswire.com/news/home/20221011005573/en/"],
+  ["Gruenbaum & Dursch, LDEF analysis, NASA (1995)", "ATOX erosion of interconnects/covers; dielectric coatings protect", "https://ntrs.nasa.gov/api/citations/19950021228/downloads/19950021228.pdf"],
+];
+---
+
+<Base
+  title="R1 design point — Surya"
+  description="The R1 thin-silicon design point resolved against the evidence: Ga-doped p-type SHJ at 60–90 µm with a tracked path to 20–40 µm; the handling cliff and the annealing cliff both turn out to be engineering variables, not walls. Sweep executed August 2026."
+  path="/r1-design-point/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    .finding {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .finding b { color: var(--accent); }
+    .decision {
+      border: 1px solid var(--accent-dim);
+      border-left-width: 3px;
+      padding: var(--space-4) var(--space-5);
+      margin: var(--space-4) 0;
+    }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R1: the design point, resolved</h1>
+      <p class="lede">
+        Sweep executed 18 August 2026. The R1 annealing baseline left the
+        program with a design point — 100 µm n-type — that was undemonstrated
+        on both of its axes. This page resolves it against the full evidence:
+        manufacturability, the annealing cliff, architecture, and
+        system-level anchors.
+      </p>
+
+      <div class="decision">
+        <p>
+          <span class="class">design point, adopted</span>
+          <b>Ga-doped p-type SHJ at 60–90 µm, with a tracked path to
+          20–40 µm.</b> Doping: p-type gallium — n-type is dropped; Cz n(P)
+          shows no low-temperature annealing while p-type recovers, and Ga
+          avoids boron–oxygen LID. Architecture: SHJ — symmetric,
+          low-temperature, tray-based processing that tolerates thin wafers;
+          TOPCon is the tracked alternative (CEA's 60 µm space-TOPCon matched
+          PERC post-irradiation at 3× lower mass) but is less adapted below
+          ~60 µm. Thickness: 60–90 µm is the band where manufacturing
+          heritage and certified annealing (97% recovery at 90 µm, 80 °C,
+          10¹⁴ e/cm², ISFH-certified) already meet; 20–40 µm is where the
+          strongest self-curing lives and where Solestial already flies, with
+          module-level polymer support replacing wafer handling.
+        </p>
+      </div>
+
+      <h2>Manufacturability: the handling cliff was a snapshot</h2>
+      <ul>
+        {manufacturability.map(([name, note]) => (
+          <li><b>{name}</b> — {note}</li>
+        ))}
+      </ul>
+      <p>
+        <span class="class">established</span> Handling yield is engineering,
+        not physics: the same institution that published the 96% figure in
+        2016 now manufactures 60 µm cells on the same line class. The
+        directions page's breakage bullet is hereby corrected in place — the
+        numbers were real, their interpretation as a fixed constraint was
+        not.
+      </p>
+
+      <h2>The annealing cliff moves</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Dataset</th><th>What it shows</th></tr>
+        </thead>
+        <tbody>
+          {cliff.map(([name, note]) => (
+            <tr>
+              <td>{name}</td>
+              <td>{note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h2>System anchors</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Option</th><th>Specific power</th><th>Cost</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          {system.map(([name, w, c, note]) => (
+            <tr>
+              <td>{name}</td>
+              <td>{w}</td>
+              <td>{c}</td>
+              <td>{note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="finding">
+        <b>Honesty check on the anchors:</b> the 500–600 W/kg and $20–40/W
+        figures are company targets, not measurements. What is measured or
+        certified: 508 g/m² module mass (self-published), &gt;18% AM0 BOL
+        mini-modules, 97% recovery at 90 µm (ISFH-certified), 60 µm beating
+        PERC EOL at every fluence (peer-reviewed). The gap between target and
+        measured module-level W/kg is itself a watch item.
+      </p>
+
+      <h2>What remains unknown</h2>
+      <ul>
+        {unknowns.map(([name, note]) => (
+          <li><b>{name}</b> — {note}</li>
+        ))}
+      </ul>
+
+      <h2>What this changes</h2>
+      <p>
+        The R1 direction is no longer "characterize annealing at a guessed
+        design point" — the design point is set, and the work splits three
+        ways. Near-term: the single decisive ground campaign (thickness-resolved
+        irradiate-and-anneal at 60–100 µm, matched fluence and processing) to
+        convert the adopted band from evidence-backed to established. Watch:
+        SPRAT-29 (August 2026), the CEA in-orbit dataset behind the October
+        2025 headline, Guillot et al. full text, Solestial flight curves.
+        Standing risk: every quantitative annealing number above traces to
+        two groups (Solestial/ASU and CEA/INES) — independent replication
+        remains the win condition on the directions page, and it is not yet
+        met.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Three parallel literature sweeps, 20 new sources (plus six carried
+        from the annealing baseline), admitted to the Surya epistemic graph
+        as event <code>ev-000000000009</code> with assessment
+        <code>surya-assessment-r1-design-point-2026-08</code>, judgment
+        <b>established-with-gap</b>. Sweep-level gaps, flagged honestly:
+        Harrison 2016 is paywalled — its figures arrive via Wu et al. 2024's
+        paraphrase; Guillot (Solar RRL) and Le (Materials Today Energy) full
+        texts were bot-walled; the Solestial SmallSat comparison table was
+        reconstructed from a jumbled PDF text layer; the 40 µm annealing
+        point exists only as a curve on a poster; SPRAT-27 has no published
+        proceedings. The adopted design point does not rest on any of the
+        bot-walled items.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

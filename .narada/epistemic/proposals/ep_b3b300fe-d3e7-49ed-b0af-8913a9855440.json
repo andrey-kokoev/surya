@@ -1,0 +1,569 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_b3b300fe-d3e7-49ed-b0af-8913a9855440",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed continuation of the surya attack order; R1 design-point resolution follows the R1 annealing baseline (task #3). Lifecycle task #4."
+  },
+  "idempotency_key": "auto-proposal-d554f5a3cc5387ecccf21aa4",
+  "expected_ledger_head": "0fab3e2fc870c8dfec9cda2bbf5127ffc550b0a2c18f231ffe896a8295b3b51a",
+  "created_at": "2026-08-18T20:51:41.9882843Z",
+  "content_fingerprint": "d554f5a3cc5387ecccf21aa444f1dd6abba757faa65f1a5b2ce69fbf956cce7c",
+  "operations": [
+    {
+      "entity_id": "src-harrison-2016-thin-wafers",
+      "kind": "source",
+      "local_ref": "s1",
+      "locator": "https://doi.org/10.4229/EUPVSEC20162016-2BO.9.2",
+      "op": "entity.declare",
+      "title": "Harrison et al., How to Deal with Thin Wafers in a Heterojunction Solar Cells Industrial Pilot Line, 32nd EU PVSEC 2016 (primary source of the 10%-at-100um to 96%-at-70um breakage figures)",
+      "version": "2016"
+    },
+    {
+      "entity_id": "src-wu-2024-edge-reinforcement",
+      "kind": "source",
+      "local_ref": "s2",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11076549/",
+      "op": "entity.declare",
+      "title": "Wu et al., Free-standing ultrathin silicon wafers and solar cells through edges reinforcement, Nature Communications 15 3787",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-terheiden-2015-100um-pilot",
+      "kind": "source",
+      "local_ref": "s3",
+      "locator": "https://doi.org/10.1002/pssa.201431241",
+      "op": "entity.declare",
+      "title": "Terheiden et al., Manufacturing 100-um-thick silicon solar cells with >20% efficiency in a pilot line (<5% breakage), phys. status solidi (a)",
+      "version": "2015"
+    },
+    {
+      "entity_id": "src-itrpv-2024-roadmap",
+      "kind": "source",
+      "local_ref": "s4",
+      "locator": "https://www.qualenergia.it/wp-content/uploads/2024/06/ITRPV-15th-Edition-2024-2.pdf",
+      "op": "entity.declare",
+      "title": "ITRPV 15th edition (2024), VDMA - mainstream wafer thickness roadmap ~130-150 um",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-solestial-flex-module",
+      "kind": "source",
+      "local_ref": "s5",
+      "locator": "https://solestial.com/product/flexible-solar-power-modules/",
+      "op": "entity.declare",
+      "title": "Solestial flexible solar power module product page: 508 g/m2 module mass, 5 cm bend radius, polymer/ceramic film packaging",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-herasimenka-2024-smallsat",
+      "kind": "source",
+      "local_ref": "s6",
+      "locator": "https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=6029&context=smallsat",
+      "op": "entity.declare",
+      "title": "Herasimenka et al., Solving Long Lead Times and the High Cost of Space Solar Panels with Upgraded Silicon Technology, SmallSat 2024 (W/kg and $/W comparison table)",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-fedoseyev-2023-fermilab",
+      "kind": "source",
+      "local_ref": "s7",
+      "locator": "https://lss.fnal.gov/archive/2023/conf/fermilab-conf-23-0886-ad.pdf",
+      "op": "entity.declare",
+      "title": "Fedoseyev et al., Radiation effects model for Ultra-Thin Silicon Solar Cells, J. Phys.: Conf. Ser. 2675 012012 (Fermilab A2D2 irradiations, 20-80 um)",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-cea-ines-2025-90um-recovery",
+      "kind": "source",
+      "local_ref": "s8",
+      "locator": "https://www.ines-solaire.org/en/news/a-major-breakthrough-for-photovoltaic-technology-in-space/",
+      "op": "entity.declare",
+      "title": "CEA/INES announcement (28 Oct 2025): 90 um and 60 um SHJ cells recovered 97% of initial performance after 1 MeV electrons at 1e14 e/cm2, cured at 80 C, ISFH-certified",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-guillot-2025-solar-rrl",
+      "kind": "source",
+      "local_ref": "s9",
+      "locator": "https://doi.org/10.1002/solr.202400669",
+      "op": "entity.declare",
+      "title": "Guillot et al., Influence of Material Composition and Wafer Thickness on Electron-Irradiated Ga-Doped SHJ Cells, Solar RRL 9 2400669",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-li-2025-rapid-healing",
+      "kind": "source",
+      "local_ref": "s10",
+      "locator": "https://doi.org/10.1016/j.solmat.2025.113729",
+      "op": "entity.declare",
+      "title": "Li et al., Rapid Healing: hydrogenation supercharges recovery of electron-irradiation defects in Ga-doped PERC, Sol. Energy Mater. Sol. Cells 290 113729",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-cea-ines-2023-topcon",
+      "kind": "source",
+      "local_ref": "s11",
+      "locator": "https://www.ines-solaire.org/en/news/first-topcon-solar-cells-adapted-for-space-missions/",
+      "op": "entity.declare",
+      "title": "CEA/INES announcement (Nov 2023): 60 um Ga-doped p-type alternative TOPCon for space (CARLAH, ESA contract), matches PERC post-irradiation at 3x lower mass",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-ma-2024-perc-topcon-tcad",
+      "kind": "source",
+      "local_ref": "s12",
+      "locator": "https://doi.org/10.1016/j.solmat.2024.113002",
+      "op": "entity.declare",
+      "title": "Ma et al., Comparative analysis of radiation-induced effects on p-type PERC and TOPCon for space (TCAD), Sol. Energy Mater. Sol. Cells 274 113002",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-le-2026-mte-utshj",
+      "kind": "source",
+      "local_ref": "s13",
+      "locator": "https://www.sciencedirect.com/science/article/pii/S2468606926000584",
+      "op": "entity.declare",
+      "title": "Le et al., Silicon's cosmic comeback: temperature-dependent performance and radiation stability of ultra-thin SHJ cells for space, Materials Today Energy 57 102245",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-nasa-techport-125378",
+      "kind": "source",
+      "local_ref": "s14",
+      "locator": "https://techport.nasa.gov/projects/125378",
+      "op": "entity.declare",
+      "title": "NASA TechPort project 125378 (Solestial/Opterus SBIR Ignite): 200 W/kg BOL array target, $40/W manufacturing-cost target",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-cnes-phd-26-254",
+      "kind": "source",
+      "local_ref": "s15",
+      "locator": "https://recrutement.cnes.fr/en/annonce/4151057-26-254-self-healing-of-radiation-induced-defects-in-silicon-solar-cell-for-space-73370-le-bourget-du-lac",
+      "op": "entity.declare",
+      "title": "CNES/CEA PhD project 26-254 (posted Jan 2026): systematic study of self-healing mechanisms in irradiated Si passivated-contact cells",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-enjalbert-siliconpv-abstract",
+      "kind": "source",
+      "local_ref": "s16",
+      "locator": "https://cea.hal.science/cea-05529053/file/Enjalbert_SiliconPV_Abstract.pdf",
+      "op": "entity.declare",
+      "title": "Enjalbert et al., SiliconPV abstract: bulk hydrogenation did not influence post-irradiation lifetime prior to self-healing; Ga doping/resistivity strongly affects post-irradiation diffusion length",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-makarenko-2014-resmdd",
+      "kind": "source",
+      "local_ref": "s17",
+      "locator": "https://indico.cern.ch/event/313925/contributions/1687268/attachments/601578/827960/3-1_makarenko.pdf",
+      "op": "entity.declare",
+      "title": "Makarenko et al., Electronic Stimulation of Interstitial Defect Reactions in Irradiated p-Type Silicon, RESMDD-2014 (REDR/BO-BiOi forward-current annealing lineage)",
+      "version": "2014"
+    },
+    {
+      "entity_id": "src-petermann-2012-porous-si",
+      "kind": "source",
+      "local_ref": "s18",
+      "locator": "https://doi.org/10.1002/pip.1129",
+      "op": "entity.declare",
+      "title": "Petermann et al., 19%-efficient 43-um crystalline Si cell from porous-silicon layer transfer, Prog. Photovolt. 20",
+      "version": "2012"
+    },
+    {
+      "entity_id": "src-businesswire-solestial-2022",
+      "kind": "source",
+      "local_ref": "s19",
+      "locator": "https://www.businesswire.com/news/home/20221011005573/en/",
+      "op": "entity.declare",
+      "title": "Business Wire (2022): Airbus Ventures leads Solestial $10M seed; 'one-tenth the cost of conventional technology'",
+      "version": "2022"
+    },
+    {
+      "entity_id": "surya-claim-r1-design-point-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c1",
+      "op": "entity.declare",
+      "title": "R1 design point (Aug 2026): adopt Ga-doped p-type SHJ as the reference architecture at 60-90 um with a tracked path to 20-40 um; n-type is dropped - Cz n(P) shows no low-temperature annealing while p-type recovers, and 90 um Ga-SHJ recovered 97% after 1e14 e/cm2 cured at 80 C (CEA, ISFH-certified); the annealing cliff is processing- and fluence-dependent, not a pure thickness law; handling breakage at 60-100 um is a solved engineering problem on modern lines"
+    },
+    {
+      "entity_id": "surya-claim-r1-manufacturability-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c2",
+      "op": "entity.declare",
+      "title": "R1 manufacturability (Aug 2026): the 10%-at-100um to 96%-at-70um breakage cliff traces to one 2016 CEA-INES pilot-line paper (Harrison et al., EU PVSEC) and is a state-of-the-line snapshot, since mitigated - CEA runs 60 um on the same line class (Cariou 2023), engineered handling achieved <5% breakage at 100 um (Terheiden 2015), edge reinforcement gives ~0% breakage at 28 um (Wu 2024), kerfless porous-Si layer transfer demonstrated 43 um at 19% (Petermann 2012), and Solestial flies ~20 um cells with polymer-film module support at 508 g/m2"
+    },
+    {
+      "entity_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c3",
+      "op": "entity.declare",
+      "title": "R1 annealing cliff (Aug 2026): the cliff is not a fixed thickness wall - Solestial data (20 um full recovery / 80 um near-zero) was taken at 1e15 e/cm2 on Cz p(B), while CEA's 90 um 97% recovery was at 1e14 e/cm2 on Ga-doped SHJ; REDR theory predicts the annealing rate scales with the injection-to-defect ratio (which thinning raises), but no published quantitative thickness model exists and the hydrogen contribution from a-Si:H is explicitly unresolved"
+    },
+    {
+      "entity_id": "surya-claim-r1-system-anchors-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c4",
+      "op": "entity.declare",
+      "title": "R1 system anchors (Aug 2026): III-V rigid panels run 100-150 W/kg at $200-400/W, III-V flexible 250-350 W/kg at $400-600/W; Solestial targets 500-600 W/kg and $20-40/W (company targets, marked post-2025) with a self-published 508 g/m2 module mass; NASA SBIR targets 200 W/kg array BOL and $40/W; no peer-reviewed measured module-level W/kg for coverglass-free thin Si exists, and no published ATOX ground-test data covers modern thin-Si polymer-encapsulated modules (heritage: LDEF dielectric-coating data)"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c1",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "relation_id": "rel:addresses-a520a98dfeb8af0f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c2",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "relation_id": "rel:addresses-e0358d0f1887d1ef"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c3",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "relation_id": "rel:addresses-6e7bcbab5adbfcd6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c4",
+      "target_id": "surya-direction-r1",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "relation_id": "rel:addresses-e1339fa16b67e919"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c2",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "target_id": "surya-claim-r1-manufacturability-2026-08",
+      "relation_id": "rel:depends_on-932c045a83e69111"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c3",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "target_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "relation_id": "rel:depends_on-e8853814c9db0376"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c4",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "target_id": "surya-claim-r1-system-anchors-2026-08",
+      "relation_id": "rel:depends_on-148be69686869ac0"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:refines",
+      "source_ref": "c1",
+      "target_id": "surya-claim-r1-annealing-baseline-2026-08",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "relation_id": "rel:suryarefines-4ed6b529b3994624"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s8",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "target_id": "src-cea-ines-2025-90um-recovery",
+      "relation_id": "rel:derived_from-15cb7780e5989891"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s11",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "target_id": "src-cea-ines-2023-topcon",
+      "relation_id": "rel:derived_from-92484859849acdf1"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_id": "src-cariou-2023-shj-thickness",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "relation_id": "rel:derived_from-b13dc05c234282ac"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_id": "src-herasimenka-2023-spw-poster",
+      "source_id": "surya-claim-r1-design-point-2026-08",
+      "relation_id": "rel:derived_from-29523cb5e2d52563"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s1",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "target_id": "src-harrison-2016-thin-wafers",
+      "relation_id": "rel:derived_from-8f11cedb59d074a6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s2",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "target_id": "src-wu-2024-edge-reinforcement",
+      "relation_id": "rel:derived_from-d40586e4ff8a09c2"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s3",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "target_id": "src-terheiden-2015-100um-pilot",
+      "relation_id": "rel:derived_from-a7d55d2cbcc1dcf9"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s5",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "target_id": "src-solestial-flex-module",
+      "relation_id": "rel:derived_from-669f3def8051b0fa"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s18",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "target_id": "src-petermann-2012-porous-si",
+      "relation_id": "rel:derived_from-830ef217d92f197d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s4",
+      "source_id": "surya-claim-r1-manufacturability-2026-08",
+      "target_id": "src-itrpv-2024-roadmap",
+      "relation_id": "rel:derived_from-6f65e30abdae2425"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s7",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "target_id": "src-fedoseyev-2023-fermilab",
+      "relation_id": "rel:derived_from-f7ae20bfbd2b5058"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s8",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "target_id": "src-cea-ines-2025-90um-recovery",
+      "relation_id": "rel:derived_from-25742285dc082662"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s9",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "target_id": "src-guillot-2025-solar-rrl",
+      "relation_id": "rel:derived_from-f1e35be056e57f06"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s10",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "target_id": "src-li-2025-rapid-healing",
+      "relation_id": "rel:derived_from-f86f93897ec55689"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s16",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "target_id": "src-enjalbert-siliconpv-abstract",
+      "relation_id": "rel:derived_from-01ec2f062b788047"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s17",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "target_id": "src-makarenko-2014-resmdd",
+      "relation_id": "rel:derived_from-d427d7c3612a7c7d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_id": "src-lang-kimerling-1974-redr",
+      "source_id": "surya-claim-r1-annealing-cliff-2026-08",
+      "relation_id": "rel:derived_from-0642122f1d8423b9"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s6",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "target_id": "src-herasimenka-2024-smallsat",
+      "relation_id": "rel:derived_from-d03145ea73bf1374"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s14",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "target_id": "src-nasa-techport-125378",
+      "relation_id": "rel:derived_from-90cc6b739af5f732"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s19",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "target_id": "src-businesswire-solestial-2022",
+      "relation_id": "rel:derived_from-75813504011ced03"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s5",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "target_id": "src-solestial-flex-module",
+      "relation_id": "rel:derived_from-65dfa4413c5a8c88"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_id": "src-gruenbaum-1995-apex",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "relation_id": "rel:derived_from-31c38caa321923f7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_id": "src-dinetta-1991-thin-cells",
+      "source_id": "surya-claim-r1-system-anchors-2026-08",
+      "relation_id": "rel:derived_from-e90d068b2b30c265"
+    },
+    {
+      "assessment_id": "surya-assessment-r1-design-point-2026-08",
+      "actor": "surya.resident",
+      "evidence": [
+        {
+          "locator": "EU PVSEC 2016, 2BO.9.2 (via Wu et al. 2024 paraphrase)",
+          "paraphrase": "CEA-INES SHJ pilot line: breakage rose from ~10% at 100 um to ~96% at 70 um in production mode on 156 mm wafers; handling/wet-processing/printing steps identified.",
+          "source_id": "src-harrison-2016-thin-wafers"
+        },
+        {
+          "locator": "Nat. Commun. 15, 3787",
+          "paraphrase": "Edge-reinforced free-standing wafers: 28 um cell at 20.33% (certified 20.05%) with ~0% breakage vs >85% for all-thin 21-29 um controls; quotes the Harrison 2016 breakage figures.",
+          "source_id": "src-wu-2024-edge-reinforcement"
+        },
+        {
+          "locator": "phys. status solidi (a) 2015",
+          "paraphrase": "Engineered handling on the Hanwha Q CELLS pilot line: <5% breakage for 100 um wafers through full cell processing, cells >20% efficient.",
+          "source_id": "src-terheiden-2015-100um-pilot"
+        },
+        {
+          "locator": "INES news, 28 Oct 2025",
+          "paraphrase": "90 um and 60 um SHJ cells recovered 97% of initial performance after 1 MeV electrons at 1e14 e/cm2, cured at 80 C under representative conditions, certified by ISFH-Caltec.",
+          "source_id": "src-cea-ines-2025-90um-recovery"
+        },
+        {
+          "locator": "IEEE J. Photovoltaics 14, 41-45",
+          "paraphrase": "CEA-INES manufactures 60 um Ga-doped SHJ on the pilot line (laser-cut in half after processing); 60 um beats 180 um PERC EOL at every fluence at 3x lower mass.",
+          "source_id": "src-cariou-2023-shj-thickness"
+        },
+        {
+          "locator": "40th Space Power Workshop poster",
+          "paraphrase": "20 um SHJ: 120 mV/hr Voc recovery (electrons) and 7.5 mV/hr (protons), full recovery in 8 h at 80 C; 80 um nearly zero annealing; Cz p(B) ~90% vs Cz n(P) none at 100 C; 1-2 cells per condition.",
+          "source_id": "src-herasimenka-2023-spw-poster"
+        },
+        {
+          "locator": "J. Phys.: Conf. Ser. 2675, 012012",
+          "paraphrase": "Fermilab A2D2 irradiations of 20-80 um UT-Si to 1e15 e/cm2; isothermal annealing under light at 100 C showed major recovery; degradation did not follow NIEL scaling.",
+          "source_id": "src-fedoseyev-2023-fermilab"
+        },
+        {
+          "locator": "Sol. Energy Mater. Sol. Cells 290, 113729",
+          "paraphrase": "Bulk-hydrogenated Ga-PERC recovered full pre-irradiation lifetime after ~360 s at 380 C vs 71.5x longer unfired; fired samples recovered at 150 C where unfired did not.",
+          "source_id": "src-li-2025-rapid-healing"
+        },
+        {
+          "locator": "SiliconPV abstract, cea-05529053",
+          "paraphrase": "CEA: bulk hydrogenation steps did not influence post-irradiation bulk lifetime prior to self-healing; Ga doping/resistivity strongly affects post-irradiation diffusion length (74 vs 354 um at 1.5e14 e/cm2 for 0.9 vs 20 ohm-cm).",
+          "source_id": "src-enjalbert-siliconpv-abstract"
+        },
+        {
+          "locator": "INES news, 27 Nov 2023",
+          "paraphrase": "60 um Ga-doped p-type alternative TOPCon on industry-representative equipment matched conventional p-PERC post-irradiation performance at ~3x lower mass; TOPCon less adapted to very thin wafers than SHJ.",
+          "source_id": "src-cea-ines-2023-topcon"
+        },
+        {
+          "locator": "SmallSat 2024 paper",
+          "paraphrase": "Solestial comparison table: III-V rigid 100-150 W/kg at $200-400/W; III-V flexible 250-350 W/kg at $400-600/W; commodity-Si flexible 50-200 W/kg at $5-20/W; Solestial target 500-600 W/kg at $20-40/W (marked as post-2025 target specs).",
+          "source_id": "src-herasimenka-2024-smallsat"
+        },
+        {
+          "locator": "Solestial product page",
+          "paraphrase": "Module mass 508 g/m2 including cells, interconnects, protective films; rollable to 5 cm bend radius; polymer/ceramic films replace coverglass.",
+          "source_id": "src-solestial-flex-module"
+        },
+        {
+          "locator": "NASA TechPort 125378",
+          "paraphrase": "SBIR Ignite targets: 200 W/kg BOL at array level, 50 kW/m3 stowed, $40/W manufacturing cost, >=10x cost reduction vs state of practice.",
+          "source_id": "src-nasa-techport-125378"
+        },
+        {
+          "locator": "NTRS 19950021228 (LDEF)",
+          "paraphrase": "AO erodes unprotected Ag interconnects ~1.0 um per 1e20 atoms/cm2; SiO2/Al2O3/SiNx dielectric coatings protect; no quality polymer cover replacement demonstrated as of LDEF analysis.",
+          "source_id": "src-gruenbaum-1995-apex"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "Three sweeps converge: the handling cliff is a 2016 line snapshot now engineered around at 60-100 um and module-supported below; the annealing cliff moved between 2023 (near-zero at 80 um, 1e15 e/cm2, Cz p(B)) and 2025 (97% at 90 um, 1e14 e/cm2, Ga-SHJ, ISFH-certified), so the design point is set by doping and processing first and thickness second; the system anchors separate company targets from measured values. Perimeter: Harrison 2016 read via Wu 2024's paraphrase (paywalled); Guillot Solar RRL and Le 2026 full texts bot-walled; Solestial W/kg and $/W figures are company targets; the 40 um annealing point exists only graphically; no published ATOX ground test for thin-Si modules; SPRAT-27 talk has no proceedings.",
+      "subject_id": "surya-claim-r1-design-point-2026-08"
+    }
+  ],
+  "digest": "6bff004d9cd26a4e03db92b618d685000af30852f778da638f849b484e0f1c56"
+}

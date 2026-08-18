@@ -54,10 +54,17 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
   `surya-assessment-r1-annealing-2026-08`, established-with-gap). The
   mechanism is real and defect-resolved; ultra-thin defect-engineered SHJ
   cells fully recover at 65–100 °C under light (inside the sunlit LEO
-  band), but recovery is thickness-gated (full at 20 µm, near-zero at
-  80 µm) and doping-gated (p-type recovers, n-type does not). The 100 µm
-  n-type design point is undemonstrated on both axes; design revision
-  toward Ga-doped p-type SHJ is an open program question.
+  band). Design point resolved August 2026 at /r1-design-point/ (graph
+  event `ev-000000000009`, assessment
+  `surya-assessment-r1-design-point-2026-08`, established-with-gap):
+  Ga-doped p-type SHJ at 60–90 µm with a tracked path to 20–40 µm,
+  superseding the earlier 100 µm n-type assumption. CEA/INES showed 90 µm
+  and 60 µm Ga-SHJ recovering 97% after 1 MeV electrons at 10¹⁴ e/cm²
+  with an 80 °C cure (ISFH-certified), so the annealing cliff is
+  processing/fluence/doping-dependent, not a thickness wall. Open: cliff
+  location at 80–100 µm at matched fluence (one ground campaign resolves;
+  CNES/CEA PhD 26-254 opened Jan 2026); no peer-reviewed module-level
+  W/kg; no ATOX ground test for thin-Si modules.
 - **R2 perovskite/tandems**: readiness baseline documented — flight
   heritage exists (MAPHEUS-8 2019; ~10-month ISS MISSE exposure with >90%
   reversible degradation; RIT CubeSat ~100 days no observable degradation;
