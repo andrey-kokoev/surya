@@ -3,3 +3,5 @@ dist/
 .wrangler/
 .astro/
 .dev.vars
+.ai/
+.narada/.ai/
