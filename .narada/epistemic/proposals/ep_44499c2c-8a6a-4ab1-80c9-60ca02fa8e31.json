@@ -1,0 +1,451 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_44499c2c-8a6a-4ab1-80c9-60ca02fa8e31",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_direct_instruction",
+    "summary": "Operator directed the resident agent through the surya research program attack order; task #5 (R3 gap map) is claimed and this admission is its evidence record."
+  },
+  "idempotency_key": "auto-proposal-5ee9f75223ad0cd5ef18ac0c",
+  "expected_ledger_head": "c48f552ef2bdbebd3dcefa03f38b900cb30c05cc0a448bb5e301e93fbaaa04c7",
+  "created_at": "2026-08-18T21:21:18.9363682Z",
+  "content_fingerprint": "5ee9f75223ad0cd5ef18ac0cf3f7d2e1532caf6744976e74e8f2f755cbf61995",
+  "operations": [
+    {
+      "op": "sweep.record",
+      "sweep_id": "surya-sweep-r3-gap-map-2026-08",
+      "interval_start": "2026-08-18",
+      "interval_end": "2026-08-18",
+      "method": "Four parallel web research sweeps (ELO throughput/scale; substrate reuse cycles/reprep economics; IMM mechanical reliability; player claims MicroLink/Rocket Lab/AZUR/NREL/Fraunhofer ISE) via WebSearch/FetchURL subagents; sources typed peer-reviewed / government-lab / company-claim / secondary.",
+      "result": "Substrate liberation is physically demonstrated at cell level but economically undemonstrated: binding constraint is per-cycle reconditioning cost and throughput, not reuse count; demonstrated reuse is <=4 cycles (GaAs) and 1 (Ge); no published production throughput/yield, no space qualification of substrate-free product."
+    },
+    {
+      "entity_id": "surya-src-isoaho-2025-elo",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Isoaho, Advanced Epitaxial Lift-off Processes for III-V Solar Cells (Tampere U. dissertation)",
+      "version": "2025",
+      "locator": "https://researchportal.tuni.fi/en/publications/advanced-epitaxial-lift-off-processes-for-iii-v-solar-cells/"
+    },
+    {
+      "entity_id": "surya-src-ramu-2022-elo-stressor",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Ramu et al., ELO for GaAs solar cells controlled by InGaAs internal sacrificial stressor layers (Sol. Energy Mater. Sol. Cells)",
+      "version": "2022",
+      "locator": "https://www.sciencedirect.com/science/article/pii/S0927024822003993"
+    },
+    {
+      "entity_id": "surya-src-vanniftrik-2007-elo-model",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "van Niftrik et al., A diffusion and reaction related model of the epitaxial lift-off process (J. Electrochem. Soc. 154 D629)",
+      "version": "2007",
+      "locator": "J. Electrochem. Soc. 154, D629 (2007)"
+    },
+    {
+      "entity_id": "surya-src-tatavari-2008-elo-4in",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Tatavari et al. (Spectrolab), Lightweight low-cost GaAs solar cells on 4-inch ELO wafers (33rd IEEE PVSC); IMM cells on 4-inch ELO wafers (35th IEEE PVSC 2010)",
+      "version": "2008/2010",
+      "locator": "33rd/35th IEEE PVSC proceedings"
+    },
+    {
+      "entity_id": "surya-src-bauhuis-2010-wafer-reuse",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Bauhuis et al., Wafer reuse for repeated growth of III-V solar cells (Prog. Photovolt. 18:155)",
+      "version": "2010",
+      "locator": "doi:10.1002/pip.930"
+    },
+    {
+      "entity_id": "surya-src-vangeelen-1997-elo-reuse",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "van Geelen et al., Epitaxial lift-off GaAs solar cell from a reusable GaAs substrate (Mater. Sci. Eng. B 45:162)",
+      "version": "1997",
+      "locator": "doi:10.1016/S0921-5107(96)02029-6"
+    },
+    {
+      "entity_id": "surya-src-adams-2013-multiple-reuses",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Adams et al. (MicroLink), Demonstration of Multiple Substrate Reuses for Inverted Metamorphic Solar Cells (IEEE J. Photovoltaics 3(2):899)",
+      "version": "2013",
+      "locator": "doi:10.1109/JPHOTOV.2013.2245722"
+    },
+    {
+      "entity_id": "surya-src-cheng-2013-ibm-elo",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Cheng et al. (IBM), ELO process for GaAs substrate reuse and flexible electronics (Nat. Commun. 4:1577)",
+      "version": "2013",
+      "locator": "doi:10.1038/ncomms2583"
+    },
+    {
+      "entity_id": "surya-src-lee-2014-wafer-recycling",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Lee, Zimmerman, Hughes, Forrest, Non-Destructive Wafer Recycling for Low-Cost Thin-Film Flexible Optoelectronics (Adv. Funct. Mater. 24:4284)",
+      "version": "2014",
+      "locator": "doi:10.1002/adfm.201400453"
+    },
+    {
+      "entity_id": "surya-src-ward-2016-tea",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Ward et al. (NREL), Techno-economic analysis of three substrate removal and reuse strategies for III-V solar cells (Prog. Photovolt. 24:1284)",
+      "version": "2016",
+      "locator": "doi:10.1002/pip.2776"
+    },
+    {
+      "entity_id": "surya-src-horowitz-2018-tea-roadmap",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Horowitz et al. (NREL), A Techno-Economic Analysis and Cost Reduction Roadmap for III-V Solar Cells (NREL/TP-6A20-72103)",
+      "version": "2018",
+      "locator": "doi:10.2172/1484349"
+    },
+    {
+      "entity_id": "surya-src-mangum-2022-spalled-ge",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Mangum et al. (NREL/Mines), High-Efficiency Solar Cells Grown on Spalled Germanium for Substrate Reuse without Polishing (Adv. Energy Mater. 12:2201332)",
+      "version": "2022",
+      "locator": "doi:10.1002/aenm.202201332"
+    },
+    {
+      "entity_id": "surya-src-vanderwoude-2024-elo-review",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "van der Woude et al., A review on epitaxial lift-off for III-V solar cells (Thin Solid Films 808:140570)",
+      "version": "2024",
+      "locator": "doi:10.1016/j.tsf.2024.140570"
+    },
+    {
+      "entity_id": "surya-src-paupy-2023-peeler",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Paupy et al., Wafer-scale detachable monocrystalline germanium nanomembranes, PEELER (Nanoscale Adv.; Sherbrooke/CNRS/Umicore)",
+      "version": "2023",
+      "locator": "doi:10.1039/D3NA00053B"
+    },
+    {
+      "entity_id": "surya-src-park-2019-gon",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Park et al. (NREL), Germanium-on-Nothing for Epitaxial Liftoff of GaAs Solar Cells (Joule 3:1782)",
+      "version": "2019",
+      "locator": "Joule 3:1782-1793 (2019); DOI reported inconsistently (j.joule.2019.05.009 vs .013)"
+    },
+    {
+      "entity_id": "surya-src-neumann-2025-sonic-liftoff",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Neumann et al. (NREL/RIT/Crystal Sonic), Solar Cell Performance after Exfoliation Using Sonic Liftoff (Solar RRL 9:e2500049)",
+      "version": "2025",
+      "locator": "NREL OSTI 87110"
+    },
+    {
+      "entity_id": "surya-src-klitzke-2022-imm4j",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Klitzke et al. (Fraunhofer ISE/tf2), Ultra-lightweight and flexible inverted metamorphic four-junction solar cells for space applications (EPJ Photovoltaics 13:25)",
+      "version": "2022",
+      "locator": "doi:10.1051/epjpv/2022024"
+    },
+    {
+      "entity_id": "surya-src-imaizumi-2017-sss-qual",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Imaizumi et al. (JAXA), Qualification test results of IMM triple-junction solar cells, space solar sheets, and lightweight solar paddle (ESPC 2016, E3S Web Conf. 16:03012)",
+      "version": "2017",
+      "locator": "doi:10.1051/e3sconf/20171603012"
+    },
+    {
+      "entity_id": "surya-src-vanleest-2017-temp-degradation",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "van Leest et al. (Radboud/Airbus NL), Temperature-Induced Degradation of Thin-Film III-V Solar Cells for Space Applications (IEEE J. Photovoltaics 7(2):702)",
+      "version": "2017",
+      "locator": "IEEE J. Photovoltaics 7(2):702-708 (2017)"
+    },
+    {
+      "entity_id": "surya-src-morioka-2011-jaxa-flight",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Morioka et al. (JAXA), First flight demonstration of film-laminated InGaP/GaAs and CIGS thin-film solar cells by JAXA small satellite in LEO (Prog. Photovolt. 19:825)",
+      "version": "2011",
+      "locator": "Prog. Photovolt. 19:825-833 (2011)"
+    },
+    {
+      "entity_id": "surya-src-mcnatt-2019-sprat25",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "McNatt (compiler), 25th Space Photovoltaic Research and Technology Conference (NASA/CP-2019-220051)",
+      "version": "2019",
+      "locator": "https://ntrs.nasa.gov/api/citations/20190000974/downloads/20190000974.pdf"
+    },
+    {
+      "entity_id": "surya-src-microlink-2018-3775-pr",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "MicroLink Devices PR: NREL-certified 37.75% triple-junction ELO cell on 6-inch GaAs production platform (PR Newswire)",
+      "version": "2018",
+      "locator": "https://www.prnewswire.com/news-releases/microlink-devices-achieves-certified-37-75-solar-cell-power-conversion-efficiency-300631962.html"
+    },
+    {
+      "entity_id": "surya-src-microlink-datasheet",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "MicroLink Devices photovoltaics product pages (mldevices.com / mldevices.co.uk)",
+      "version": "2025-08 accessed",
+      "locator": "https://mldevices.com/photovoltaics-2/"
+    },
+    {
+      "entity_id": "surya-src-zephyr-2018-microlink-pr",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "MicroLink PR: ELO IMM sheets power Airbus Zephyr S record stratospheric flight; Airbus supplier recognition (PR Newswire / Airbus)",
+      "version": "2018-2019",
+      "locator": "https://www.prnewswire.com/news-releases/microlink-devices-powers-successful-stratospheric-flight-of-airbus-defence-and-space-zephyr-s-haps-solar-aircraft-300732214.html"
+    },
+    {
+      "entity_id": "surya-src-rocketlab-2022-immb",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Rocket Lab PR: Begins qualification of IMM-beta space solar cell (~33.3% avg BOL, 87% P_rem at 1e15 e/cm2)",
+      "version": "2022",
+      "locator": "https://rocketlabcorp.com/updates/rocket-lab-begins-qualification-of-highest-performing-space-solar-cell-technology/"
+    },
+    {
+      "entity_id": "surya-src-rocketlab-solar-datasheet",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Rocket Lab Space Solar Cells product pages (IMM-alpha 32.0% in production; IMM-beta listed space-qualified 5J)",
+      "version": "2025-08 accessed",
+      "locator": "https://rocketlabcorp.com/space-systems/solar/"
+    },
+    {
+      "entity_id": "surya-src-nasa-soa-2024-power",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "NASA State-of-the-Art Small Spacecraft Technology, Power section",
+      "version": "2024",
+      "locator": "https://www.nasa.gov/wp-content/uploads/2025/02/3-soa-power-2024.pdf"
+    },
+    {
+      "entity_id": "surya-src-nist-2024-chips-rocketlab",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "NIST CHIPS award page: Rocket Lab (Albuquerque NM), up to $23.9M for space-grade solar cell supply",
+      "version": "2024",
+      "locator": "https://www.nist.gov/chips/rocket-lab-new-mexico-albuquerque"
+    },
+    {
+      "entity_id": "surya-src-esa-ella-2023-umicore",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Umicore, ESA-ELLA Epitaxial Layer and Lift-Off Approach executive summary (contract 4000129924)",
+      "version": "2023",
+      "locator": "https://nebula.esa.int/sites/default/files/neb_tec_studies/2946/public/Executive%20summary_Contract%2040001299%202420NLFE%20ELLA%20UMICORE.pdf"
+    },
+    {
+      "entity_id": "surya-src-esa-euog-azur-recycling",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "ESA EUOG Effective Use of Germanium executive summary (contract 4000128156; AZUR backgrinding-waste Ge recycling)",
+      "version": "2021",
+      "locator": "https://nebula.esa.int/sites/default/files/neb_tec_studies/2653/public/4000128156_EX.pdf"
+    },
+    {
+      "entity_id": "surya-src-schulte-2023-spalled-cost",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Schulte et al. (NREL), GaAs solar cells grown on acoustically spalled substrates (Joule; ~$150/W current III-V cost estimate)",
+      "version": "2023",
+      "locator": "https://www.cell.com/joule/fulltext/S2542-4351(23)00216-7"
+    },
+    {
+      "entity_id": "surya-src-geisz-2008-imm",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Geisz et al. (NREL), 40.8% efficient inverted triple-junction solar cell with two independently metamorphic junctions (Appl. Phys. Lett. 93:123505)",
+      "version": "2008",
+      "locator": "doi:10.1063/1.2988497"
+    },
+    {
+      "entity_id": "surya-src-ise-epiwafer",
+      "kind": "source",
+      "op": "entity.declare",
+      "title": "Fraunhofer ISE, Silicon and Germanium Epitaxial Wafers (EpiWafer reusable-template program)",
+      "version": "2025-08 accessed",
+      "locator": "https://www.ise.fraunhofer.de/en/business-areas/photovoltaics-materials-cells-and-modules/silicon-and-germanium-epitaxial-wafers.html"
+    },
+    {
+      "entity_id": "surya-claim-r3-gap-map-2026-08",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "R3 gap map: substrate liberation via ELO/IMM is physically demonstrated at cell level (13 um epi stacks, ~31% AM0, >3000 W/kg cell-level, film-laminated flight heritage) but economically undemonstrated - the binding constraints are per-cycle substrate reconditioning cost and process throughput, not reuse cycle count; no public evidence shows reuse beyond ~4 cycles (GaAs) or 1 cycle (Ge), production-scale throughput or yield, or space qualification of substrate-free product."
+    },
+    {
+      "entity_id": "surya-claim-r3-elo-throughput-2026-08",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "ELO throughput: classic HF ELO is diffusion-limited to 0.1-0.3 mm/h lateral undercut; best published rates reach 15-30 mm/h with stressor/mechanical enhancement, still implying hours per 6-inch wafer per station; constellation-relevant volume (order 1,550 six-inch lift-offs/day for 10,000 m2/yr) is >100x beyond any demonstrated facility; no per-wafer yield figures are published anywhere."
+    },
+    {
+      "entity_id": "surya-claim-r3-reuse-cycles-2026-08",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Reuse cycles: the ~10-cycles threshold circulating in cost literature is an assumption, not an experimental result - demonstrated reuse is 4 cycles (GaAs 1997, materials metrics only), 'multiple' (MicroLink IMM 2013, count not public), and 1 for Ge (porous-Ge 2023; spalled-Ge 2022); per NREL TEA the per-cycle reconditioning cost (CMP est. 10-40 um/cycle, $9-34/cell) binds before cycle count; Ge reuse after classic AlAs-sacrificial ELO is undemonstrated."
+    },
+    {
+      "entity_id": "surya-claim-r3-mechanical-2026-08",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Mechanical integration: substrate-free IMM/ELO cells are held by metal carrier stacks (Au/Cu) or polymer/silicone laminates; cell-level >3000 W/kg and JAXA Space Solar Sheet ~600 W/kg demonstrated; but no published AIAA S-111/ECSS-E-ST-20-08C qualification of substrate-free product, no cyclic-flexure dataset, no on-orbit degradation data for substrate-free multijunction III-V; MicroLink flight heritage is stratospheric (HAPS), and Cu carriers fail catastrophically (>60% loss) under 200 C accelerated ageing vs ~10% for Au."
+    },
+    {
+      "entity_id": "surya-claim-r3-players-2026-08",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Players: only MicroLink commercially deploys ELO (HAPS scale; certified 37.75% AM1.5G research cell; 29% AM0 production datasheet; no published throughput/yield/cost; space qualification only started ~2021 per company); Rocket Lab/SolAero production IMM removes but does not reuse substrates; AZUR addresses the Ge chokepoint via backgrinding-waste recycling, not lift-off; Fraunhofer ISE runs a reusable-template program (EpiWafer) without published cell data; ESA-ELLA (Umicore) demonstrates 200 mm engineered Ge substrates at lab scale with 2x reuse."
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r3-gap-map-2026-08",
+      "target_id": "surya-chokepoint-germanium",
+      "relation_id": "rel:addresses-26fac63a838c33ca"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:supports",
+      "source_id": "surya-claim-r3-elo-throughput-2026-08",
+      "target_id": "surya-claim-r3-gap-map-2026-08",
+      "relation_id": "rel:suryasupports-4a1a1ca2a5a83092"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:supports",
+      "source_id": "surya-claim-r3-reuse-cycles-2026-08",
+      "target_id": "surya-claim-r3-gap-map-2026-08",
+      "relation_id": "rel:suryasupports-e5207e7a7dac2ecd"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:supports",
+      "source_id": "surya-claim-r3-mechanical-2026-08",
+      "target_id": "surya-claim-r3-gap-map-2026-08",
+      "relation_id": "rel:suryasupports-3de6d3d0423ce152"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:supports",
+      "source_id": "surya-claim-r3-players-2026-08",
+      "target_id": "surya-claim-r3-gap-map-2026-08",
+      "relation_id": "rel:suryasupports-ad4aa1db0ec61384"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "criticizes",
+      "source_id": "surya-claim-r3-reuse-cycles-2026-08",
+      "target_id": "src-founding-article",
+      "relation_id": "rel:criticizes-602e04c285633848"
+    },
+    {
+      "assessment_id": "surya-assessment-r3-gap-map-2026-08",
+      "actor": "surya.resident",
+      "evidence": [
+        {
+          "locator": "doi:10.1051/epjpv/2022024",
+          "paraphrase": "IMM4J thin-film cell: 13 um epi stack, 140 g/m2, >3000 W/kg cell level, 30.9% AM0 BOL; handling cracks and shunts documented in unsupported films; metal layer stack serves as mechanical carrier.",
+          "source_id": "surya-src-klitzke-2022-imm4j"
+        },
+        {
+          "locator": "doi:10.1051/e3sconf/20171603012",
+          "paraphrase": "JAXA Space Solar Sheet: IMM-3J on 10-20 um film, <0.2 mm total, ~600 W/kg sheet level, >150 W/kg paddle; internal qual tests passed within +/-2.5% with no crack propagation (test matrix table not extractable).",
+          "source_id": "surya-src-imaizumi-2017-sss-qual"
+        },
+        {
+          "locator": "IEEE J. Photovoltaics 7(2):702-708 (2017)",
+          "paraphrase": "Accelerated ageing at 200 C: thin-film cells on Au carrier lose ~10% after 37 days; on Cu carrier >60% (Cu diffusion, film curling); ELO peel-bend itself introduced no device damage.",
+          "source_id": "surya-src-vanleest-2017-temp-degradation"
+        },
+        {
+          "locator": "J. Electrochem. Soc. 154, D629 (2007)",
+          "paraphrase": "Diffusion-reaction model: maximum lateral etch rate bounded by H2 out-diffusion through the narrowing etched gap; basis for the 0.1-0.3 mm/h classic ELO ceiling.",
+          "source_id": "surya-src-vanniftrik-2007-elo-model"
+        },
+        {
+          "locator": "Tampere U. dissertation 2025",
+          "paraphrase": "20 mm/h lateral etch with internal sacrificial stressor layers plus acetone-HF, described as fastest reported; implies ~3.75 h per 6-inch wafer (derived).",
+          "source_id": "surya-src-isoaho-2025-elo"
+        },
+        {
+          "locator": "doi:10.1002/pip.2776",
+          "paraphrase": "NREL bottom-up TEA of ELO, spalling, porous-Ge: cost reduction from reuse is limited not by achievable cycle count but by per-cycle substrate re-preparation cost.",
+          "source_id": "surya-src-ward-2016-tea"
+        },
+        {
+          "locator": "doi:10.2172/1484349",
+          "paraphrase": "III-V cell MSP $70-170+/WDC at 50-200 kW/yr; Ge substrate single largest cost; whether reuse beyond 5-10 cycles lowers cost appreciably depends on CMP/reclaim costs.",
+          "source_id": "surya-src-horowitz-2018-tea-roadmap"
+        },
+        {
+          "locator": "doi:10.1016/S0921-5107(96)02029-6",
+          "paraphrase": "GaAs substrate reused four times after ELO with wet-chemical cleaning; no decrease in ELO film minority-carrier lifetime or mobility.",
+          "source_id": "surya-src-vangeelen-1997-elo-reuse"
+        },
+        {
+          "locator": "doi:10.1109/JPHOTOV.2013.2245722",
+          "paraphrase": "MicroLink demonstrates multiple substrate reuses for IMM cells on 4-inch GaAs; exact cycle count not stated in accessible text (paywalled).",
+          "source_id": "surya-src-adams-2013-multiple-reuses"
+        },
+        {
+          "locator": "doi:10.1039/D3NA00053B",
+          "paraphrase": "PEELER porous-Ge: 100 mm Ge wafer, one reuse demonstrated with wet-etch reconditioning (RMS 20.1 to 1.3 nm), ~30 reuses projected; 0.27 g Ge per cycle vs 6.06 g per conventional 145 um wafer.",
+          "source_id": "surya-src-paupy-2023-peeler"
+        },
+        {
+          "locator": "doi:10.1002/aenm.202201332",
+          "paraphrase": "ELO is currently the only commercially deployed substrate reuse technology; CMP re-polish estimated $9-34 per cell; Ge/GaAs substrate >$30/W; 23.4% GaInAs cell on spalled Ge without polishing.",
+          "source_id": "surya-src-mangum-2022-spalled-ge"
+        },
+        {
+          "locator": "PR Newswire 2018",
+          "paraphrase": "MicroLink 37.75% 3J ELO cell NREL-certified under AM1.5G on 6-inch GaAs production platform; >3000 W/kg AM0 claimed but not certified; production datasheet 29% AM0, <350 g/m2.",
+          "source_id": "surya-src-microlink-2018-3775-pr"
+        },
+        {
+          "locator": "Rocket Lab PR 2022 + product pages",
+          "paraphrase": "IMM-beta ~33.3% avg BOL entering qualification, 87% power remaining after 1 MeV electrons 1e15 e/cm2; product pages list IMM-beta as space-qualified; no ELO or wafer-reuse claim from Rocket Lab/SolAero.",
+          "source_id": "surya-src-rocketlab-2022-immb"
+        },
+        {
+          "locator": "ESA contract 4000129924 executive summary",
+          "paraphrase": "Umicore ELLA: 190 mm detachable Ge foil on 200 mm wafer via GeON/porous Ge, wafer reused 2x, 3J cells on 7 um Ge foil performing similar to controls; lab-scale feasibility.",
+          "source_id": "surya-src-esa-ella-2023-umicore"
+        },
+        {
+          "locator": "Prog. Photovolt. 19:825-833 (2011)",
+          "paraphrase": "First flight demonstration of film-laminated thin-film InGaP/GaAs 2J cells in LEO (JAXA SDS, 2009); no IMM/ELO multijunction on-orbit dataset exists.",
+          "source_id": "surya-src-morioka-2011-jaxa-flight"
+        },
+        {
+          "locator": "Joule 2023",
+          "paraphrase": "Current III-V cell cost ~$150/W; no public $/W price for any ELO-based product.",
+          "source_id": "surya-src-schulte-2023-spalled-cost"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "Four independent sweeps converge: substrate-liberation physics is demonstrated at cell level and in HAPS/early LEO flight, but every economic leg of R3 (cycle count, reprep cost, throughput, space qualification of substrate-free product) rests on assumptions or company claims rather than published demonstration. Gaps enumerated: ELO yield, per-wafer lift-off time in production, demonstrated Ge reuse after classic ELO, space-qual and flexure datasets for thin-film III-V, ELO product $/W.",
+      "subject_id": "surya-claim-r3-gap-map-2026-08"
+    }
+  ],
+  "digest": "ec8660d23a6fb744c2a94cc3136d2554a1f6ff78f03b6ac97ca133bbf60158f9"
+}

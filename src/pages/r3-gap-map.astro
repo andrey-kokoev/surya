@@ -1,0 +1,307 @@
+---
+import Base from "../layouts/Base.astro";
+
+const throughput = [
+  ["Classic HF ELO (AlAs sacrificial)", "0.1–0.3 mm/h lateral undercut; diffusion-limited by H₂ out-diffusion through the narrowing gap (van Niftrik/Schermer model)", "~250 h per 6-inch wafer (derived)", "physics ceiling"],
+  ["Stressor-assisted wet ELO", "15 mm/h (Ramu 2022, InGaAs + PMMA stressors); 20 mm/h reported as fastest (Tampere dissertation 2025)", "~3.75–5 h per 6-inch wafer (derived)", "laboratory"],
+  ["Mechanically gap-opened ELO", "~10 mm/h typical, 30 mm/h best claimed (apparatus-dependent)", "~2.5–7.5 h per 6-inch wafer (derived)", "laboratory"],
+  ["Gas-phase XeF₂ (Ge sacrificial)", "3–9 mm/h on 1 cm² coupons, room temperature, selectivity ~10⁶ (Cole, TU Wien)", "not wafer-scale", "laboratory"],
+  ["MicroLink production platform", "6-inch GaAs platform claimed; AIXTRON 8×6-inch reactor ordered 2011", "no published throughput, cycle time, or yield", "company claim"],
+];
+
+const reuse = [
+  ["GaAs, classic ELO", "4 reuses, no degradation in film lifetime/mobility (van Geelen 1997)", "materials metrics only, no device curve"],
+  ["InP, protection-layer ELO", "1 reuse, no device degradation (Lee/Forrest 2010)", "single cycle"],
+  ["GaAs, protection layers", "“Repeated use,” no repolish needed (Lee 2012); “indefinite” claimed, count not stated (Lee 2014); direct reuse without post-processing (Cheng/IBM 2013)", "count not published"],
+  ["GaAs, IMM cells (MicroLink)", "“Multiple substrate reuses” demonstrated (Adams 2013, IEEE J. PV)", "count paywalled/unstated"],
+  ["GaAs, water-soluble sacrificial", "“Multiple reuses,” no CMP, no degradation (Sharma 2022)", "count not extractable"],
+  ["Ge, porous-Ge PEELER", "1 reuse demonstrated; RMS roughness 20.1→1.3 nm after wet reconditioning; ~30 projected (Paupy 2023)", "projection, not demonstration"],
+  ["Ge, controlled spalling", "49 cells on spalled 50 mm Ge, best 23.4%, no CMP (Mangum 2022)", "spalling, not classic ELO"],
+];
+
+const players = [
+  ["MicroLink Devices", "37.75% AM1.5G 3J ELO cell, NREL-certified, 6-inch platform (2018); production datasheet 29% AM0, <350 g/m², >1000 W/kg UAV cells", "Zephyr S HAPS 25-day flight (2018), Zephyr 8 64-day (2022); PHASA-35 production contract", "All scale/yield/cost numbers unpublished; AM0 >3000 W/kg uncertified; stated it “will begin” AIAA S-111/112 space qualification only in Jan 2021; no on-orbit heritage found"],
+  ["Rocket Lab / SolAero", "IMM-α 32.0% min avg BOL in production; IMM-β ~33.3% BOL, 87% power remaining at 10¹⁵ e/cm², listed as space-qualified 5J product", "Volume production of substrate-removed IMM cells; $80M acquisition (2022); $23.9M CHIPS award (2024)", "Removes the substrate but claims no reuse and no ELO — liberation from substrate mass, not from substrate consumption"],
+  ["AZUR SPACE", "Ge-substrate 3G30/4G32 lines; no ELO product or position found", "ESA EUOG study: recycles Ge from backgrinding waste, >90% recovery target (~80% reported implemented 2021)", "Answers the chokepoint with recycling, not lift-off"],
+  ["Fraunhofer ISE / tf2", "IMM4J thin-film: 13 µm stack, 140 g/m², >3000 W/kg, 30.9% AM0 BOL (peer-reviewed); EpiWafer reusable-template program with licensable patents", "Laboratory", "No published ISE ELO cell or reuse-cycle data; handling cracks documented in unsupported films"],
+  ["NREL", "IMM architecture origin (40.8% at 326 suns, 2008); TEAs anchoring the cost picture; spalling and Ge-on-nothing demos", "Research + tech transfer (exclusive IMM license to MicroLink)", "GON route at 14.4% — lab-to-industry gap runs in industry's favor here"],
+  ["Umicore / ESA-ELLA", "200 mm engineered Ge substrates (Ge-on-nothing, porous Ge); wafer reused 2×; 3J cells on 7 µm Ge foil ≈ controls", "Government-contracted feasibility", "Lab scale; no production intent stated"],
+];
+
+const sources = [
+  ["van der Woude et al., Thin Solid Films (2024)", "The ELO manufacturability review", "https://doi.org/10.1016/j.tsf.2024.140570"],
+  ["Isoaho, Tampere U. dissertation (2025)", "20 mm/h stressor-assisted ELO — fastest reported", "https://researchportal.tuni.fi/en/publications/advanced-epitaxial-lift-off-processes-for-iii-v-solar-cells/"],
+  ["Ramu et al., Sol. Energy Mater. Sol. Cells (2022)", "15 mm/h via InGaAs internal stressor + PMMA surface stressor", "https://www.sciencedirect.com/science/article/pii/S0927024822003993"],
+  ["van Niftrik et al., J. Electrochem. Soc. (2007)", "Diffusion–reaction model bounding lateral etch rate", "https://doi.org/10.1149/1.2779968"],
+  ["van Geelen et al., Mater. Sci. Eng. B (1997)", "4 GaAs reuses, no materials degradation", "https://doi.org/10.1016/S0921-5107(96)02029-6"],
+  ["Bauhuis et al., Prog. Photovolt. (2010)", "Wafer reuse for repeated III-V growth; ~10 µm loss per cycle", "https://doi.org/10.1002/pip.930"],
+  ["Adams et al. (MicroLink), IEEE J. Photovoltaics (2013)", "Multiple substrate reuses for IMM cells", "https://doi.org/10.1109/JPHOTOV.2013.2245722"],
+  ["Cheng et al. (IBM), Nat. Commun. (2013)", "Direct substrate reuse without post-processing", "https://doi.org/10.1038/ncomms2583"],
+  ["Lee et al., Adv. Funct. Mater. (2014)", "“Indefinite” wafer recycling claim — count not stated", "https://doi.org/10.1002/adfm.201400453"],
+  ["Ward et al. (NREL), Prog. Photovolt. (2016)", "TEA: reprep cost, not cycle count, is the binding constraint", "https://doi.org/10.1002/pip.2776"],
+  ["Horowitz et al. (NREL, 2018)", "III-V cost reduction roadmap; Ge substrate the largest cost", "https://doi.org/10.2172/1484349"],
+  ["Mangum et al. (NREL/Mines), Adv. Energy Mater. (2022)", "Spalled Ge without polishing; ELO the only commercially deployed reuse tech", "https://doi.org/10.1002/aenm.202201332"],
+  ["Paupy et al., Nanoscale Adv. (2023)", "PEELER porous-Ge: 1 reuse demonstrated, ~30 projected", "https://doi.org/10.1039/D3NA00053B"],
+  ["Park et al. (NREL), Joule (2019)", "Germanium-on-nothing ELO; 14.4% GaAs cell", "https://www.sciencedirect.com/science/article/pii/S2542435119302569"],
+  ["Neumann et al., Solar RRL (2025)", "Sonic liftoff (spalling) cell performance; reuse modeling", "https://docs.nrel.gov/docs/fy25osti/87110.pdf"],
+  ["Klitzke et al. (ISE/tf2), EPJ Photovoltaics (2022)", "IMM4J thin-film: 13 µm, 140 g/m², >3000 W/kg, 30.9% AM0", "https://doi.org/10.1051/epjpv/2022024"],
+  ["Imaizumi et al. (JAXA), ESPC (2016)", "Space Solar Sheet qualification results; 600 W/kg sheet", "https://doi.org/10.1051/e3sconf/20171603012"],
+  ["van Leest et al., IEEE J. Photovoltaics (2017)", "Thermal ageing of thin-film III-V: Au vs Cu carriers", "https://repository.ubn.ru.nl/bitstream/handle/2066/174450/174450-1.pdf"],
+  ["Morioka et al. (JAXA), Prog. Photovolt. (2011)", "First film-laminated thin-film III-V flight in LEO (2009)", "https://jopss.jaea.go.jp/search/servlet/search?5027540&language=1"],
+  ["MicroLink PR (2018)", "NREL-certified 37.75% 3J ELO on 6-inch platform", "https://www.prnewswire.com/news-releases/microlink-devices-achieves-certified-37-75-solar-cell-power-conversion-efficiency-300631962.html"],
+  ["MicroLink photovoltaics pages", "Production datasheet: 29% AM0, <350 g/m²", "https://mldevices.com/photovoltaics-2/"],
+  ["MicroLink PR / Airbus (2018–2019)", "Zephyr S flight heritage; supplier recognition", "https://www.prnewswire.com/news-releases/microlink-devices-powers-successful-stratospheric-flight-of-airbus-defence-and-space-zephyr-s-haps-solar-aircraft-300732214.html"],
+  ["Rocket Lab (2022)", "IMM-β qualification announcement", "https://rocketlabcorp.com/updates/rocket-lab-begins-qualification-of-highest-performing-space-solar-cell-technology/"],
+  ["Rocket Lab product pages", "IMM-α in production; IMM-β space-qualified listing", "https://rocketlabcorp.com/space-systems/solar/"],
+  ["NASA State-of-the-Art Small Spacecraft (2024)", "Power section — manufacturer efficiency compilation", "https://www.nasa.gov/wp-content/uploads/2025/02/3-soa-power-2024.pdf"],
+  ["NIST CHIPS award (2024)", "Rocket Lab Albuquerque, up to $23.9M", "https://www.nist.gov/chips/rocket-lab-new-mexico-albuquerque"],
+  ["Umicore, ESA-ELLA executive summary (2023)", "200 mm engineered Ge, 2× reuse, 3J on 7 µm foil", "https://nebula.esa.int/sites/default/files/neb_tec_studies/2946/public/Executive%20summary_Contract%2040001299%202420NLFE%20ELLA%20UMICORE.pdf"],
+  ["ESA EUOG executive summary", "AZUR Ge recycling from backgrinding waste", "https://nebula.esa.int/sites/default/files/neb_tec_studies/2653/public/4000128156_EX.pdf"],
+  ["Schulte et al. (NREL), Joule (2023)", "~$150/W current III-V cost anchor", "https://www.cell.com/joule/fulltext/S2542-4351(23)00216-7"],
+  ["Geisz et al. (NREL), Appl. Phys. Lett. (2008)", "IMM architecture origin: 40.8% at 326 suns", "https://doi.org/10.1063/1.2988497"],
+  ["Fraunhofer ISE", "EpiWafer reusable-template program", "https://www.ise.fraunhofer.de/en/business-areas/photovoltaics-materials-cells-and-modules/silicon-and-germanium-epitaxial-wafers.html"],
+  ["NASA SPRAT-25 proceedings (2019)", "SolAero/Spectrolab qualification status; MicroLink Zephyr statement", "https://ntrs.nasa.gov/api/citations/20190000974/downloads/20190000974.pdf"],
+];
+---
+
+<Base
+  title="R3 gap map: ELO/IMM substrate liberation — Surya"
+  description="The evidence map for epitaxial lift-off and inverted metamorphic III-V: what is physically demonstrated, what the reuse-economics literature actually shows, and where the gap to constellation-scale economics sits. Sweep executed August 2026."
+  path="/r3-gap-map/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    .finding {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .finding b { color: var(--accent); }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R3: substrate liberation, mapped</h1>
+      <p class="lede">
+        Sweep executed 18 August 2026. The finding: ELO/IMM is physically
+        demonstrated — 13 µm epitaxial stacks at ~31% AM0 and &gt;3,000 W/kg,
+        film-laminated flight heritage since 2009 — but the economic thesis
+        is undemonstrated on every leg. The binding constraint is per-cycle
+        reconditioning cost and process throughput, not reuse cycle count;
+        and the "~10 reuse cycles" threshold in the originating article
+        traces to a modeling assumption, not an experiment.
+      </p>
+
+      <h2>Why this map exists</h2>
+      <p>
+        R3 is the only direction that attacks the germanium chokepoint while
+        keeping III-V performance: lift the junction off the wafer, reuse the
+        wafer as a template. The originating article poses three sub-questions
+        — ELO throughput and yield at industrial scale, substrate reuse cycle
+        count (~10 cycles as the order-of-magnitude threshold), and IMM
+        mechanical reliability without the handle wafer — and sets the win
+        condition: reuse economics close at constellation volumes. Four
+        parallel sweeps (throughput, reuse, mechanical, player claims) mapped
+        what is actually on the record.
+      </p>
+
+      <h2>Throughput: hours per wafer, and no yield data anywhere</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Process</th><th>Best published evidence</th><th>Implied per-wafer time</th><th>Class</th></tr>
+        </thead>
+        <tbody>
+          {throughput.map(([p, ev, t, c]) => (
+            <tr><td>{p}</td><td>{ev}</td><td>{t}</td><td>{c}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p>
+        <span class="class">established</span> The scale gap is derivable:
+        10,000 m²/yr of constellation demand is ≈565,000 six-inch wafer
+        lift-offs per year, ≈1,550 per day. At the fastest published etch
+        rates that is on the order of 160–260 etch stations running
+        continuously — before yield losses. No public evidence shows any ELO
+        facility at even 1% of that throughput, and no source anywhere
+        publishes ELO process yield. Alta Devices ran an ELO pilot/production
+        line and failed commercially (closed 2019; equipment auctioned).
+      </p>
+
+      <h2>Reuse: the "~10 cycles" threshold is an assumption</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Substrate / route</th><th>Demonstrated</th><th>Caveat</th></tr>
+        </thead>
+        <tbody>
+          {reuse.map(([r, d, c]) => (
+            <tr><td>{r}</td><td>{d}</td><td>{c}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="finding">
+        <b>The correction:</b> the originating article's "~10 reuse cycles is
+        the threshold where germanium exposure drops by an order of
+        magnitude" is arithmetically true but experimentally unsupported. The
+        figure circulates in LCA and cost literature as an assumption — one
+        peer-reviewed LCA states "5 to 10 wafer reuses have already been
+        achieved" citing Adams 2013 and Lee 2012, whose own demonstrated
+        counts are lower or unstated — and NREL's cost models
+        <em>assume</em> 10–100 reuses to show competitiveness. The strongest
+        demonstrated counts are 4 (GaAs, 1997, materials metrics only) and 1
+        (Ge, 2023). Ge reuse after classic AlAs-sacrificial ELO is
+        undemonstrated entirely; the demonstrated Ge routes are porous-Ge and
+        spalling, one cycle each.
+      </p>
+      <p>
+        <span class="class">established</span> And the cycle count is not the
+        binding variable anyway. NREL's bottom-up techno-economic analysis
+        (Ward 2016) of all three substrate-liberation strategies — ELO,
+        spalling, porous-Ge — found cost reduction is limited "not by the
+        number of reuse cycles achievable, but by the costs incurred in each
+        cycle to prepare the substrate for another epitaxial deposition":
+        CMP reconditioning at an estimated 10–40 µm and $9–34 per cell per
+        cycle, against a substrate that costs &gt;$30/W. Protection-layer
+        schemes that eliminate CMP exist in the literature (Michigan, IBM,
+        Houston) but have no published per-cycle device-performance series.
+      </p>
+
+      <h2>Mechanical: what holds the cell together</h2>
+      <p>
+        <span class="class">established</span> Two demonstrated answers:
+        metal carrier stacks (ISE/tf2's IMM4J uses the back-contact metal as
+        the mechanical carrier — 13 µm total stack, 140 g/m², 30.9% AM0;
+        Radboud transfers to ~20 µm Au or ~25 µm Cu) and polymer/silicone
+        laminates (JAXA's Space Solar Sheet: IMM-3J strings in silicone
+        between films, &lt;0.2 mm total, ~600 W/kg at sheet level, &gt;150
+        W/kg at paddle level, internal qualification tests passed within
+        ±2.5% with no crack propagation). The ELO peel-bend itself does not
+        damage devices (Radboud accelerated ageing). What does damage them:
+        handling of unsupported films (cracks and shunts documented in the
+        ISE IMM4J work) and copper carriers under thermal stress (&gt;60%
+        efficiency loss after 37 days at 200 °C from Cu diffusion, vs ~10%
+        for gold).
+      </p>
+      <p>
+        <span class="class">gap</span> No published AIAA S-111/S-112 or
+        ECSS-E-ST-20-08C qualification campaign exists for any substrate-free
+        thin-film III-V cell or laminate — qualified metamorphic products
+        (SolAero Z4J, IMM-β) retain or do not disclose their substrate. No
+        cyclic-flexure dataset (bend radius vs cycles vs ΔP) exists for
+        IMM/ELO cells; MicroLink's "2 cm bend radius" is unsourced marketing.
+        No vibration, acoustic, or shock data. No on-orbit degradation data
+        for substrate-free multijunction III-V: the only orbital thin-film
+        III-V data point is JAXA's 2009 film-laminated dual-junction
+        demonstration, and MicroLink's extensive Zephyr heritage is
+        stratospheric — a materially different environment with no
+        high-energy particle radiation and no thermal-vacuum cycling.
+      </p>
+
+      <h2>Player landscape</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Player</th><th>Demonstrated / claimed</th><th>Scale evidence</th><th>Honest caveat</th></tr>
+        </thead>
+        <tbody>
+          {players.map(([p, d, s, c]) => (
+            <tr><td>{p}</td><td>{d}</td><td>{s}</td><td>{c}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p>
+        Cost anchors: current III-V cells run ~$150/W (Schulte 2023);
+        the substrate alone is &gt;$30/W. No public $/W price exists for any
+        ELO-based product — MicroLink claims only qualitative "lower
+        manufacturing costs." NREL's conditional pathway to $0.40/W requires
+        high-volume production <em>and</em> low-cost epitaxy <em>and</em>
+        substrate-reuse R&D simultaneously.
+      </p>
+
+      <h2>The gaps, as fundable work</h2>
+      <ol>
+        <li><b>ELO process yield at any scale</b> — the single largest
+        evidence gap; no public number exists.</li>
+        <li><b>Per-wafer lift-off time in a real line</b> — only coupon-scale
+        lateral etch rates are published; all per-wafer times here are
+        derived arithmetic.</li>
+        <li><b>Demonstrated reuse with per-cycle device data</b> — a
+        published "N reuses at constant AM0 efficiency" curve, most valuable
+        for Ge after classic ELO (currently undemonstrated).</li>
+        <li><b>Space qualification of substrate-free product</b> — an AIAA
+        S-111/ECSS-class campaign for a lifted cell or laminate, including
+        the missing cyclic-flexure and thermal-vacuum datasets.</li>
+        <li><b>ELO product $/W</b> — any verified price or cost breakdown
+        for a shipped ELO cell.</li>
+        <li><b>MicroLink space-qualification follow-through</b> — the company
+        announced AIAA S-111/112 work in 2021; no completion evidence found.
+        Watch item, alongside Rocket Lab IMM process disclosures.</li>
+      </ol>
+
+      <h2>What this changes</h2>
+      <p>
+        R3 stays on the board, but reframed: the question is no longer "can
+        the wafer be reused ~10 times" but "can per-cycle reconditioning cost
+        and per-wafer throughput fall far enough that reuse beats both virgin
+        Ge and AZUR-style Ge recycling." The substrate-liberation physics is
+        real and flying (stratospherically); the economics are unbuilt, and
+        the volume player in the market (Rocket Lab/SolAero) has voted with
+        its process: substrate removal without reuse. The most decision-
+        relevant single artifact would be MicroLink's actual per-wafer
+        economics — not public — followed by a demonstrated multi-cycle Ge
+        reuse series with device data, which any lab could produce.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Four parallel literature sweeps, 32 sources, admitted to the Surya
+        epistemic graph as event <code>ev-000000000010</code> with assessment
+        <code>surya-assessment-r3-gap-map-2026-08</code>, judgment
+        <b>established-with-gap</b>. Flagged honestly: the two most-cited
+        reuse papers (Bauhuis 2010, Adams 2013) are paywalled and their cycle
+        counts are known only through secondary paraphrase; the Tampere
+        dissertation full text is bot-walled (20 mm/h figure from the
+        abstract); conflicting "fastest etch rate" claims exist across
+        sources under non-comparable conditions; the JAXA qualification test
+        matrix (temperatures, cycle counts) could not be extracted from the
+        proceedings PDF; per-wafer times and constellation throughput are
+        derived arithmetic, labeled as such; MicroLink scale figures are
+        company claims throughout, with only the 37.75% AM1.5G efficiency
+        independently certified.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

@@ -75,6 +75,17 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
   fillable datasets) is published at /r2-gap-map/ (graph event
   `ev-000000000007`, assessment `surya-assessment-r2-gap-map-2026-08`,
   established-with-gap).
+- **R3 substrate liberation (ELO/IMM)**: gap map published at /r3-gap-map/
+  (graph event `ev-000000000010`, assessment
+  `surya-assessment-r3-gap-map-2026-08`, established-with-gap). Physically
+  demonstrated at cell level (13 µm stacks, ~31% AM0, >3,000 W/kg,
+  film-laminated flight heritage since 2009) but economically
+  undemonstrated: the binding constraint is per-cycle reconditioning cost
+  and throughput, not reuse count; the "~10 reuse cycles" threshold is a
+  modeling assumption (demonstrated: 4 cycles GaAs, 1 Ge); no published ELO
+  yield, production throughput, or space qualification of substrate-free
+  product. Rocket Lab/SolAero removes substrates without reuse; AZUR
+  recycles Ge. Watch: MicroLink space-qualification follow-through.
 - **Closed (kill table, with reasons)**: space-unique non-PV variants —
   permanent source+sink thermal schemes, eclipse-cycle harvesting,
   thermoradiative laminates, tethers-as-generators, solar-pumped lasers.
