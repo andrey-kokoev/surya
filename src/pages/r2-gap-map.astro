@@ -1,0 +1,272 @@
+---
+import Base from "../layouts/Base.astro";
+
+const stressors = [
+  {
+    name: "Electrons",
+    tested: "1 MeV to 10¹⁶ e/cm² — no deterioration (Miyazawa 2018; Caltech 2017)",
+    needed: "Matches the AIAA S-111 characterization ceiling",
+    verdict: "strongest",
+  },
+  {
+    name: "Protons",
+    tested: "Tolerated to ~10¹³ p/cm² with in-situ self-healing; failure at 3×10¹⁴ via transport-layer breakdown, not the absorber",
+    needed: "S-111 range 10¹⁰–10¹³ p/cm² — covered, but tested at room temperature and low flux, not orbit-realistic",
+    verdict: "strong, single-stressor only",
+  },
+  {
+    name: "UV",
+    tested: "800 h continuous narrowband 365 nm is the longest published",
+    needed: "AM0-calibrated dose (equivalent sun-hours) — no such perovskite dataset exists",
+    verdict: "thin",
+  },
+  {
+    name: "Atomic oxygen",
+    tested: "One dedicated study: 120 min accelerated plasma. SiO encapsulation retained >97%; unencapsulated lost ~45% PCE; 2D-passivated cells degraded fastest (the 2D layer is an ATOX diffusion channel)",
+    needed: "Fluence-calibrated (atoms/cm²) exposure over mission-representative doses",
+    verdict: "nearly absent",
+  },
+  {
+    name: "Thermal cycling",
+    tested: "Widest published: −60/+80 °C × 120 cycles",
+    needed: "LEO range ~−120/+120 °C, thousands of cycles (5,800/yr); incumbent cells are cycled to 20,000",
+    verdict: "absent",
+  },
+  {
+    name: "Vacuum",
+    tested: "Outgassing and MAI volatility documented; light-driven vacuum decomposition is self-limiting after ~24 h; one 6-cycle vacuum-thermal-MPP experiment (JKU Linz)",
+    needed: "Thermal-vacuum cycling with IV monitoring, hundreds of cycles",
+    verdict: "thin",
+  },
+  {
+    name: "Humidity / ingress",
+    tested: "Glass-glass + edge seal passes IEC 61215 damp heat (1000 h, 85/85); thin-film barriers at 10⁻⁵ g/m²/day",
+    needed: "Terrestrial anchor exists; not a space discriminator",
+    verdict: "adequate terrestrially",
+  },
+  {
+    name: "Combined (the point)",
+    tested: "Terrestrial light+heat only (NREL, Nature 2023 — synergy documented: combined stressors produce failure modes absent in single tests). Everything else is flight data with inseparable stressors",
+    needed: "Radiation + thermal cycling + AM0 + vacuum, simultaneously, with attribution",
+    verdict: "the gap",
+  },
+];
+
+const flights = [
+  ["MAPHEUS-8 (2019)", "First perovskites in space; suborbital, minutes of exposure; full post-flight characterization published (Reb et al., Solar RRL 2023). Follow-up flight November 2024."],
+  ["ISS MISSE (2020–21)", "~10 months exterior LEO. Film stayed black; incurred damage >90% reversible under light back on Earth. Combined environment by construction — no stressor attribution."],
+  ["RIT CubeSat (2025–26)", "~100 days at ISS altitude, operated the entire flight, no breakdown. Kirmani group; journal paper forthcoming."],
+  ["Big Red Sat-1 (2024)", "105 days LEO with a perovskite panel, TRL 5→6 objective. Data still being processed — watch item."],
+  ["RHOK-SAT (2025)", "Launched 14 September 2025. Results pending — watch item."],
+];
+
+const sources = [
+  ["Duarte et al., Energies (2026)", "Perovskite space-durability review — dose inventory per stressor", "https://www.mdpi.com/1996-1073/19/6/1432"],
+  ["Bush et al., NREL / ACS Energy Focus (2025)", "Space environment considerations for perovskite PV", "https://www.osti.gov/servlets/purl/2573925"],
+  ["Seid, Lang et al., Small (2024)", "The one dedicated ATOX study", "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202311097"],
+  ["Kim et al., Nano-Micro Lett. (2026)", "Perovskite solar cells for extreme environments — review", "https://pmc.ncbi.nlm.nih.gov/articles/PMC13076826/"],
+  ["Kirmani & Sellers, Joule (2025)", "Are metal-halide perovskite solar cells really radiation tolerant?", "https://www.sciencedirect.com/science/article/abs/pii/S2542435125000339"],
+  ["Akylbayeva et al., Int. J. Mol. Sci. (2026)", "Space reliability review; proposes ISOS-T-Space / ISOS-LC-Space", "https://pubmed.ncbi.nlm.nih.gov/42074102/"],
+  ["Khenkin et al., Nat. Energy (2020)", "ISOS consensus statement (terrestrial combined-testing anchor)", "https://www.fluxim.com/research-blogs/isos-protocols-stability-perovskite-solar-cells"],
+  ["Jiang et al., Nature 623 (2023)", "Lab-to-field lifetimes; combined stressors produce new failure modes", "https://pubmed.ncbi.nlm.nih.gov/37696288/"],
+  ["Demchyshyn, Kaltenbrunner et al. (2019)", "Vacuum thermal cycling at maximum power point (6 cycles, −140 °C)", "https://www.marshallplan.at/images/All-Papers/MP-2019/Demchyshyn_Stepan.PDF"],
+  ["NASA feature (2023)", "10-month MISSE exposure, >90% reversible damage", "https://www.nasa.gov/general/10-month-voyage-proves-solar-cell-material-survives-thrives-in-space/"],
+  ["Nanosats database (2024)", "Big Red Sat-1 mission record", "https://www.nanosats.eu/sat/big-red-sat-1.html"],
+  ["RIT News (2026)", "100-day CubeSat perovskite mission", "https://www.rit.edu/news/successful-space-mission-shows-promise-rit-led-space-energy-solution"],
+  ["Reb et al., Solar RRL (2023)", "MAPHEUS-8 post-flight characterization", "https://onlinelibrary.wiley.com/doi/full/10.1002/solr.202300043"],
+  ["AIAA S-111A-2014", "Space solar cell qualification standard (preview)", "https://webstore.ansi.org/preview-pages/AIAA/preview_AIAA+S-111A-2014.pdf"],
+  ["ECSS-E-ST-20-08C", "PV assemblies standard — excludes thin-film cells", "https://ecss.nl/wp-content/uploads/standards/ecss-e/ECSS-E-ST-20-08C_Rev118July2012.pdf"],
+  ["Messenger et al., Prog. Photovolt. (2001)", "NRL displacement damage dose methodology", "https://onlinelibrary.wiley.com/doi/10.1002/pip.357"],
+  ["SPENVIS documentation", "EQFLUX damage-equivalent fluence tooling", "https://www.spenvis.oma.be/help/background/soldam/soldam.html"],
+  ["SBIR.gov STRATFI award", "Full S-111A + S-112A qualification program: $4.5M", "https://www.sbir.gov/portfolio/234341"],
+  ["NASA Glenn (NTRS 19930006406)", "Combined vacuum-thermal-cycling + VUV facility", "https://ntrs.nasa.gov/api/citations/19930006406/downloads/19930006406.pdf"],
+];
+---
+
+<Base
+  title="R2 gap map: coupled stressors — Surya"
+  description="The coupled-stressor durability gap for perovskite space photovoltaics, mapped: what single-stressor evidence exists, what has never been tested, and what a credible 5-year LEO degradation model requires. Sweep executed August 2026."
+  path="/r2-gap-map/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    .finding {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .finding b { color: var(--accent); }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; white-space: nowrap; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R2: the coupled-stressor gap, mapped</h1>
+      <p class="lede">
+        Sweep executed 18 August 2026. The finding: the gap is real, it is
+        total, and the review literature now names it in the program's own
+        words. No published ground study combines particle radiation with
+        thermal cycling on a perovskite cell; no experiment anywhere combines
+        three or more space stressors. Everything multi-stressor is flight
+        data, where the stressors are inseparable by construction.
+      </p>
+
+      <h2>Why this map exists</h2>
+      <p>
+        The R2 readiness baseline (August 2026) established that perovskite
+        flight heritage exists and the open gap is multi-year duration under
+        coupled UV / ATOX / thermal stressors, not existence of the effect.
+        R2 wins when a credible 5-year LEO degradation model survives
+        independent replication. This page converts that one-sentence gap
+        into a work program: what evidence exists per stressor, what has
+        never been measured, and what the incumbent qualification practice
+        says "credible" must mean.
+      </p>
+
+      <h2>Single-stressor inventory</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Stressor</th><th>Best evidence to date</th><th>What LEO needs</th><th>State</th></tr>
+        </thead>
+        <tbody>
+          {stressors.map((s) => (
+            <tr>
+              <td>{s.name}</td>
+              <td>{s.tested}</td>
+              <td>{s.needed}</td>
+              <td>{s.verdict}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p>
+        <span class="class">established</span> Radiation tolerance is the
+        strong suit: the absorber survives doses past the S-111
+        characterization ceiling, and self-healing during irradiation is
+        documented physics (dual-dose proton experiments show damage and
+        repair in the same exposure). The documented failure path at extreme
+        fluence is the organic transport layer, not the perovskite — which
+        points the materials work at the stack, not the absorber.
+      </p>
+
+      <h2>The coupled-stressor gap</h2>
+      <p>
+        <span class="class">established</span> Three independent sweeps
+        converged on the same negative result. Kirmani &amp; Sellers (Joule
+        2025): radiation testing is done at room temperature and low flux,
+        while orbit adds thermal cycling, AM0 illumination, and atomic oxygen
+        simultaneously. Akylbayeva et al. (2026): stressors act
+        synergistically and are not detected by single-factor tests;
+        standardized space protocols for this class do not exist. Kim et al.
+        (2026): long-term operational data under combined space stressors is
+        "critically insufficient." Terrestrially, NREL has already shown the
+        trap: combined light+heat produces failure modes that single-stressor
+        testing never sees. There is no reason to expect space stressors to
+        be kinder.
+      </p>
+      <p class="finding">
+        <b>The gap, decomposed into four fillable datasets:</b>
+        (1) LEO-range thermal-vacuum cycling with IV monitoring — hundreds of
+        cycles, −120/+120 °C class;
+        (2) AM0-calibrated UV dose response, in equivalent sun-hours;
+        (3) fluence-calibrated ATOX exposure (atoms/cm²), with and without
+        candidate encapsulations;
+        (4) the combined in-situ campaign — radiation + thermal cycling +
+        AM0 + vacuum at once. Facilities for combined exposure exist (NASA
+        Glenn, MSFC, ESA/ESTEC, DLR); none has published a perovskite PV
+        campaign.
+      </p>
+
+      <h2>Flight heritage, restated as evidence class</h2>
+      <ul>
+        {flights.map(([name, note]) => (
+          <li><b>{name}</b> — {note}</li>
+        ))}
+      </ul>
+      <p>
+        Flight data proves survival, not attribution: every flight combines
+        every stressor and reports one outcome. It sets the floor of the
+        model, never the curve.
+      </p>
+
+      <h2>What "credible 5-year model" means by incumbent practice</h2>
+      <p>
+        <span class="class">evidence-backed</span> III-V qualification
+        defines the bar: ground radiation data across energies reducible to
+        a single displacement-damage-dose (or equivalent-fluence) curve;
+        mission-spectrum convolution through coverglass shielding with
+        SAVANT/SPENVIS-class tooling; end-of-life remaining-power prediction
+        with demonstrated flight agreement (Equator-S; an 8.3-year validation
+        dataset); and an S-111/S-112-class test matrix — a ~$4.5M, 1–2+ year
+        campaign per cell technology (SBIR STRATFI award record). Note the
+        structural opening: ECSS-E-ST-20-08C explicitly excludes thin-film
+        cells, and even incumbent matrices run stressors sequentially. The
+        qualification literature itself has no combined-stressor protocol —
+        for anyone. The program-level leverage recorded on the directions
+        page stands: whoever writes the ISOS-T-Space-class protocol defines
+        everyone's market entry cost, and Akylbayeva et al. have already
+        published the proposal sketch.
+      </p>
+
+      <h2>What this changes</h2>
+      <p>
+        R2's next moves, in order: watch the pending flight data (Big Red
+        Sat-1, RHOK-SAT) for the first attributed-orbit performance points;
+        scope the four datasets above as the fundable work — each is a
+        ground campaign at an existing facility, not a new facility; and
+        evaluate writing the combined-stressor test protocol itself as a
+        program deliverable, per the qualification-lock analysis. The gap is
+        not a wall; it is four datasets and a protocol.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Three parallel literature sweeps, 19 sources, admitted to the Surya
+        epistemic graph as event <code>ev-000000000007</code> with assessment
+        <code>surya-assessment-r2-gap-map-2026-08</code>, judgment
+        <b>established-with-gap</b>. Sweep-level gaps, flagged honestly:
+        MDPI full texts were bot-blocked, so a few quotes rest on
+        abstracts and review citations rather than primary text; Big Red
+        Sat-1 and RHOK-SAT performance data are unpublished at sweep time;
+        no primary neutron-irradiation study was located; one vacuum
+        decomposition study is known only through a review's citation. None
+        of these change the shape of the map — they are recorded as
+        perimeter, not smoothed over.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

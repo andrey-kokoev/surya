@@ -54,7 +54,11 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
   reversible degradation; RIT CubeSat ~100 days no observable degradation;
   Big Red Sat-1; RHOK-SAT). TRL 4–5, trending 6. Gap is duration and
   coupled stressors, not existence. Corroborated by two independent
-  research sweeps; full record in ledger Entry 888.
+  research sweeps; full record in ledger Entry 888. The coupled-stressor
+  gap map (single-stressor inventory, III-V qualification benchmark, four
+  fillable datasets) is published at /r2-gap-map/ (graph event
+  `ev-000000000007`, assessment `surya-assessment-r2-gap-map-2026-08`,
+  established-with-gap).
 - **Closed (kill table, with reasons)**: space-unique non-PV variants —
   permanent source+sink thermal schemes, eclipse-cycle harvesting,
   thermoradiative laminates, tethers-as-generators, solar-pumped lasers.

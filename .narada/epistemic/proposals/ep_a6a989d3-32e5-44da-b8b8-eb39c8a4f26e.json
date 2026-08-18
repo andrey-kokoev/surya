@@ -1,0 +1,583 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_a6a989d3-32e5-44da-b8b8-eb39c8a4f26e",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_request",
+    "summary": "Operator directed execution of the surya research program; R2 gap map second after R7. Lifecycle task #2."
+  },
+  "idempotency_key": "auto-proposal-0d1b45ca84f5f2d838cb9ad0",
+  "expected_ledger_head": "0e829f28ab53803f5975938799ca761c803f0e7d477a7d0180774e1827efe91a",
+  "created_at": "2026-08-18T20:03:08.6336699Z",
+  "content_fingerprint": "0d1b45ca84f5f2d838cb9ad083a2094b2ff92b57b0636a14445b89d1d7815831",
+  "operations": [
+    {
+      "entity_id": "src-duarte-2026-energies-review",
+      "kind": "source",
+      "local_ref": "s1",
+      "locator": "https://www.mdpi.com/1996-1073/19/6/1432",
+      "op": "entity.declare",
+      "title": "Duarte et al., review of perovskite space environmental durability, Energies 2026",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-bush-2025-space-environment",
+      "kind": "source",
+      "local_ref": "s2",
+      "locator": "https://www.osti.gov/servlets/purl/2573925",
+      "op": "entity.declare",
+      "title": "Bush et al., Space environment considerations for perovskite solar cell operations (NREL/ACS Energy Focus)",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-seid-lang-2024-atox",
+      "kind": "source",
+      "local_ref": "s3",
+      "locator": "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202311097",
+      "op": "entity.declare",
+      "title": "Seid, Lang et al., atomic-oxygen exposure of perovskite cells, Small 2024",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-kim-2026-extreme-environments",
+      "kind": "source",
+      "local_ref": "s4",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13076826/",
+      "op": "entity.declare",
+      "title": "Kim et al., Perovskite Solar Cells for Extreme Environments, Nano-Micro Lett. 2026",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-kirmani-sellers-2025-joule",
+      "kind": "source",
+      "local_ref": "s5",
+      "locator": "https://www.sciencedirect.com/science/article/abs/pii/S2542435125000339",
+      "op": "entity.declare",
+      "title": "Kirmani & Sellers, Are metal-halide perovskite solar cells really radiation tolerant?, Joule 2025",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-akylbayeva-2026-ijms",
+      "kind": "source",
+      "local_ref": "s6",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/42074102/",
+      "op": "entity.declare",
+      "title": "Akylbayeva et al., perovskite space reliability review proposing ISOS-T-Space / ISOS-LC-Space, Int. J. Mol. Sci. 2026",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-khenkin-2020-isos",
+      "kind": "source",
+      "local_ref": "s7",
+      "locator": "https://www.fluxim.com/research-blogs/isos-protocols-stability-perovskite-solar-cells",
+      "op": "entity.declare",
+      "title": "Khenkin et al., ISOS consensus statement for perovskite stability assessment, Nat. Energy 2020",
+      "version": "2020"
+    },
+    {
+      "entity_id": "src-jiang-2023-nature-lab-field",
+      "kind": "source",
+      "local_ref": "s8",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/37696288/",
+      "op": "entity.declare",
+      "title": "Jiang et al., Towards linking lab and field lifetimes of perovskite solar cells, Nature 623 (2023)",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-demchyshyn-2019-vacuum-cycling",
+      "kind": "source",
+      "local_ref": "s9",
+      "locator": "https://www.marshallplan.at/images/All-Papers/MP-2019/Demchyshyn_Stepan.PDF",
+      "op": "entity.declare",
+      "title": "Demchyshyn, Kaltenbrunner et al., vacuum thermal cycling at maximum power point, JKU Linz",
+      "version": "2019"
+    },
+    {
+      "entity_id": "src-nasa-misse-10months",
+      "kind": "source",
+      "local_ref": "s10",
+      "locator": "https://www.nasa.gov/general/10-month-voyage-proves-solar-cell-material-survives-thrives-in-space/",
+      "op": "entity.declare",
+      "title": "NASA feature: 10-month ISS MISSE perovskite exposure, damage >90% reversible",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-nanosats-bigredsat1",
+      "kind": "source",
+      "local_ref": "s11",
+      "locator": "https://www.nanosats.eu/sat/big-red-sat-1.html",
+      "op": "entity.declare",
+      "title": "Big Red Sat-1 mission record: 105 days LEO perovskite panel, data pending",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-rit-cubesat-2026",
+      "kind": "source",
+      "local_ref": "s12",
+      "locator": "https://www.rit.edu/news/successful-space-mission-shows-promise-rit-led-space-energy-solution",
+      "op": "entity.declare",
+      "title": "RIT/Kirmani 100-day CubeSat perovskite mission (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-reb-2023-mapheus",
+      "kind": "source",
+      "local_ref": "s13",
+      "locator": "https://onlinelibrary.wiley.com/doi/full/10.1002/solr.202300043",
+      "op": "entity.declare",
+      "title": "Reb et al., MAPHEUS-8 post-flight perovskite characterization, Solar RRL 2023",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-aiaa-s111a-2014",
+      "kind": "source",
+      "local_ref": "s14",
+      "locator": "https://webstore.ansi.org/preview-pages/AIAA/preview_AIAA+S-111A-2014.pdf",
+      "op": "entity.declare",
+      "title": "AIAA S-111A-2014, Qualification and Quality Requirements for Space Solar Cells (ANSI preview)",
+      "version": "2014"
+    },
+    {
+      "entity_id": "src-ecss-e-st-20-08c",
+      "kind": "source",
+      "local_ref": "s15",
+      "locator": "https://ecss.nl/wp-content/uploads/standards/ecss-e/ECSS-E-ST-20-08C_Rev118July2012.pdf",
+      "op": "entity.declare",
+      "title": "ECSS-E-ST-20-08C, Photovoltaic assemblies and components (scope excludes thin-film cells)",
+      "version": "2012"
+    },
+    {
+      "entity_id": "src-messenger-2001-ddd",
+      "kind": "source",
+      "local_ref": "s16",
+      "locator": "https://onlinelibrary.wiley.com/doi/10.1002/pip.357",
+      "op": "entity.declare",
+      "title": "Messenger et al., NRL displacement damage dose methodology, Prog. Photovolt. 2001",
+      "version": "2001"
+    },
+    {
+      "entity_id": "src-spenvis-soldam",
+      "kind": "source",
+      "local_ref": "s17",
+      "locator": "https://www.spenvis.oma.be/help/background/soldam/soldam.html",
+      "op": "entity.declare",
+      "title": "SPENVIS/EQFLUX damage-equivalent fluence tooling documentation",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-sbir-stratfi-qual-cost",
+      "kind": "source",
+      "local_ref": "s18",
+      "locator": "https://www.sbir.gov/portfolio/234341",
+      "op": "entity.declare",
+      "title": "SBIR STRATFI award record: full AIAA S-111A + S-112A qualification program, $4.5M",
+      "version": "2022"
+    },
+    {
+      "entity_id": "src-nasa-glenn-combined-facility",
+      "kind": "source",
+      "local_ref": "s19",
+      "locator": "https://ntrs.nasa.gov/api/citations/19930006406/downloads/19930006406.pdf",
+      "op": "entity.declare",
+      "title": "NASA Glenn combined vacuum-thermal-cycling + VUV facility description",
+      "version": "1993"
+    },
+    {
+      "entity_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c2",
+      "op": "entity.declare",
+      "title": "R2 single-stressor inventory (Aug 2026): radiation evidence is strong (1 MeV electrons to 1e16 e/cm2 no loss; protons tolerated to ~1e13 p/cm2 with in-situ self-healing; failure at 3e14 p/cm2 via transport-layer breakdown); UV thin (800 h narrowband 365 nm max, no AM0-calibrated dose); ATOX nearly absent (one 120-min plasma study, not fluence-calibrated); LEO-range thermal cycling absent (widest tested -60/+80 C x 120 cycles vs required ~-120/+120 C x thousands)"
+    },
+    {
+      "entity_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c3",
+      "op": "entity.declare",
+      "title": "R2 qualification benchmark (Aug 2026): a credible 5-year LEO degradation model by incumbent practice requires DDD/equivalent-fluence reducibility of radiation data, mission-spectrum convolution (SAVANT/SPENVIS class), EOL prediction validated against flight data, and an S-111/S-112-class test matrix (~$4.5M, 1-2+ years per campaign); ECSS-E-ST-20-08C currently excludes thin-film cells entirely"
+    },
+    {
+      "entity_id": "surya-claim-r2-gap-shape-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c4",
+      "op": "entity.declare",
+      "title": "R2 gap shape (Aug 2026): the coupled-stressor gap decomposes into four fillable datasets - LEO-range thermal-vacuum cycling with IV monitoring; AM0-calibrated UV dose; ATOX fluence-calibrated exposure; and a combined in-situ campaign (radiation + thermal cycling + AM0 + vacuum). Combined-exposure facilities exist (NASA Glenn, MSFC, ESA/ESTEC, DLR) but none has published a perovskite PV campaign"
+    },
+    {
+      "entity_id": "surya-claim-r2-gap-map-2026-08",
+      "evidence_class": "evidence-backed",
+      "kind": "claim",
+      "local_ref": "c1",
+      "op": "entity.declare",
+      "title": "R2 gap map (Aug 2026): the coupled-stressor gap is real and total - no published ground study combines particle radiation with thermal cycling, and no 3+ space-stressor simultaneous perovskite experiment exists; combined-stressor data exists only as flight data without stressor attribution (MISSE 10-month, CubeSats ~100 days); the 2025-2026 review literature states this gap explicitly"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c1",
+      "target_id": "surya-direction-r2",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "relation_id": "rel:addresses-2e2ec7c7873726e8"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c2",
+      "target_id": "surya-direction-r2",
+      "source_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "relation_id": "rel:addresses-c8762ad14df491d4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c3",
+      "target_id": "surya-direction-r2",
+      "source_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "relation_id": "rel:addresses-852bf42fbd80293f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "c4",
+      "target_id": "surya-direction-r2",
+      "source_id": "surya-claim-r2-gap-shape-2026-08",
+      "relation_id": "rel:addresses-b4157da69db3d6de"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c2",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "relation_id": "rel:depends_on-1bf4a2510b73777d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c3",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "relation_id": "rel:depends_on-0fe98f6dececcf17"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "depends_on",
+      "source_ref": "c1",
+      "target_ref": "c4",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "surya-claim-r2-gap-shape-2026-08",
+      "relation_id": "rel:depends_on-86efaa6c97c688fe"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:refines",
+      "source_ref": "c1",
+      "target_id": "surya-claim-r2-readiness-baseline-2026-08",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "relation_id": "rel:suryarefines-5fa94cf774fb2b26"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s1",
+      "source_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "target_id": "src-duarte-2026-energies-review",
+      "relation_id": "rel:derived_from-51e1ec9fec65de2e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s2",
+      "source_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "target_id": "src-bush-2025-space-environment",
+      "relation_id": "rel:derived_from-25b63413476e96b7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s3",
+      "source_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "target_id": "src-seid-lang-2024-atox",
+      "relation_id": "rel:derived_from-1b4d0b0beb9f9579"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s4",
+      "source_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "target_id": "src-kim-2026-extreme-environments",
+      "relation_id": "rel:derived_from-ec168b58a58e3c0e"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c2",
+      "target_ref": "s5",
+      "source_id": "surya-claim-r2-single-stressor-inventory-2026-08",
+      "target_id": "src-kirmani-sellers-2025-joule",
+      "relation_id": "rel:derived_from-e67a019fb84b533d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s14",
+      "source_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "target_id": "src-aiaa-s111a-2014",
+      "relation_id": "rel:derived_from-fd1d5166bdee594b"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s15",
+      "source_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "target_id": "src-ecss-e-st-20-08c",
+      "relation_id": "rel:derived_from-10acc83794253d80"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s16",
+      "source_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "target_id": "src-messenger-2001-ddd",
+      "relation_id": "rel:derived_from-4ebf463c79a6d6df"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s17",
+      "source_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "target_id": "src-spenvis-soldam",
+      "relation_id": "rel:derived_from-c7de62c26c867336"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c3",
+      "target_ref": "s18",
+      "source_id": "surya-claim-r2-qualification-benchmark-2026-08",
+      "target_id": "src-sbir-stratfi-qual-cost",
+      "relation_id": "rel:derived_from-6f5639d974e2c0f7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s3",
+      "source_id": "surya-claim-r2-gap-shape-2026-08",
+      "target_id": "src-seid-lang-2024-atox",
+      "relation_id": "rel:derived_from-8d933f796ee05391"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s4",
+      "source_id": "surya-claim-r2-gap-shape-2026-08",
+      "target_id": "src-kim-2026-extreme-environments",
+      "relation_id": "rel:derived_from-95a4dd4754018b4d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s6",
+      "source_id": "surya-claim-r2-gap-shape-2026-08",
+      "target_id": "src-akylbayeva-2026-ijms",
+      "relation_id": "rel:derived_from-6cc48c94b169acc6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s9",
+      "source_id": "surya-claim-r2-gap-shape-2026-08",
+      "target_id": "src-demchyshyn-2019-vacuum-cycling",
+      "relation_id": "rel:derived_from-ac5fca6cfcec791f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c4",
+      "target_ref": "s19",
+      "source_id": "surya-claim-r2-gap-shape-2026-08",
+      "target_id": "src-nasa-glenn-combined-facility",
+      "relation_id": "rel:derived_from-3d16a87eafd41946"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s5",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-kirmani-sellers-2025-joule",
+      "relation_id": "rel:derived_from-56c8de0d06df3c8d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s6",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-akylbayeva-2026-ijms",
+      "relation_id": "rel:derived_from-03533b32e7234879"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s7",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-khenkin-2020-isos",
+      "relation_id": "rel:derived_from-229130a9e526a697"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s8",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-jiang-2023-nature-lab-field",
+      "relation_id": "rel:derived_from-e516ed1decffa0c4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s9",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-demchyshyn-2019-vacuum-cycling",
+      "relation_id": "rel:derived_from-37a56dd239f0699d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s10",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-nasa-misse-10months",
+      "relation_id": "rel:derived_from-47dcd48ee0bae05f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s11",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-nanosats-bigredsat1",
+      "relation_id": "rel:derived_from-d911b933e9de02ea"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s12",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-rit-cubesat-2026",
+      "relation_id": "rel:derived_from-8b299f92e22de7bf"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_ref": "c1",
+      "target_ref": "s13",
+      "source_id": "surya-claim-r2-gap-map-2026-08",
+      "target_id": "src-reb-2023-mapheus",
+      "relation_id": "rel:derived_from-bc4f6668b019aca6"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-r2-gap-map-2026-08",
+      "evidence": [
+        {
+          "locator": "Joule 2025, combined in situ stress testing section",
+          "paraphrase": "Radiation testing is usually conducted at ~1e-7 Torr and room temperature; realistic orbit adds temperature cycling, AM0 illumination, and AO simultaneously.",
+          "source_id": "src-kirmani-sellers-2025-joule"
+        },
+        {
+          "locator": "PubMed 42074102 abstract",
+          "paraphrase": "Stressors often act synergistically and are not detected by single-factor tests; standardized space-related test protocols remain insufficiently developed; proposes ISOS-T-Space and ISOS-LC-Space.",
+          "source_id": "src-akylbayeva-2026-ijms"
+        },
+        {
+          "locator": "Nano-Micro Lett. 2026 review",
+          "paraphrase": "Long-term operational data under the diverse and combined stressors present in actual space missions remain critically insufficient.",
+          "source_id": "src-kim-2026-extreme-environments"
+        },
+        {
+          "locator": "Nature 623, 313-318",
+          "paraphrase": "Combined light+heat significantly accelerates degradation or causes new problems absent when testing separately; >93% retained after 5030 h combined operation, 1000 thermal cycles at -40/+85 C.",
+          "source_id": "src-jiang-2023-nature-lab-field"
+        },
+        {
+          "locator": "Marshall Plan paper, JKU Linz",
+          "paraphrase": "The only device-level vacuum thermal cycling at MPP under illumination found: 6 cycles, 25 to -140 C; cells recover well.",
+          "source_id": "src-demchyshyn-2019-vacuum-cycling"
+        },
+        {
+          "locator": "NASA feature article",
+          "paraphrase": "10-month ISS MISSE exterior exposure: film stayed black, incurred damage >90% reversible under light back on Earth; stressors inseparable in flight data.",
+          "source_id": "src-nasa-misse-10months"
+        },
+        {
+          "locator": "Nanosats database + NASA CSLI final report",
+          "paraphrase": "Big Red Sat-1: 105 days LEO with perovskite panel, TRL 5 to 6 goal; performance data not yet published.",
+          "source_id": "src-nanosats-bigredsat1"
+        },
+        {
+          "locator": "RIT News 2026",
+          "paraphrase": "Kirmani-group perovskite cells operated for ~100 days on a CubeSat at ISS altitude with no breakdown.",
+          "source_id": "src-rit-cubesat-2026"
+        },
+        {
+          "locator": "Small 2024",
+          "paraphrase": "Only dedicated perovskite ATOX study: unencapsulated cells lost ~45% PCE in 120 min accelerated plasma; SiO-encapsulated retained >97%; not LEO-fluence calibrated.",
+          "source_id": "src-seid-lang-2024-atox"
+        },
+        {
+          "locator": "Energies 2026 review",
+          "paraphrase": "Dose inventory: electrons 1 MeV to 1e16 e/cm2 no deterioration; proton failure at 3e14 p/cm2 via transport-layer breakdown; UV max 800 h narrowband; widest thermal cycling -60/+80 C x 120.",
+          "source_id": "src-duarte-2026-energies-review"
+        },
+        {
+          "locator": "ANSI preview; ECSS-E-ST-20-08C Rev.1",
+          "paraphrase": "S-111A mandates radiation characterization (protons 1e10-1e13, electrons 1e13-1e16) plus sequential qual tests; ECSS PV standard explicitly excludes thin-film cell technologies.",
+          "source_id": "src-aiaa-s111a-2014"
+        },
+        {
+          "locator": "Prog. Photovolt. 2001; SPENVIS docs",
+          "paraphrase": "DDD/NIEL collapses multi-energy ground data to one remaining-power curve; flight-validated (Equator-S, 8.3-year dataset); ~3-4x qualification cost reduction.",
+          "source_id": "src-messenger-2001-ddd"
+        },
+        {
+          "locator": "SBIR.gov portfolio 234341",
+          "paraphrase": "A full AIAA S-111A + S-112A qualification program is a $4.5M, multi-year effort (STRATFI award covering pre-qual, cell qual, panel qual).",
+          "source_id": "src-sbir-stratfi-qual-cost"
+        },
+        {
+          "locator": "NTRS 19930006406",
+          "paraphrase": "NASA Glenn operates a purpose-built combined vacuum-thermal-cycling + VUV facility because LEO effects act synergistically; no published perovskite PV campaign.",
+          "source_id": "src-nasa-glenn-combined-facility"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "Three independent sweeps converge: the coupled-stressor gap is total and explicitly named by the 2025-2026 review literature; single-stressor evidence is strong on radiation, thin on UV, nearly absent on ATOX, absent at LEO thermal range. Known gaps in the sweep itself: MDPI full texts bot-blocked (some quotes from abstracts/snippets, flagged); Big Red Sat-1 and RHOK-SAT flight data still pending; no primary neutron study located; one vacuum-degradation study known only via review citation. None of these change the map's shape - they are pinned as perimeter, not hidden.",
+      "subject_id": "surya-claim-r2-gap-map-2026-08"
+    }
+  ],
+  "digest": "0a71d2cccd812bb38e6180b0097126897d34cd9ba2584aa81b40a93e808a43e6"
+}
