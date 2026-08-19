@@ -1,0 +1,37 @@
+{
+  "schema": "narada.worker.cognition_defaults.v1",
+  "version": 2,
+  "provider_cognition_defaults": {
+    "kimi-api": {
+      "low": {
+        "model": "kimi-k2.7-code",
+        "reasoning_effort": "low"
+      }
+    },
+    "codex-subscription": {
+      "low": {
+        "model": "gpt-5.6-luna",
+        "reasoning_effort": "low"
+      }
+    }
+  },
+  "effective_cognition_defaults": {
+    "low": {
+      "provider": "codex-subscription",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low"
+    },
+    "medium": {
+      "provider": null,
+      "model": null,
+      "reasoning_effort": null
+    },
+    "high": {
+      "provider": null,
+      "model": null,
+      "reasoning_effort": null
+    }
+  },
+  "updated_at": "2026-08-19T01:35:52.1763515Z",
+  "updated_by": "surya.resident"
+}

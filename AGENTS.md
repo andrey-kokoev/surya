@@ -86,6 +86,20 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
   yield, production throughput, or space qualification of substrate-free
   product. Rocket Lab/SolAero removes substrates without reuse; AZUR
   recycles Ge. Watch: MicroLink space-qualification follow-through.
+- **R5 in-space cell manufacturing**: gap map published at /r5-gap-map/
+  (graph event `ev-000000000011`, assessment
+  `surya-assessment-r5-gap-map-2026-08`, established-with-gap). Uniquely
+  leveraged and unclaimed: ~100× mass leverage of feedstock (30 W/g) over
+  SOTA arrays (40–225 W/kg); no funded in-space PV program exists (OSAM-1
+  cancelled at ~$2B, OSAM-2 concluded unflew; ISAM heritage is polymer
+  printing, ZBLAN, one ceramic demo). Precedents: Wake Shield MBE/CBE
+  GaAs films (1994–96, no complete device) and IKAROS a-Si on 7.5 µm
+  polyimide (~500 W, Earth-fabricated) — the two halves never combined.
+  Critical path: ground deposition-process demo at rate and quality on
+  membrane-class substrate; AO erosion pushes unprotected membranes out
+  of LEO ram; economics face Starship launch-cost and Starlink COTS-Si
+  pressure. Watch: Space Forge plasma work, Archinaut asset dispersal,
+  launch-cost trend.
 - **Closed (kill table, with reasons)**: space-unique non-PV variants —
   permanent source+sink thermal schemes, eclipse-cycle harvesting,
   thermoradiative laminates, tethers-as-generators, solar-pumped lasers.

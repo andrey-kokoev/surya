@@ -1,0 +1,244 @@
+---
+import Base from "../layouts/Base.astro";
+
+const leverage = [
+  ["Feedstock, launched", "Ultralight perovskite modules at 30.3 W/g demonstrated on Earth (Wu 2022) — cells are chemicals and microns of film", "~30,000 W/kg equivalent"],
+  ["State of practice arrays", "SOTA rigid/flexible arrays ~40 W/kg (Aerospace Corp 2018); Redwire ROSA roll-out 100–120 W/kg", "40–120 W/kg"],
+  ["Advanced projected arrays", "Cost/mass modeling of advanced technologies (Gaddy 2017)", "to ~225 W/kg"],
+  ["The gap", "Feedstock-to-array mass leverage if the coater itself is cheap and reusable", "~100×"],
+];
+
+const heritage = [
+  ["Wake Shield Facility (1994–96)", "The only in-space semiconductor deposition ever flown: 8 MBE/CBE source cells, 7 wafers, GaAs-family films grown on STS-60/69/80. Nearly carbon-free AlGaAs; ~10⁻¹⁰ Torr achieved behind the 3.7 m shield (theory promised 10⁻¹⁴). Never a complete device; the program ended with the Shuttle era."],
+  ["IKAROS (2010)", "The only ultralight cell-on-membrane ever flown: a-Si cells on 7.5 µm polyimide, 20 m diagonal sail, 307 kg, spin-deployed, ~500 W. Fabricated on Earth, survived the fairing — exactly what R5 wants to skip."],
+  ["ISAM missions", "OSAM-1 cancelled March 2024 at nearly $2B total cost; OSAM-2/Archinaut One concluded without flight. Actual in-space manufacturing heritage: polymer 3D printing, ZBLAN fiber draws (ISS, 2017–23), one Redwire ceramic demo. No PV anywhere in the portfolio."],
+  ["Adjacent thermal processing", "Space Forge generated >1000 °C plasma aboard ForgeStar-1 (June 2025) — high-temperature process control on orbit is being demonstrated, for semiconductors but not for deposition."],
+];
+
+const constraints = [
+  ["Atomic oxygen", "Kapton erosion yield 3.0×10⁻²⁴ cm³/atom (MISSE PEACE). Unprotected micron-scale polymer membranes are short-lived in LEO ram — R5 lives at high LEO/GEO, in wake, or behind coatings.", "shapes the orbit"],
+  ["Rate vs quality", "Record flexible CIGS on polymer (21.4%, Empa 2021) grows at 0.1–0.5 nm/s. A coater that must cover m²/minute accepts relaxed quality, or solves rate-quality co-optimization. The wedge is choosing the regime on purpose.", "shapes the process"],
+  ["Space resilience of the product", "Perovskite films stable through 10 months ISS exterior exposure (UC Merced 2023); quasi-2D ultrathin flexible perovskite cells radiation-stable (Putz 2026). The membrane-native cell materials tolerate the environment they'd be made in.", "supports the route"],
+];
+
+const economics = [
+  ["Launch cost", "Falcon 9 ~$3,000/kg LEO; rideshare $7,000/kg ($350k/50 kg SSO); Starship aspiration $100–1,000/kg. Falling launch cost is the headwind: it shrinks the mass leverage that is R5's whole case."],
+  ["Incumbent cell cost", "3J cells $50–100/W; a 20 W GaAs CubeSat panel runs €12,800 (~€640/W at panel level). Against that, Starlink flies COTS silicon at $0.20–0.50/W and builds ~70 satellites/week in Redmond — cost was never the cell for the volume player."],
+  ["Regime dependence", "R5 wins where mass and stowage dominate cost: very large arrays, GEO and beyond, deployables past fairing limits. It loses where launch is cheap and COTS silicon is good enough — which is Starlink's regime, and Starlink is eating the market."],
+];
+
+const sources = [
+  ["Strozier et al., Vacuum 64:119 (2001)", "Wake Shield Facility wake vacuum measurement and analysis", "https://doi.org/10.1016/S0042-207X(01)00383-9"],
+  ["Thompson et al., Quantum Sci. Technol. 8 014002 (2023)", "Ultracold atoms in space; WSF wake-vacuum heritage revisited", "https://arxiv.org/abs/2302.11548"],
+  ["University of Houston, space materials", "WSF project page; Cell Paver lunar PV concept", "https://cam.uh.edu/projects/space-materials"],
+  ["Mori et al., ISSFD (2009)", "IKAROS first solar power sail demonstration", "https://issfd.org/ISSFD_2009/AOCSI/Mori.pdf"],
+  ["Gunter's Space Page", "IKAROS mission record", "https://space.skyrocket.de/doc_sdat/ikaros.htm"],
+  ["de Groh et al., NASA/TM-2006-214482", "MISSE PEACE atomic oxygen erosion yields", "https://ntrs.nasa.gov/citations/20070002707"],
+  ["Empa (2021)", "Record 21.4% flexible CIGS on polymer film", "https://www.newswise.com/articles/empa-researchers-develop-thin-film-solar-cells-with-record-efficiency"],
+  ["Ramanujam & Singh, Prog. Mater. Sci. (2020)", "Flexible CIGS/CdTe/a-Si review — deposition rates", "https://www.sciencedirect.com/science/article/pii/S007964251930101X"],
+  ["Wu et al., Sci. China Mater. (2022)", "30.3 W/g ultralight flexible perovskite modules", "https://link.springer.com/article/10.1007/s40843-022-2075-7"],
+  ["UC Merced (2023)", "Perovskite films stable through 10-month MISSE exposure", "https://news.ucmerced.edu/news/2023/researchers-find-radiation-tolerant-material-space-solar-power-cells"],
+  ["Putz et al., Adv. Mater. (2026)", "Space-resistant quasi-2D ultrathin flexible perovskite cells", "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202520433"],
+  ["NASA (2024)", "OSAM-1 cancellation", "https://www.nasa.gov/news-release/nasa-cancels-on-orbit-servicing-assembly-and-manufacturing-1-project/"],
+  ["NASA", "OSAM-2 mission page — concluded without flight", "https://www.nasa.gov/mission/osam-2/"],
+  ["Quilty Space (2025)", "The full story of NASA's nearly $2B OSAM-1", "https://quiltyspace.com/research/"],
+  ["NASA InSPA (2022)", "In-space production applications; HiPIPS thin-film cell printing concept", "https://www.nasa.gov/wp-content/uploads/2022/05/harwood.pdf"],
+  ["NewSpace Economy (2026)", "ZBLAN fiber in-space manufacturing case study", "https://newspaceeconomy.ca/2026/02/26/zblan-glass-fiber-in-space-manufacturing-a-case-study/"],
+  ["GlobalInfoResearch / Space Forge (2025)", "ForgeStar-1 >1000 °C plasma on orbit", "https://www.globalinforesearch.com/news/space-forge-successfully-generates-plasma-on-forgestar-1-1064166"],
+  ["GeekWire (2026)", "Starlink V2 Mini production cadence, Redmond", "https://www.geekwire.com/2026/spacex-readies-rebound-v2-mini-satellite-production-starlink/"],
+  ["SpaceX", "SmallSat rideshare pricing", "https://www.spacex.com/rideshare/"],
+  ["Orbital Radar (2026)", "Cost per kg to orbit, 1960–2026", "https://orbitalradar.com/launch-cost-2026/"],
+  ["Forethought Foundation (2026)", "Space data centers; space cell vs COTS silicon $/W", "https://www.forethought.org/research/space-data-centers"],
+  ["SatNow / Redwire", "ROSA roll-out solar array specifications", "https://www.satnow.com/products/solar-array-redwire-space-94-3517-06-06-2024"],
+  ["Gaddy et al. (2017)", "Cost and mass modeling of advanced space solar array technologies", "https://ntrs.nasa.gov/citations/20170010684"],
+  ["Aerospace Corp (2018)", "High power solar electric propulsion — SOTA array W/kg", "https://aerospace.org/sites/default/files/2022-08/Dorfman_0959.pdf"],
+  ["NanoAvionics", "CubeSat GaAs solar panel pricing", "https://nanoavionics.com/cubesat-components/cubesat-solar-panels-dhaesa/"],
+];
+---
+
+<Base
+  title="R5 gap map: in-space cell manufacturing — Surya"
+  description="The in-space thin-film PV manufacturing gap, mapped: the Wake Shield and IKAROS precedents, the mass-leverage math, the weak ISAM incumbent, and the economic bar. Sweep executed August 2026."
+  path="/r5-gap-map/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    .finding {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .finding b { color: var(--accent); }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; white-space: nowrap; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R5: in-space cell manufacturing, mapped</h1>
+      <p class="lede">
+        Sweep executed 18 August 2026. The finding: the direction is uniquely
+        leveraged and unclaimed. Nobody makes photovoltaics in space, nobody
+        is funded to, and the incumbent ISAM program that would have built
+        the adjacent capability was cancelled at nearly $2B spent. The open
+        critical path is a deposition-process demonstration at rate and
+        quality on orbit — a 30-year-old molecular-beam precedent is the
+        entire flight heritage.
+      </p>
+
+      <h2>Why this map exists</h2>
+      <p>
+        R5 is the long game on the directions page: deposit thin-film cells
+        directly onto deployed membranes in orbit, escaping substrate,
+        coverglass, and launch mass in one move. "Nobody else is motivated
+        to build this" is a claim — this page checks it, prices the
+        leverage, and names what is actually missing.
+      </p>
+
+      <h2>The leverage math</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Line</th><th>Basis</th><th>Specific power</th></tr>
+        </thead>
+        <tbody>
+          {leverage.map(([line, basis, num]) => (
+            <tr>
+              <td>{line}</td>
+              <td>{basis}</td>
+              <td>{num}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p>
+        <span class="class">established</span> Two orders of magnitude of
+        mass leverage sit between launched feedstock and launched arrays.
+        That is the largest single lever in the program's portfolio — larger
+        than substrate liberation (R3), which fights for ~3× on the same
+        axis. The catch is the coater: the leverage survives only if the
+        deposition hardware is cheap, reusable, and does not need the array
+        shipped back.
+      </p>
+
+      <h2>Flight heritage and the empty chair</h2>
+      <ul>
+        {heritage.map(([name, note]) => (
+          <li><b>{name}</b> — {note}</li>
+        ))}
+      </ul>
+      <p>
+        <span class="class">established</span> The two halves of R5 have each
+        flown separately, three decades apart: deposit a semiconductor film
+        in orbit (Wake Shield, 1994–96) and fly a complete ultralight cell
+        on a membrane (IKAROS, 2010). Nobody has combined them — grown the
+        cell on the membrane in space. And nobody is trying: the ISAM
+        portfolio that would naturally own the mission profile contains no
+        PV manufacturing at all.
+      </p>
+
+      <h2>Environment and process constraints</h2>
+      <ul>
+        {constraints.map(([name, note, tag]) => (
+          <li><b>{name}</b> ({tag}) — {note}</li>
+        ))}
+      </ul>
+
+      <h2>The economic bar</h2>
+      <ul>
+        {economics.map(([name, note]) => (
+          <li><b>{name}</b> — {note}</li>
+        ))}
+      </ul>
+      <p class="finding">
+        <b>The honest tension:</b> R5's case strengthens with array size and
+        distance (huge GEO platforms, deep-space, fairing-limited
+        deployables) and weakens with every Starship milestone. The
+        direction is a bet that very-large-structure economics arrive before
+        very-cheap-launch economics eat them. The Starship headwind is real
+        but bounded: at any launch price, shipping 1 kg of feedstock instead
+        of 100 kg of array is a 99 kg saving — the question is whether the
+        coater's amortized mass and operations give it back.
+      </p>
+
+      <h2>What is actually missing</h2>
+      <p>
+        <span class="class">established-with-gap</span> The gap decomposes
+        into four items, in dependency order:
+        (1) <b>a deposition-process demo</b> — rate and quality in
+        uncontrolled vacuum on a membrane-class substrate, on the ground
+        first; the WSF precedent says vacuum quality is achievable and the
+        rate-quality literature says the regime must be chosen on purpose;
+        (2) <b>contamination control</b> — the coater and the host platform
+        must not poison each other; WSF's own history (10⁻¹⁰ Torr achieved
+        vs 10⁻¹⁴ promised) is the cautionary dataset;
+        (3) <b>the membrane environment answer</b> — orbit selection or
+        coatings that keep a micron-scale substrate alive against atomic
+        oxygen;
+        (4) <b>the mission profile</b> — repair and re-coat as a service,
+        which is an ISAM rendezvous problem that no living program is
+        staffed to fly.
+      </p>
+
+      <h2>What this changes</h2>
+      <p>
+        R5 stays far-term, but it is no longer a slogan: the leverage is
+        quantified (~100×), the empty chair is verified (no funded in-space
+        PV program exists), and the critical path is a ground deposition
+        demo, not a flight. The cheap near-term moves: track Space Forge's
+        plasma work and any Archinaut asset dispersal for acquirable
+        capability; watch perovskite membrane flight results from the R2
+        perimeter (they double as R5 feedstock-material heritage); and keep
+        the launch-cost trend on the watch list, because it is the one
+        external variable that can kill the direction.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Four-track sweep (deposition precedents, membrane flight heritage,
+        ISAM landscape, economics), 25 sources, admitted to the Surya
+        epistemic graph as event <code>ev-000000000011</code> with
+        assessment <code>surya-assessment-r5-gap-map-2026-08</code>,
+        judgment <b>established-with-gap</b>. Sweep-level gaps, flagged
+        honestly: MicroLink and Redwire deposition-rate disclosures were not
+        obtained; WSF contamination analyses beyond the project page were
+        not reviewed; the ForgeStar-1 plasma result is a secondary source;
+        launch prices are list prices, not contract prices. The sweep was
+        executed in-session because the delegation-worker surface has no
+        network access — recorded as method, not hidden.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

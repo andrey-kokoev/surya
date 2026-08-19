@@ -1,0 +1,649 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_def33327-f973-4159-82af-f77fd29010fd",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_direct_instruction",
+    "summary": "Operator: go on R5 gap map; encode sweep findings in epistemic graph with extension relations surya:supports where needed."
+  },
+  "idempotency_key": "auto-proposal-38242133031eb91fc239caa8",
+  "expected_ledger_head": "0c7f32482315888764d156551a53cf5273f0351c1614eae117d24fbee745145a",
+  "created_at": "2026-08-19T02:00:30.9002458Z",
+  "content_fingerprint": "38242133031eb91fc239caa89a457b77efac3990d0506e28be5c6322216b30d2",
+  "operations": [
+    {
+      "entity_id": "surya-problem-r5-in-space-manufacturing",
+      "kind": "problem",
+      "local_ref": "problem-r5",
+      "op": "entity.declare",
+      "title": "R5 gap map: in-space cell manufacturing — what is missing to make thin-film cells at final orbit?"
+    },
+    {
+      "entity_id": "src-strozier-2001-wake-vacuum",
+      "kind": "source",
+      "locator": "DOI:10.1016/S0042-207X(01)00383-9",
+      "op": "entity.declare",
+      "title": "Strozier et al., Wake vacuum measurement and analysis for the Wake Shield Facility free flying platform, Vacuum 64:119-144 (2001)",
+      "version": "2001"
+    },
+    {
+      "entity_id": "src-thompson-2023-ultracold",
+      "kind": "source",
+      "locator": "https://arxiv.org/abs/2302.11548",
+      "op": "entity.declare",
+      "title": "Thompson et al., The path to scalable quantum technologies with ultracold atoms in space, Quantum Sci. Technol. 8 014002 (2023)",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-uh-wsf-page",
+      "kind": "source",
+      "locator": "https://cam.uh.edu/projects/space-materials",
+      "op": "entity.declare",
+      "title": "University of Houston: Space materials — Wake Shield Facility and Cell Paver",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-mori-2009-ikaros",
+      "kind": "source",
+      "locator": "https://issfd.org/ISSFD_2009/AOCSI/Mori.pdf",
+      "op": "entity.declare",
+      "title": "Mori et al., First Solar Power Sail Demonstration by IKAROS, ISSFD 2009",
+      "version": "2009"
+    },
+    {
+      "entity_id": "src-gunter-ikaros",
+      "kind": "source",
+      "locator": "https://space.skyrocket.de/doc_sdat/ikaros.htm",
+      "op": "entity.declare",
+      "title": "Gunter's Space Page: IKAROS",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-degroh-2006-misse",
+      "kind": "source",
+      "locator": "https://ntrs.nasa.gov/citations/20070002707",
+      "op": "entity.declare",
+      "title": "de Groh et al., MISSE PEACE polymers atomic oxygen erosion experiment (NASA/TM-2006-214482)",
+      "version": "2006"
+    },
+    {
+      "entity_id": "src-empa-2021-cigs",
+      "kind": "source",
+      "locator": "https://www.newswise.com/articles/empa-researchers-develop-thin-film-solar-cells-with-record-efficiency",
+      "op": "entity.declare",
+      "title": "Empa: record 21.4% flexible CIGS solar cell on polymer film (2021)",
+      "version": "2021"
+    },
+    {
+      "entity_id": "src-ramanujam-2020-review",
+      "kind": "source",
+      "locator": "https://www.sciencedirect.com/science/article/pii/S007964251930101X",
+      "op": "entity.declare",
+      "title": "Ramanujam and Singh, Flexible CIGS, CdTe and a-Si:H thin film solar cells: A review, Prog. Mater. Sci. (2020)",
+      "version": "2020"
+    },
+    {
+      "entity_id": "src-wu-2022-perovskite",
+      "kind": "source",
+      "locator": "https://link.springer.com/article/10.1007/s40843-022-2075-7",
+      "op": "entity.declare",
+      "title": "Wu et al., A new record: 30 W/g ultralight flexible perovskite solar modules, Sci. China Mater. (2022)",
+      "version": "2022"
+    },
+    {
+      "entity_id": "src-ucmerced-2023-perovskite",
+      "kind": "source",
+      "locator": "https://news.ucmerced.edu/news/2023/researchers-find-radiation-tolerant-material-space-solar-power-cells",
+      "op": "entity.declare",
+      "title": "UC Merced: perovskite films stable after 10 months on ISS (MISSE) (2023)",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-putz-2026-adma",
+      "kind": "source",
+      "locator": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202520433",
+      "op": "entity.declare",
+      "title": "Putz et al., Space-Resistant Quasi-2D Perovskite Ultrathin Flexible Solar Cells, Adv. Mater. (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-nasa-osam1-2024",
+      "kind": "source",
+      "locator": "https://www.nasa.gov/news-release/nasa-cancels-on-orbit-servicing-assembly-and-manufacturing-1-project/",
+      "op": "entity.declare",
+      "title": "NASA cancels OSAM-1 project (2024-03-01)",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-nasa-osam2",
+      "kind": "source",
+      "locator": "https://www.nasa.gov/mission/osam-2/",
+      "op": "entity.declare",
+      "title": "NASA OSAM-2 (Archinaut One) mission page — project concluded without flight",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-quilty-osam1-2025",
+      "kind": "source",
+      "locator": "https://quiltyspace.com/research/",
+      "op": "entity.declare",
+      "title": "Quilty Space: The Full Story of NASA's Nearly $2B OSAM-1 Satellite Servicing Project (2025)",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-nasa-inspa-2022",
+      "kind": "source",
+      "locator": "https://www.nasa.gov/wp-content/uploads/2022/05/harwood.pdf",
+      "op": "entity.declare",
+      "title": "NASA InSPA overview (2022) — in-space production applications incl. HiPIPS thin-film cell printing concept",
+      "version": "2022"
+    },
+    {
+      "entity_id": "src-nse-zblan-2026",
+      "kind": "source",
+      "locator": "https://newspaceeconomy.ca/2026/02/26/zblan-glass-fiber-in-space-manufacturing-a-case-study/",
+      "op": "entity.declare",
+      "title": "NewSpace Economy: ZBLAN glass fiber in-space manufacturing case study (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-forgestar-2025",
+      "kind": "source",
+      "locator": "https://www.globalinforesearch.com/news/space-forge-successfully-generates-plasma-on-forgestar-1-1064166",
+      "op": "entity.declare",
+      "title": "Space Forge generates >1000C plasma aboard ForgeStar-1 (2025)",
+      "version": "2025"
+    },
+    {
+      "entity_id": "src-geekwire-2026-starlink",
+      "kind": "source",
+      "locator": "https://www.geekwire.com/2026/spacex-readies-rebound-v2-mini-satellite-production-starlink/",
+      "op": "entity.declare",
+      "title": "GeekWire: SpaceX Starlink V2 Mini production cadence and IPO filing details (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-spacex-rideshare",
+      "kind": "source",
+      "locator": "https://www.spacex.com/rideshare/",
+      "op": "entity.declare",
+      "title": "SpaceX SmallSat Rideshare pricing",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-orbitalradar-2026-launch",
+      "kind": "source",
+      "locator": "https://orbitalradar.com/launch-cost-2026/",
+      "op": "entity.declare",
+      "title": "Orbital Radar: cost per kg to orbit 1960-2026",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-forethought-2026-datacenters",
+      "kind": "source",
+      "locator": "https://www.forethought.org/research/space-data-centers",
+      "op": "entity.declare",
+      "title": "Forethought Foundation: Space data centers could beat Earth on cost within 10 years (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-redwire-rosa",
+      "kind": "source",
+      "locator": "https://www.satnow.com/products/solar-array-redwire-space-94-3517-06-06-2024",
+      "op": "entity.declare",
+      "title": "SatNow: Redwire ROSA roll-out solar array specifications",
+      "version": "2024"
+    },
+    {
+      "entity_id": "src-gaddy-2017-array",
+      "kind": "source",
+      "locator": "https://ntrs.nasa.gov/citations/20170010684",
+      "op": "entity.declare",
+      "title": "Gaddy et al., Cost and mass modeling of advanced space solar array technologies (2017)",
+      "version": "2017"
+    },
+    {
+      "entity_id": "src-aerospace-2018-hpsep",
+      "kind": "source",
+      "locator": "https://aerospace.org/sites/default/files/2022-08/Dorfman_0959.pdf",
+      "op": "entity.declare",
+      "title": "Aerospace Corp: High Power Solar Electric Propulsion for Future NASA Missions (2018)",
+      "version": "2018"
+    },
+    {
+      "entity_id": "src-nanoavionics-gaas",
+      "kind": "source",
+      "locator": "https://nanoavionics.com/cubesat-components/cubesat-solar-panels-dhaesa/",
+      "op": "entity.declare",
+      "title": "NanoAvionics CubeSat GaAs solar panel (20 W, EUR 12,800)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "surya-claim-r5-space-deposition-precedent",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Wake Shield Facility remains the only in-space semiconductor deposition precedent: MBE/CBE GaAs-family film growth with dramatically reduced contamination; never a complete cell, program ended with Shuttle era"
+    },
+    {
+      "entity_id": "surya-claim-r5-cell-on-membrane-flown",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "A complete ultralight cell has been fabricated on Earth and flown on a membrane: IKAROS a-Si on 7.5-micron polyimide, ~500 W"
+    },
+    {
+      "entity_id": "surya-claim-r5-ao-limits-leo",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Atomic oxygen erosion (Kapton yield ~3.0e-24 cm3/atom) makes unprotected micron-scale polymer membranes short-lived in LEO ram, pushing in-space manufacturing to GEO/high orbits or requiring protective coatings"
+    },
+    {
+      "entity_id": "surya-claim-r5-rate-quality-tension",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Record flexible thin-film cells (21.4% CIGS on polymer) are produced at low deposition rates (~0.1-0.5 nm/s); the R5 in-space wedge must accept relaxed quality or solve rate-quality co-optimization"
+    },
+    {
+      "entity_id": "surya-claim-r5-feedstock-leverage",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Mass leverage for on-orbit fabrication is ~100x: feedstock at 30 W/g vs state-of-art arrays at 40-225 W/kg"
+    },
+    {
+      "entity_id": "surya-claim-r5-isam-weak",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "ISAM is a weak incumbent for in-space PV manufacturing: OSAM-1 cancelled, OSAM-2 concluded without flight; in-space manufacturing heritage is confined to polymer printing, ZBLAN fiber draws, and a ceramic demo"
+    },
+    {
+      "entity_id": "surya-claim-r5-perovskite-space-resilient",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Perovskite thin films show strong space-environment resilience (10-month ISS exposure stable; rad-stable quasi-2D ultrathin flexible cells), strengthening the coater-on-membrane route"
+    },
+    {
+      "entity_id": "surya-claim-r5-economics-bar",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "The economic bar for R5 is high and regime-dependent: launch $3,000-7,000/kg with Starship threatening <$1,000/kg; incumbent space cells at $50-640/W while Starlink COTS silicon at $0.20-0.50/W under extreme cadence"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "problem-r5",
+      "target_id": "surya-chokepoint-germanium",
+      "source_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-5a7f9db443d72e54"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-space-deposition-precedent",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-412cd0febd1435e4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-space-deposition-precedent",
+      "target_id": "src-strozier-2001-wake-vacuum",
+      "relation_id": "rel:derived_from-d46361772ab04bf5"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-space-deposition-precedent",
+      "target_id": "src-thompson-2023-ultracold",
+      "relation_id": "rel:derived_from-9c51e4d2830f94b4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-space-deposition-precedent",
+      "target_id": "src-uh-wsf-page",
+      "relation_id": "rel:derived_from-bb5d5fea6ec3e92a"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-cell-on-membrane-flown",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-fbad6338b086bf03"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-cell-on-membrane-flown",
+      "target_id": "src-mori-2009-ikaros",
+      "relation_id": "rel:derived_from-bfa50a0f9963262b"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-cell-on-membrane-flown",
+      "target_id": "src-gunter-ikaros",
+      "relation_id": "rel:derived_from-62c1af68863597b6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-ao-limits-leo",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-48aad21d2125535c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-ao-limits-leo",
+      "target_id": "src-degroh-2006-misse",
+      "relation_id": "rel:derived_from-24cd75ad155d48dc"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-rate-quality-tension",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-4e967f10ff42d59c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-rate-quality-tension",
+      "target_id": "src-empa-2021-cigs",
+      "relation_id": "rel:derived_from-a73d78ff3ccadb29"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-rate-quality-tension",
+      "target_id": "src-ramanujam-2020-review",
+      "relation_id": "rel:derived_from-b270a4ae88d2297f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-feedstock-leverage",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-af31ae0a56386fb4"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-feedstock-leverage",
+      "target_id": "src-wu-2022-perovskite",
+      "relation_id": "rel:derived_from-810f14bc83b67c7d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-feedstock-leverage",
+      "target_id": "src-redwire-rosa",
+      "relation_id": "rel:derived_from-2d76a880dddfb1c8"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-feedstock-leverage",
+      "target_id": "src-gaddy-2017-array",
+      "relation_id": "rel:derived_from-7b454f3df36f55d7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-feedstock-leverage",
+      "target_id": "src-aerospace-2018-hpsep",
+      "relation_id": "rel:derived_from-ba9b51e9fc57c035"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-c56c36ada661c862"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_id": "src-nasa-osam1-2024",
+      "relation_id": "rel:derived_from-f272603525426c05"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_id": "src-nasa-osam2",
+      "relation_id": "rel:derived_from-4dbe642ed3d4236c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_id": "src-quilty-osam1-2025",
+      "relation_id": "rel:derived_from-8687dc68485f8b2d"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_id": "src-nse-zblan-2026",
+      "relation_id": "rel:derived_from-de0d18ba708ae50c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_id": "src-forgestar-2025",
+      "relation_id": "rel:derived_from-41a538ef33df856c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:supports",
+      "source_id": "surya-claim-r5-isam-weak",
+      "target_id": "src-founding-article",
+      "relation_id": "rel:suryasupports-89de51370d41dfa7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-perovskite-space-resilient",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-4d9601bd04298611"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-perovskite-space-resilient",
+      "target_id": "src-ucmerced-2023-perovskite",
+      "relation_id": "rel:derived_from-23bf473fe40066ff"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-perovskite-space-resilient",
+      "target_id": "src-putz-2026-adma",
+      "relation_id": "rel:derived_from-5ed3e2466b83bb0c"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_ref": "problem-r5",
+      "target_id": "surya-problem-r5-in-space-manufacturing",
+      "relation_id": "rel:addresses-1f8ba5be20723b2f"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_id": "src-geekwire-2026-starlink",
+      "relation_id": "rel:derived_from-294f80515a499e13"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_id": "src-spacex-rideshare",
+      "relation_id": "rel:derived_from-bc0d0fc1a5f9c338"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_id": "src-orbitalradar-2026-launch",
+      "relation_id": "rel:derived_from-d581afc7d514baa6"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_id": "src-forethought-2026-datacenters",
+      "relation_id": "rel:derived_from-c6bd79d01c35a34b"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_id": "src-nanoavionics-gaas",
+      "relation_id": "rel:derived_from-943b080ed571f332"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r5-economics-bar",
+      "target_id": "src-nasa-inspa-2022",
+      "relation_id": "rel:derived_from-181b82f28f030b8a"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-r5-gap-map-2026-08",
+      "evidence": [
+        {
+          "locator": "DOI:10.1016/S0042-207X(01)00383-9",
+          "paraphrase": "WSF flew 3 times; achieved ~1e-10 Torr behind shield; GaAs film growth with unprecedented purity",
+          "source_id": "src-strozier-2001-wake-vacuum"
+        },
+        {
+          "locator": "https://cam.uh.edu/projects/space-materials",
+          "paraphrase": "WSF used 8 MBE/CBE cells and 7 wafers; nearly carbon-free AlGaAs; ended with Shuttle era; no complete device",
+          "source_id": "src-uh-wsf-page"
+        },
+        {
+          "locator": "https://issfd.org/ISSFD_2009/AOCSI/Mori.pdf",
+          "paraphrase": "IKAROS: a-Si cells on 7.5 um polyimide sail, almost 500 W generated",
+          "source_id": "src-mori-2009-ikaros"
+        },
+        {
+          "locator": "https://ntrs.nasa.gov/citations/20070002707",
+          "paraphrase": "Kapton H AO erosion yield 3.0e-24 cm3/atom on MISSE",
+          "source_id": "src-degroh-2006-misse"
+        },
+        {
+          "locator": "https://www.newswise.com/articles/empa-researchers-develop-thin-film-solar-cells-with-record-efficiency",
+          "paraphrase": "21.4% record flexible CIGS on polymer film",
+          "source_id": "src-empa-2021-cigs"
+        },
+        {
+          "locator": "https://www.sciencedirect.com/science/article/pii/S007964251930101X",
+          "paraphrase": "CIGS absorber deposition at 0.1-0.5 nm/s typical",
+          "source_id": "src-ramanujam-2020-review"
+        },
+        {
+          "locator": "https://link.springer.com/article/10.1007/s40843-022-2075-7",
+          "paraphrase": "30.3 W/g ultralight flexible perovskite modules",
+          "source_id": "src-wu-2022-perovskite"
+        },
+        {
+          "locator": "https://www.satnow.com/products/solar-array-redwire-space-94-3517-06-06-2024",
+          "paraphrase": "ROSA arrays at 100-120 W/kg",
+          "source_id": "src-redwire-rosa"
+        },
+        {
+          "locator": "https://ntrs.nasa.gov/citations/20170010684",
+          "paraphrase": "Advanced arrays projected to 225 W/kg",
+          "source_id": "src-gaddy-2017-array"
+        },
+        {
+          "locator": "https://aerospace.org/sites/default/files/2022-08/Dorfman_0959.pdf",
+          "paraphrase": "SOTA arrays ~40 W/kg (2018)",
+          "source_id": "src-aerospace-2018-hpsep"
+        },
+        {
+          "locator": "https://www.nasa.gov/news-release/nasa-cancels-on-orbit-servicing-assembly-and-manufacturing-1-project/",
+          "paraphrase": "OSAM-1 cancelled March 2024",
+          "source_id": "src-nasa-osam1-2024"
+        },
+        {
+          "locator": "https://quiltyspace.com/research/",
+          "paraphrase": "OSAM-1 total cost nearly $2B",
+          "source_id": "src-quilty-osam1-2025"
+        },
+        {
+          "locator": "https://www.nasa.gov/mission/osam-2/",
+          "paraphrase": "OSAM-2/Archinaut One concluded without flight",
+          "source_id": "src-nasa-osam2"
+        },
+        {
+          "locator": "https://www.globalinforesearch.com/news/space-forge-successfully-generates-plasma-on-forgestar-1-1064166",
+          "paraphrase": "ForgeStar-1 generated >1000C plasma on orbit June 2025",
+          "source_id": "src-forgestar-2025"
+        },
+        {
+          "locator": "https://newspaceeconomy.ca/2026/02/26/zblan-glass-fiber-in-space-manufacturing-a-case-study/",
+          "paraphrase": "ZBLAN fiber draws on ISS 2017-2023 are the main in-space manufacturing heritage",
+          "source_id": "src-nse-zblan-2026"
+        },
+        {
+          "locator": "https://news.ucmerced.edu/news/2023/researchers-find-radiation-tolerant-material-space-solar-power-cells",
+          "paraphrase": "Perovskite films stable after 10 months on ISS exterior",
+          "source_id": "src-ucmerced-2023-perovskite"
+        },
+        {
+          "locator": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202520433",
+          "paraphrase": "Quasi-2D ultrathin flexible perovskite cells are radiation stable",
+          "source_id": "src-putz-2026-adma"
+        },
+        {
+          "locator": "https://www.spacex.com/rideshare/",
+          "paraphrase": "Rideshare $350k/50kg = $7,000/kg to SSO",
+          "source_id": "src-spacex-rideshare"
+        },
+        {
+          "locator": "https://www.geekwire.com/2026/spacex-readies-rebound-v2-mini-satellite-production-starlink/",
+          "paraphrase": "Starlink building ~70 satellites/week in Redmond",
+          "source_id": "src-geekwire-2026-starlink"
+        },
+        {
+          "locator": "https://www.forethought.org/research/space-data-centers",
+          "paraphrase": "3J cells $50-100/W vs Starlink COTS silicon $0.20-0.50/W",
+          "source_id": "src-forethought-2026-datacenters"
+        },
+        {
+          "locator": "https://nanoavionics.com/cubesat-components/cubesat-solar-panels-dhaesa/",
+          "paraphrase": "20 W GaAs panel at EUR 12,800 = ~EUR 640/W panel level",
+          "source_id": "src-nanoavionics-gaas"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "R5 (in-space thin-film PV manufacturing) is uniquely leveraged and unclaimed: no funded program makes PV in space (OSAM-1 cancelled ~$2B, OSAM-2 concluded, heritage is polymer printing/ZBLAN/ceramic), mass leverage vs SOTA arrays is ~100x, and perovskite/CIGS-on-polymer resilience is demonstrated. Critical open path: deposition process demo at rate and quality on orbit (WSF MBE precedent is 30 years old and made no device); AO limits LEO membranes; economics face Starship launch-cost and Starlink COTS-silicon pressure.",
+      "subject_id": "surya-problem-r5-in-space-manufacturing"
+    },
+    {
+      "interval_end": "2026-08-19",
+      "interval_start": "2026-08-18",
+      "method": "4-track in-session web sweep (worker delegation MCP could not execute research: k2.7 not provisioned in intelligence registry, workers network-denied and repo-read-only). Tracks: (1) in-space deposition precedents and vacuum quality, (2) cell-on-membrane flight heritage and environment limits, (3) ISAM competitive landscape, (4) economics and cadence.",
+      "op": "sweep.record",
+      "result": "8 claims declared, 25 sources registered, 1 problem mapped to chokepoint-germanium, assessment established-with-gap recorded. Unverified/open: MicroLink and Redwire deposition-rate disclosures; any funded in-space PV deposition program (none found); WSF contamination analyses beyond project page; pricing for dedicated vs rideshare at 2026 cadence.",
+      "sweep_id": "surya-sweep-r5-2026-08-18"
+    }
+  ],
+  "digest": "94d0b3e7c55c4dd902873aa676b83104e930a5e91aa514cfc8b7fc68b46f86fe"
+}
