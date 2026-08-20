@@ -1,0 +1,353 @@
+{
+  "schema": "narada.epistemic.proposal.v1",
+  "proposal_id": "ep_53a56a11-8fd9-4812-a5be-bd9c8b3e9ee1",
+  "status": "submitted",
+  "actor": "surya.resident",
+  "authority_basis": {
+    "kind": "operator_direct_instruction",
+    "summary": "Operator directed the full surya research-program attack; task #7 (R6 gap map) claimed and executed by surya.resident"
+  },
+  "idempotency_key": "auto-proposal-191dff349c1d51487facfbbf",
+  "expected_ledger_head": "2189abb997eb6274e15bc13938941bf0e8790626b7a78770ea22e4dfbd166ad0",
+  "created_at": "2026-08-20T02:02:43.0645379Z",
+  "content_fingerprint": "191dff349c1d51487facfbbf82cce93154082160da6fe3ea681e89565fdda94e",
+  "operations": [
+    {
+      "entity_id": "surya-problem-r6-system-architecture",
+      "kind": "problem",
+      "local_ref": "problem-r6",
+      "op": "entity.declare",
+      "title": "R6 gap map: system architecture as research — ISCR integration, high-voltage arrays, panel standardization, qualification economics"
+    },
+    {
+      "entity_id": "src-gaalema-2026-iscr",
+      "kind": "source",
+      "locator": "https://arxiv.org/abs/2604.07760",
+      "op": "entity.declare",
+      "title": "Gaalema, Indyk & Staley, Reduced-Mass Orbital AI Inference via Integrated Solar, Compute, and Radiator Panels (ISCR), arXiv April 2026",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-supercomputing-2026-sophia",
+      "kind": "source",
+      "locator": "https://www.supercomputing.news/emerging/sophia-space-orbital-data-center-patent-radiator-area",
+      "op": "entity.declare",
+      "title": "Supercomputing News, Sophia Space orbital data center bet on radiator area; notes ISCR preprint is not peer reviewed (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-ferguson-2002-hv-arrays",
+      "kind": "source",
+      "locator": "https://ntrs.nasa.gov/api/citations/20030022705/downloads/20030022705.pdf",
+      "op": "entity.declare",
+      "title": "Ferguson et al., High Voltage Space Solar Arrays, IAC-02 — ISS 160 V decision basis (NTRS 20030022705)",
+      "version": "2002"
+    },
+    {
+      "entity_id": "src-nasa-2012-direct-drive",
+      "kind": "source",
+      "locator": "https://ntrs.nasa.gov/api/citations/20120000068/downloads/20120000068.pdf",
+      "op": "entity.declare",
+      "title": "NASA NTRS 20120000068, High Power SEP vehicles for human exploration — 300 V direct drive vs 4,000 A distribution (2012)",
+      "version": "2012"
+    },
+    {
+      "entity_id": "src-schneider-d2het",
+      "kind": "source",
+      "locator": "https://www.spis.org/archives/projects/spine/home/tools/sctc/VIIIth/7939c84ac0a8001400532b174054837c/8th_High_Voltage_Solar_Array_Testing_for_a_Direct_Driv_22.pdf",
+      "op": "entity.declare",
+      "title": "Schneider et al., High Voltage Solar Array Testing for a Direct Drive Hall Thruster (D2HET), 8th Spacecraft Charging Technology Conference",
+      "version": "2003"
+    },
+    {
+      "entity_id": "src-leo-arcing-spine",
+      "kind": "source",
+      "locator": "https://www.spis.org/archives/projects/spine/home/tools/sctc/VIIIth/793596cac0a800140051d078665c1a25/8th_Degradation_of_High_Voltage_Solar_Array_Due_to_Arc_41.pdf",
+      "op": "entity.declare",
+      "title": "Degradation of High Voltage Solar Array Due to Arcing in LEO Plasma Environment, 8th Spacecraft Charging Technology Conference",
+      "version": "2003"
+    },
+    {
+      "entity_id": "src-edda-2022-directdrive",
+      "kind": "source",
+      "locator": "https://edda-h2020.eu/wp-content/uploads/2022/09/SP2022_EDDA_test-results.pdf",
+      "op": "entity.declare",
+      "title": "EDDA H2020, Direct-drive spacecraft power test results (2022)",
+      "version": "2022"
+    },
+    {
+      "entity_id": "src-semianalysis-2026-datacenters",
+      "kind": "source",
+      "locator": "https://newsletter.semianalysis.com/p/to-boldly-go-the-case-for-space-datacenters",
+      "op": "entity.declare",
+      "title": "SemiAnalysis, To Boldly Go: The Case for Space Datacenters — silicon vs GaAs at Starlink-class production (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-exterra-2026-bottleneck",
+      "kind": "source",
+      "locator": "https://www.exterrajsc.com/p/the-invisible-bottleneck",
+      "op": "entity.declare",
+      "title": "Ex Terra / Journal of Space Commerce, The Invisible Bottleneck — GaAs prohibitively expensive at Starlink volume (2026)",
+      "version": "2026"
+    },
+    {
+      "entity_id": "src-cern-rha-qual-cost",
+      "kind": "source",
+      "locator": "https://indico.cern.ch/event/1287100/contributions/5408902/attachments/2661918/4612497/RHA%20full.pdf",
+      "op": "entity.declare",
+      "title": "CERN RADWG (Indico), Radiation hardness assurance: beam time ~$800/h, ~33% of facility requests unsatisfied",
+      "version": "2023"
+    },
+    {
+      "entity_id": "src-gsfc-std-1000h",
+      "kind": "source",
+      "locator": "https://standards.nasa.gov/sites/default/files/standards/GSFC/H/0/GSFC-STD-1000RevH_Approved.pdf",
+      "op": "entity.declare",
+      "title": "NASA GSFC-STD-1000 RevH, Goddard technical standard mandating AIAA S-111A / S-112A qualification",
+      "version": "2022"
+    },
+    {
+      "entity_id": "src-rocketlab-z4j",
+      "kind": "source",
+      "locator": "https://rocketlabcorp.com/space-systems/solar/space-solar-cellscics/",
+      "op": "entity.declare",
+      "title": "Rocket Lab Space Systems, Z4J/ZTJ cells — 'fully qualified to AIAA-S111-2014' as the product feature",
+      "version": "2026"
+    },
+    {
+      "entity_id": "surya-claim-r6-iscr-single-source",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "ISCR ~500 W/kg array-level and >100 kW compute per launched tonne is a single-source design target: one unrefereed preprint (arXiv 2604.07760) plus one startup patent bet; no hardware, no replication"
+    },
+    {
+      "entity_id": "surya-claim-r6-hv-established-regime-bounded",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "High-voltage arrays are established heritage, regime-bounded: ISS 160 V chosen for cable mass; direct-drive SEP runs 300-400 V because 400 kW at 100-160 V means up to 4,000 A distribution; LEO plasma arcing fences the regime out of constellation altitudes"
+    },
+    {
+      "entity_id": "surya-claim-r6-standardization-confirmed",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "Starlink standardization lesson confirmed independently: silicon beats GaAs at Starlink-class production economics; cell choice is second-order behind panel standardization and production cadence"
+    },
+    {
+      "entity_id": "surya-claim-r6-qual-moat-priced",
+      "kind": "claim",
+      "op": "entity.declare",
+      "title": "The qualification moat is priced: $4.5M S-111A+S-112A campaign (STRATFI), ~$800/h beam time with ~33% of facility requests unsatisfied, GSFC-STD-1000H mandate, incumbents sell qualification as the product; the fast-campaign counter-position is unclaimed"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_ref": "problem-r6",
+      "target_id": "surya-chokepoint-germanium",
+      "source_id": "surya-problem-r6-system-architecture",
+      "relation_id": "rel:addresses-c66855ad33fb35d7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r6-iscr-single-source",
+      "target_ref": "problem-r6",
+      "target_id": "surya-problem-r6-system-architecture",
+      "relation_id": "rel:addresses-899e21aded45bdc7"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-iscr-single-source",
+      "target_id": "src-gaalema-2026-iscr",
+      "relation_id": "rel:derived_from-f7f4e4a04c88cf08"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-iscr-single-source",
+      "target_id": "src-supercomputing-2026-sophia",
+      "relation_id": "rel:derived_from-640b3c69e458bec0"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r6-hv-established-regime-bounded",
+      "target_ref": "problem-r6",
+      "target_id": "surya-problem-r6-system-architecture",
+      "relation_id": "rel:addresses-8a22feed7ac099fb"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-hv-established-regime-bounded",
+      "target_id": "src-ferguson-2002-hv-arrays",
+      "relation_id": "rel:derived_from-2fae35ba0ce1c003"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-hv-established-regime-bounded",
+      "target_id": "src-nasa-2012-direct-drive",
+      "relation_id": "rel:derived_from-4cb2468279e54751"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-hv-established-regime-bounded",
+      "target_id": "src-schneider-d2het",
+      "relation_id": "rel:derived_from-20662967bb4bf244"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-hv-established-regime-bounded",
+      "target_id": "src-leo-arcing-spine",
+      "relation_id": "rel:derived_from-c0cad943e4aafc92"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-hv-established-regime-bounded",
+      "target_id": "src-edda-2022-directdrive",
+      "relation_id": "rel:derived_from-1e1fddeb28caa1a1"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r6-standardization-confirmed",
+      "target_ref": "problem-r6",
+      "target_id": "surya-problem-r6-system-architecture",
+      "relation_id": "rel:addresses-23a4e79fce862dac"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-standardization-confirmed",
+      "target_id": "src-semianalysis-2026-datacenters",
+      "relation_id": "rel:derived_from-73513116ed389407"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-standardization-confirmed",
+      "target_id": "src-exterra-2026-bottleneck",
+      "relation_id": "rel:derived_from-bf11f33de9e9ff27"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "addresses",
+      "source_id": "surya-claim-r6-qual-moat-priced",
+      "target_ref": "problem-r6",
+      "target_id": "surya-problem-r6-system-architecture",
+      "relation_id": "rel:addresses-3540bcb0a1474842"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-qual-moat-priced",
+      "target_id": "src-cern-rha-qual-cost",
+      "relation_id": "rel:derived_from-0b781f03518d9c94"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-qual-moat-priced",
+      "target_id": "src-gsfc-std-1000h",
+      "relation_id": "rel:derived_from-a83a0226fd3a8357"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "derived_from",
+      "source_id": "surya-claim-r6-qual-moat-priced",
+      "target_id": "src-rocketlab-z4j",
+      "relation_id": "rel:derived_from-ad7bab25f5eac9d0"
+    },
+    {
+      "op": "relation.declare",
+      "relation_type": "surya:supports",
+      "source_id": "surya-claim-r6-qual-moat-priced",
+      "target_id": "src-founding-article",
+      "relation_id": "rel:suryasupports-f29df20a2d9c66f6"
+    },
+    {
+      "actor": "surya.resident",
+      "assessment_id": "surya-assessment-r6-gap-map-2026-08",
+      "evidence": [
+        {
+          "locator": "https://arxiv.org/abs/2604.07760",
+          "paraphrase": "ISCR concept: solar cells, vapor-chamber radiator, and compute on common support; ~500 W/kg at array level; >100 kW compute per launched tonne; 16 MW / 150 t / 20 m x 2,200 m grid of 16,000 panels in one Starship; >30% energy/token gain at 35 C vs 105 C junction; unrefereed preprint",
+          "source_id": "src-gaalema-2026-iscr"
+        },
+        {
+          "locator": "https://www.supercomputing.news/emerging/sophia-space-orbital-data-center-patent-radiator-area",
+          "paraphrase": "Sophia Space patent bet on radiator-area orbital data centers; article notes the ISCR preprint is not peer reviewed",
+          "source_id": "src-supercomputing-2026-sophia"
+        },
+        {
+          "locator": "https://ntrs.nasa.gov/api/citations/20030022705/downloads/20030022705.pdf",
+          "paraphrase": "ISS 160 V primary power chosen explicitly to reduce cable mass",
+          "source_id": "src-ferguson-2002-hv-arrays"
+        },
+        {
+          "locator": "https://ntrs.nasa.gov/api/citations/20120000068/downloads/20120000068.pdf",
+          "paraphrase": "High-power SEP direct-drive at 300-400 V; at 400 kW a 100-160 V bus must distribute up to 4,000 A",
+          "source_id": "src-nasa-2012-direct-drive"
+        },
+        {
+          "locator": "https://www.spis.org/archives/projects/spine/home/tools/sctc/VIIIth/7939c84ac0a8001400532b174054837c/8th_High_Voltage_Solar_Array_Testing_for_a_Direct_Driv_22.pdf",
+          "paraphrase": "High-voltage solar array arc testing for direct-drive Hall thruster (D2HET) operation",
+          "source_id": "src-schneider-d2het"
+        },
+        {
+          "locator": "https://www.spis.org/archives/projects/spine/home/tools/sctc/VIIIth/793596cac0a800140051d078665c1a25/8th_Degradation_of_High_Voltage_Solar_Array_Due_to_Arc_41.pdf",
+          "paraphrase": "Degradation of high-voltage solar arrays due to arcing in the LEO plasma environment",
+          "source_id": "src-leo-arcing-spine"
+        },
+        {
+          "locator": "https://edda-h2020.eu/wp-content/uploads/2022/09/SP2022_EDDA_test-results.pdf",
+          "paraphrase": "EDDA H2020 direct-drive spacecraft power hardware test results",
+          "source_id": "src-edda-2022-directdrive"
+        },
+        {
+          "locator": "https://newsletter.semianalysis.com/p/to-boldly-go-the-case-for-space-datacenters",
+          "paraphrase": "Silicon's mass and cost advantage at Starlink-class production outweighs GaAs efficiency for 30 kW-1 MW space datacenter payloads",
+          "source_id": "src-semianalysis-2026-datacenters"
+        },
+        {
+          "locator": "https://www.exterrajsc.com/p/the-invisible-bottleneck",
+          "paraphrase": "GaAs prohibitively expensive at Starlink production volume; standardization and cadence dominate cell choice",
+          "source_id": "src-exterra-2026-bottleneck"
+        },
+        {
+          "locator": "https://indico.cern.ch/event/1287100/contributions/5408902/attachments/2661918/4612497/RHA%20full.pdf",
+          "paraphrase": "RHA beam time ~$800/h; most cost in test-bench development; ~33% of facility requests unsatisfied",
+          "source_id": "src-cern-rha-qual-cost"
+        },
+        {
+          "locator": "https://standards.nasa.gov/sites/default/files/standards/GSFC/H/0/GSFC-STD-1000RevH_Approved.pdf",
+          "paraphrase": "GSFC-STD-1000H mandates AIAA S-111A / S-112A qualification by rule",
+          "source_id": "src-gsfc-std-1000h"
+        },
+        {
+          "locator": "https://rocketlabcorp.com/space-systems/solar/space-solar-cellscics/",
+          "paraphrase": "Rocket Lab sells cells 'fully qualified to AIAA-S111-2014' — qualification as the product feature",
+          "source_id": "src-rocketlab-z4j"
+        }
+      ],
+      "judgment": "established-with-gap",
+      "op": "assessment.record",
+      "reason": "R6 (system architecture as research) decomposes into four sub-directions with distinct evidence classes: ISCR integration is a single unrefereed preprint plus one startup patent bet (design target, not demonstrated); high-voltage arrays are established heritage bounded out of LEO by plasma arcing; Starlink panel standardization is confirmed directionally by two independent analyses (cell choice second-order to cadence); qualification economics are priced — $4.5M S-111A+S-112A campaign, $800/h beam, 33% unsatisfied demand, standards mandate, incumbents sell qualification as the product — and the fast-campaign counter-position is unclaimed. Cheapest high-information artifact: benchtop cell-on-vapor-chamber panel through thermal-vacuum.",
+      "subject_id": "surya-problem-r6-system-architecture"
+    },
+    {
+      "interval_end": "2026-08-19",
+      "interval_start": "2026-08-19",
+      "method": "4-track in-session web sweep (delegation workers remain network-denied and repo-read-only, so sweeps run in-session with WebSearch/FetchURL). Tracks: (1) ISCR integrated solar-compute-radiator claims and commercial parallels, (2) high-voltage array heritage and the LEO plasma constraint, (3) Starlink-class panel standardization economics, (4) qualification campaign cost structure and mandates.",
+      "op": "sweep.record",
+      "result": "1 problem, 12 sources, 4 claims, 20 relations, 1 assessment (established-with-gap); problem mapped to chokepoint-germanium. Perimeter: ISCR is preprint-only (no referee, no hardware); SemiAnalysis and Ex Terra are analyst pieces, not primary disclosures — no published Starlink BOM teardown; STRATFI $4.5M anchor carried from R2 event ev-000000000007, not re-admitted; SCTC papers are conference proceedings.",
+      "sweep_id": "surya-sweep-r6-2026-08-19"
+    }
+  ],
+  "digest": "d5c94b7a22e26c23f1223dade59a4bf2105fb58291874c48593a4ccecdd00a7a"
+}

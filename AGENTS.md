@@ -100,6 +100,22 @@ site, ledger event `ev-000000000188`) — the R2 readiness baseline.
   of LEO ram; economics face Starship launch-cost and Starlink COTS-Si
   pressure. Watch: Space Forge plasma work, Archinaut asset dispersal,
   launch-cost trend.
+- **R6 system architecture as research**: gap map published at
+  /r6-gap-map/ (graph event `ev-000000000012`, assessment
+  `surya-assessment-r6-gap-map-2026-08`, established-with-gap).
+  Sub-directions graded by evidence class: ISCR ~500 W/kg is a design
+  target from one unrefereed preprint (arXiv 2604.07760) plus one
+  startup's patent bet — quote as target, never as demonstrated; the
+  cheapest high-information artifact in the portfolio is a benchtop
+  cell-on-vapor-chamber panel through thermal-vacuum. High-voltage arrays
+  are established heritage (ISS 160 V for cable mass; direct-drive SEP at
+  300–400 V) fenced out of LEO by plasma arcing. Starlink
+  standardization lesson confirmed independently (SemiAnalysis, Ex
+  Terra): cell choice is second-order behind panel standardization and
+  cadence. Qualification moat priced: $4.5M S-111A+S-112A campaign
+  (STRATFI, from R2), ~$800/h beam time with 33% of requests
+  unsatisfied, GSFC-STD-1000H mandate, incumbents sell qualification as
+  the product; the fast-campaign counter-position is unclaimed.
 - **Closed (kill table, with reasons)**: space-unique non-PV variants —
   permanent source+sink thermal schemes, eclipse-cycle harvesting,
   thermoradiative laminates, tethers-as-generators, solar-pumped lasers.

@@ -1,0 +1,243 @@
+---
+import Base from "../layouts/Base.astro";
+
+const subdirections = [
+  {
+    name: "ISCR integration (solar + radiator + compute)",
+    evidence: "One unrefereed preprint (Gaalema, Indyk, Staley, arXiv April 2026): co-locating cells, vapor-chamber radiator, and compute on common support yields ~500 W/kg at array level and >100 kW of compute per launched tonne; a 16 MW / 150 t / 20 m × 2,200 m grid of 16,000 panels fits one Starship. One commercial parallel: Sophia Space's radiator-area orbital data center bet (patent-backed).",
+    missing: "Independent replication, any hardware, thermal-vacuum test of a panel, deployment dynamics of a kilometer-class grid",
+    verdict: "single-source",
+  },
+  {
+    name: "High-voltage arrays",
+    evidence: "Established heritage: ISS runs 160 V primary power, a decision made explicitly to cut cable mass; direct-drive SEP concepts run 300–400 V because a 400 kW vehicle at 100–160 V must distribute up to 4,000 A — cabling becomes prohibitive. Test campaigns exist (D2HET high-voltage array arc testing; EDDA H2020 direct-drive hardware results).",
+    missing: "The constraint is known and physical: arcing in LEO plasma. High voltage lives at high power SEP / GEO class, or behind plasma mitigation — not a free win at LEO constellation altitude",
+    verdict: "established, regime-bounded",
+  },
+  {
+    name: "Mass-production panel standardization",
+    evidence: "The Starlink lesson, now confirmed by independent analyses: SemiAnalysis (2026) finds silicon's mass and cost advantage at Starlink-class production outweighs GaAs efficiency for 30 kW–1 MW compute payloads; Ex Terra (2026): GaAs was prohibitively expensive at Starlink volume. Combined with the R5 sweep anchors: COTS Si at $0.20–0.50/W vs 3J at $50–100/W, ~70 satellites/week in Redmond.",
+    missing: "A published teardown of Starlink panel cost structure — everything is inference from production economics, not disclosed BOM",
+    verdict: "confirmed directionally",
+  },
+  {
+    name: "Qualification economics",
+    evidence: "The moat is priced: a full AIAA S-111A + S-112A campaign ran ~$4.5M and 1–2+ years (STRATFI award record, from the R2 sweep). Beam time is ~$800/hour with most cost in test-bench development, and ~33% of facility requests go unsatisfied (CERN RADWG/RCS data). GSFC-STD-1000H mandates S-111/S-112 by rule; incumbents sell qualification as the product (Rocket Lab: 'fully qualified to AIAA-S111-2014').",
+    missing: "No published low-cost qualification protocol; no pooled-facility model; nobody sells a fast campaign",
+    verdict: "moat confirmed, attack unbuilt",
+  },
+];
+
+const sources = [
+  ["Gaalema, Indyk & Staley, arXiv (2026)", "Reduced-Mass Orbital AI Inference via Integrated Solar, Compute, and Radiator Panels — the ISCR analysis", "https://arxiv.org/abs/2604.07760"],
+  ["Supercomputing News (2026)", "Sophia Space's orbital data center bet on radiator area; notes ISCR preprint is not peer reviewed", "https://www.supercomputing.news/emerging/sophia-space-orbital-data-center-patent-radiator-area"],
+  ["Ferguson et al., IAC-02 (2002)", "High Voltage Space Solar Arrays — ISS 160 V decision basis", "https://ntrs.nasa.gov/api/citations/20030022705/downloads/20030022705.pdf"],
+  ["NASA NTRS (2012)", "High Power SEP vehicles for human exploration — 300 V direct drive vs 4,000 A distribution", "https://ntrs.nasa.gov/api/citations/20120000068/downloads/20120000068.pdf"],
+  ["Schneider et al., 8th SCTC", "High voltage solar array arc testing for direct-drive Hall thrusters (D2HET)", "https://www.spis.org/archives/projects/spine/home/tools/sctc/VIIIth/7939c84ac0a8001400532b174054837c/8th_High_Voltage_Solar_Array_Testing_for_a_Direct_Driv_22.pdf"],
+  ["8th SCTC, LEO plasma arcing", "Degradation of high voltage solar array due to arcing in LEO plasma environment", "https://www.spis.org/archives/projects/spine/home/tools/sctc/VIIIth/793596cac0a800140051d078665c1a25/8th_Degradation_of_High_Voltage_Solar_Array_Due_to_Arc_41.pdf"],
+  ["EDDA H2020 (2022)", "Direct-drive spacecraft power test results", "https://edda-h2020.eu/wp-content/uploads/2022/09/SP2022_EDDA_test-results.pdf"],
+  ["SemiAnalysis (2026)", "To Boldly Go: The Case for Space Datacenters — silicon vs GaAs at Starlink-class production", "https://newsletter.semianalysis.com/p/to-boldly-go-the-case-for-space-datacenters"],
+  ["Ex Terra / Journal of Space Commerce (2026)", "The Invisible Bottleneck — GaAs prohibitively expensive at Starlink volume", "https://www.exterrajsc.com/p/the-invisible-bottleneck"],
+  ["CERN RADWG (Indico)", "Radiation hardness assurance: beam time ~$800/h, ~33% of requests unsatisfied", "https://indico.cern.ch/event/1287100/contributions/5408902/attachments/2661918/4612497/RHA full.pdf"],
+  ["NASA GSFC-STD-1000H", "Goddard technical standard mandating AIAA S-111A / S-112A qualification", "https://standards.nasa.gov/sites/default/files/standards/GSFC/H/0/GSFC-STD-1000RevH_Approved.pdf"],
+  ["Rocket Lab Space Systems", "Z4J/ZTJ cells — 'fully qualified to AIAA-S111-2014' as the product feature", "https://rocketlabcorp.com/space-systems/solar/space-solar-cellscics/"],
+];
+---
+
+<Base
+  title="R6 gap map: system architecture as research — Surya"
+  description="The system-architecture research direction mapped: the ISCR ~500 W/kg claim and its evidence class, high-voltage array heritage and its LEO constraint, the Starlink standardization lesson, and the priced qualification moat. Sweep executed August 2026."
+  path="/r6-gap-map/"
+>
+  <style>
+    article { padding: var(--space-8) 0 0; }
+    h1 { font-size: var(--text-2xl); letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+    h2 {
+      font-size: var(--text-xl);
+      margin: var(--space-8) 0 var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--rule);
+    }
+    .lede { color: var(--fg-dim); font-size: var(--text-lg); max-width: 46rem; }
+    p, li { max-width: 46rem; }
+    ul, ol { padding-left: var(--space-5); }
+    li { margin-bottom: var(--space-2); }
+    .class { font-family: ui-monospace, monospace; font-size: var(--text-sm); color: var(--accent); }
+    .finding {
+      border-left: 3px solid var(--accent-dim);
+      padding-left: var(--space-4);
+      color: var(--fg-dim);
+    }
+    .finding b { color: var(--accent); }
+    table.nums {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin: var(--space-4) 0;
+    }
+    table.nums th, table.nums td {
+      text-align: left;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.nums th { color: var(--fg-dim); font-weight: 600; }
+    table.nums td:first-child { font-weight: 600; }
+    .srcs { font-size: var(--text-sm); color: var(--fg-dim); }
+    .srcs li { margin-bottom: var(--space-1); }
+  </style>
+
+  <article>
+    <div class="wrap">
+      <h1>R6: system architecture as research, mapped</h1>
+      <p class="lede">
+        Sweep executed 19 August 2026. The finding: R6's four sub-directions
+        sit in four different evidence classes. High-voltage arrays are
+        established heritage with a known physical constraint. The Starlink
+        standardization lesson is confirmed by independent analyses. The
+        qualification moat is now priced. And the headline claim — ISCR's
+        ~500 W/kg by merging solar, radiator, and compute into one
+        structure — rests on a single unrefereed preprint with no hardware
+        behind it.
+      </p>
+
+      <h2>Why this map exists</h2>
+      <p>
+        R6 is the cross-cutting direction: cheap to do now, compounding
+        returns. The directions page asserts the ISCR move (~500 W/kg at
+        array level), the high-voltage lever, the standardization lesson,
+        and qualification economics as an attack on the filing-cabinet
+        moat. This page checks each assertion's evidence class — because a
+        program that quotes 500 W/kg needs to know whether it is quoting a
+        measurement or a whiteboard.
+      </p>
+
+      <h2>Sub-direction inventory</h2>
+      <table class="nums">
+        <thead>
+          <tr><th>Sub-direction</th><th>Best evidence</th><th>What's missing</th><th>Evidence class</th></tr>
+        </thead>
+        <tbody>
+          {subdirections.map((s) => (
+            <tr>
+              <td>{s.name}</td>
+              <td>{s.evidence}</td>
+              <td>{s.missing}</td>
+              <td>{s.verdict}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h2>The ISCR claim, graded</h2>
+      <p>
+        <span class="class">single-source</span> The ~500 W/kg figure is
+        real arithmetic in a real preprint, and the physical intuition is
+        sound — a radiator's structure can carry cells, and a 35 °C
+        junction beats a 105 °C one on energy per token by >30%. But the
+        entire evidence base is one April 2026 arXiv preprint (Gaalema,
+        Indyk, Staley), explicitly not peer reviewed, plus one startup's
+        patent-backed bet on the same radiator-area thesis (Sophia Space).
+        No panel has been built, no thermal-vacuum test published, no
+        deployment dynamics analyzed for a 20 m × 2,200 m grid. Treat the
+        number as a design target with a plausible mechanism, not as
+        demonstrated specific power.
+      </p>
+      <p class="finding">
+        <b>What would move ISCR up an evidence class:</b> a single
+        benchtop panel — cells bonded to a vapor-chamber radiator with
+        compute on the back, run through thermal-vacuum with IV
+        monitoring. That is a ground campaign at an existing facility,
+        same shape as the R2 datasets. It is also exactly the kind of
+        artifact that forces the thermal interfaces, CTE stack, and
+        harness routing into the open, where the real mass accounting
+        lives.
+      </p>
+
+      <h2>High voltage: established, with a fence</h2>
+      <p>
+        <span class="class">established</span> The lever is heritage, not
+        speculation. ISS chose 160 V primary power explicitly for cable
+        mass. Direct-drive SEP studies put the array at thruster voltage
+        (300–400 V) because a 400 kW vehicle at conventional voltage
+        distributes up to 4,000 A — the harness becomes the mass problem.
+        The fence is equally well documented: high-voltage arrays arc in
+        LEO plasma, and the mitigation literature (arc testing, grouting,
+        plasma contactors) is its own field. High voltage pays at
+        high-power SEP and GEO class; at LEO constellation altitude it
+        buys a plasma problem. Regime-bounded, same shape as the R5
+        atomic-oxygen fence.
+      </p>
+
+      <h2>Standardization: the lesson holds up</h2>
+      <p>
+        <span class="class">confirmed</span> The Starlink lesson survives
+        independent scrutiny. SemiAnalysis' 2026 space-datacenter case
+        finds silicon's mass and cost advantage at Starlink-class
+        production outweighs GaAs efficiency for 30 kW–1 MW payloads;
+        Ex Terra's account matches: GaAs was prohibitively expensive at
+        Starlink volume. Combined with the R5 sweep's anchors (COTS Si at
+        $0.20–0.50/W against 3J at $50–100/W; ~70 satellites/week), the
+        conclusion hardens: at constellation economics, cell choice is a
+        second-order decision behind panel standardization and production
+        cadence. The honest perimeter: no published Starlink panel BOM
+        teardown exists — this is inference from production economics,
+        consistently pointing one way.
+      </p>
+
+      <h2>Qualification economics: the moat has a price list</h2>
+      <p>
+        <span class="class">established</span> The R2 sweep priced the
+        campaign (~$4.5M, 1–2+ years for S-111A + S-112A via the STRATFI
+        record). This sweep priced the inputs: beam time ~$800/hour with
+        most cost in test-bench development, and ~33% of radiation-facility
+        requests unsatisfied — the queue is part of the moat. The mandate
+        is codified (GSFC-STD-1000H requires S-111/S-112 by rule), and the
+        incumbent sells the moat as the product: Rocket Lab's cell page
+        leads with "fully qualified to AIAA-S111-2014." Nobody publishes a
+        low-cost protocol, nobody pools facility access, nobody sells a
+        fast campaign. The attack the directions page sketched — cheap,
+        fast radiation-test campaigns that let new materials accumulate
+        credible heritage — remains unbuilt by anyone.
+      </p>
+
+      <h2>What this changes</h2>
+      <p>
+        Program moves, in order: (1) quote ISCR as a design target, never
+        as a demonstrated number — and consider the benchtop panel above
+        as the cheapest high-information artifact in the whole portfolio;
+        (2) treat high voltage as a regime tool for the R5/GEO-class
+        concepts, not a LEO play; (3) keep standardization as the default
+        cost model assumption — the burden of proof now sits on any
+        architecture that needs exotic cells at volume; (4) scope the
+        fast-qualification campaign as a deliverable: the moat is priced,
+        the queue is documented, and the counter-position (pooled
+        facility + fixed-price campaign) is unclaimed. R6 earns its
+        "compounding returns" label — every other direction's numbers get
+        sharper when the architecture assumptions are graded.
+      </p>
+
+      <h2>Perimeter and provenance</h2>
+      <p>
+        Four-track sweep (ISCR, high-voltage heritage, standardization,
+        qualification economics), 12 new sources, admitted to the Surya
+        epistemic graph as event <code>ev-000000000012</code> with
+        assessment <code>surya-assessment-r6-gap-map-2026-08</code>,
+        judgment <b>established-with-gap</b>. Sweep-level gaps, flagged
+        honestly: the ISCR preprint was assessed from its abstract and
+        coverage, not a full-text read; SemiAnalysis and Ex Terra are
+        analyst pieces, not primary disclosures; the STRATFI $4.5M anchor
+        is carried from the R2 sweep (event <code>ev-000000000007</code>),
+        not re-verified; no Starlink BOM teardown was located. None of
+        these move a sub-direction out of its evidence class.
+      </p>
+
+      <h2>Sources</h2>
+      <ul class="srcs">
+        {sources.map(([label, note, url]) => (
+          <li><a href={url}>{label}</a> — {note}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>
